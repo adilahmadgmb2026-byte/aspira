@@ -3,341 +3,410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KHDA Approval in Dubai | Aspira Business Setup</title>
-  <meta name="description" content="KHDA approval for training centres, nurseries, schools and online academies in Dubai. We handle the full licensing process — from trade name to final permit.">
+  <title>KHDA Approval in Dubai — Aspira Business Setup</title>
+  <meta name="description" content="KHDA licensing for training centres, nurseries, schools and online academies in Dubai. We handle the full process — from trade name to permit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* =========================================
-       RESET
-    ========================================= */
+    /* ============================================
+       RESET & BASE
+    ============================================ */
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{
       font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-      font-size:16px;line-height:1.65;color:#1a1a2e;-webkit-font-smoothing:antialiased;
-      background:#fff
+      font-size:16px;line-height:1.65;color:#1a1a2e;-webkit-font-smoothing:antialiased;background:#fff
     }
 
-    /* =========================================
-       VARIABLES
-    ========================================= */
+    /* ============================================
+       DESIGN TOKENS
+    ============================================ */
     :root{
-      --gold:#C8A96E;--gold-light:#E0C88A;--gold-dim:rgba(200,169,110,0.12);
-      --navy:#0f0f23;--navy-mid:#16163a;
-      --ink:#1a1a2e;--ink-light:#4a4a5a;
-      --gray:#7a7a8a;--gray-border:#e8e8ed;--gray-bg:#f5f5f7;
+      --gold:#BF9D5A;--gold-light:#D4B878;--gold-dim:rgba(191,157,90,0.10);
+      --navy:#0a0a1a;--navy-mid:#12122a;
+      --text:#1a1a2e;--text-secondary:#5a5a72;--text-muted:#8a8a9e;
+      --bg:#ffffff;--bg-subtle:#f6f6f8;--bg-warm:#fafafc;
+      --border:#e6e6ec;--border-light:#f0f0f4;
       --white:#fff;
-      --shadow-sm:0 1px 3px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.06);--shadow-lg:0 12px 40px rgba(0,0,0,0.08);
-      --radius:8px;--radius-lg:16px;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.04);--shadow-md:0 4px 12px rgba(0,0,0,0.05);--shadow-lg:0 12px 32px rgba(0,0,0,0.06);
+      --radius-sm:6px;--radius:10px;--radius-lg:18px;
+      --font-display:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
     }
     .container{max-width:1120px;margin:0 auto;padding:0 24px}
-
-    /* =========================================
-       TYPOGRAPHY
-    ========================================= */
-    h1,h2,h3,h4{font-family:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;line-height:1.15;text-wrap:balance}
-    h1{font-size:clamp(32px,4vw,52px);letter-spacing:-0.03em}
-    h2{font-size:clamp(26px,2.8vw,38px);letter-spacing:-0.02em}
-    h3{font-size:clamp(18px,1.3vw,22px)}
-    h4{font-size:16px}
-    p{max-width:68ch;color:var(--ink-light)}
-    p + p{margin-top:1em}
-    a{color:inherit}
+    .container.narrow{max-width:860px}
     img{max-width:100%;height:auto;display:block}
 
-    /* optical margin compensation for headings flush left */
-    h1, h2, h3 { margin-left:-0.03em }
+    /* ============================================
+       TYPOGRAPHY
+    ============================================ */
+    h1,h2,h3,h4{font-family:var(--font-display);line-height:1.12;text-wrap:balance}
+    h1{font-size:clamp(34px,4.4vw,56px);font-weight:300;letter-spacing:-0.04em;line-height:1.08}
+    h1 strong{font-weight:800}
+    h2{font-size:clamp(26px,2.6vw,36px);font-weight:600;letter-spacing:-0.03em}
+    h2 strong{font-weight:800}
+    h3{font-size:clamp(18px,1.2vw,21px);font-weight:600;letter-spacing:-0.02em}
+    h4{font-size:15px;font-weight:600}
+    p{max-width:66ch;color:var(--text-secondary)}
+    .eyebrow{
+      font-family:var(--font-body);font-size:11px;font-weight:600;
+      text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);margin-bottom:12px
+    }
+    .eyebrow-rule{
+      display:flex;align-items:center;gap:16px;margin-bottom:14px
+    }
+    .eyebrow-rule::after{
+      content:'';flex:1;height:1px;background:var(--border)
+    }
+    .eyebrow-rule span{
+      font-family:var(--font-body);font-size:11px;font-weight:600;
+      text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);flex-shrink:0
+    }
 
-    /* =========================================
-       ANNOUNCEMENT BAR
-    ========================================= */
+    /* ============================================
+       UTILITY
+    ============================================ */
+    .section{padding:96px 0}
+    .section.dark{background:var(--navy);color:#fff}
+    .section.dark p{color:rgba(255,255,255,0.6)}
+    .section.dark .eyebrow-rule::after{background:rgba(255,255,255,0.08)}
+    .section.subtle{background:var(--bg-subtle)}
+    .section.warm{background:var(--bg-warm)}
+
+    /* ============================================
+       ANNOUNCEMENT
+    ============================================ */
     .announce{
       background:var(--navy);padding:10px 20px;text-align:center;
-      font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);
-      border-bottom:1px solid rgba(200,169,110,0.1)
+      font-size:12px;color:rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.04);
+      font-weight:500
     }
-    .announce strong{color:var(--gold);font-weight:600}
+    .announce strong{color:var(--gold-light);font-weight:600}
 
-    /* =========================================
+    /* ============================================
        NAV
-    ========================================= */
+    ============================================ */
     nav{
       position:sticky;top:0;z-index:100;
-      background:rgba(255,255,255,0.93);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--gray-border);padding:14px 0;transition:box-shadow 0.3s
+      background:rgba(255,255,255,0.88);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+      padding:16px 0;transition:all 0.3s;border-bottom:1px solid transparent
     }
-    nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+    nav.scrolled{border-bottom-color:var(--border-light);box-shadow:0 1px 8px rgba(0,0,0,0.04)}
     nav .container{display:flex;align-items:center;justify-content:space-between}
-    .logo{font-family:'Archivo',sans-serif;font-size:20px;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-0.03em}
+    .logo{font-family:var(--font-display);font-size:22px;font-weight:900;color:var(--text);text-decoration:none;letter-spacing:-0.04em;display:flex;flex-direction:column;line-height:1}
     .logo em{font-style:normal;color:var(--gold)}
-    .logo small{display:block;font-family:'Inter',sans-serif;font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.2em;color:var(--gray);margin-top:-1px}
+    .logo small{font-family:var(--font-body);font-size:8px;font-weight:500;text-transform:uppercase;letter-spacing:0.35em;color:var(--text-muted);margin-top:1px}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;transition:color 0.2s}
+    .nav-links a:hover{color:var(--gold)}
     .nav-cta{
-      font-size:13px;font-weight:600;color:var(--white);background:var(--ink);
-      padding:10px 22px;border-radius:100px;text-decoration:none;transition:all 0.25s
+      font-size:13px;font-weight:600;color:#fff;background:var(--text);
+      padding:10px 24px;border-radius:100px;text-decoration:none;transition:all 0.25s
     }
     .nav-cta:hover{background:var(--gold);color:var(--navy)}
+    @media(max-width:768px){.nav-links{display:none}}
 
-    /* =========================================
+    /* ============================================
        HERO
-    ========================================= */
+    ============================================ */
     .hero{
-      background:var(--white);padding:96px 0 72px;border-bottom:1px solid var(--gray-border)
+      padding:120px 0 100px;background:linear-gradient(180deg,#fff 0%,var(--bg-warm) 100%);
+      border-bottom:1px solid var(--border-light);position:relative;overflow:hidden
     }
-    .hero .container{display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center}
-    .hero h1{font-weight:800;margin-bottom:16px}
-    .hero h1 em{font-style:normal;color:var(--gold)}
-    .hero p{font-size:17px;color:var(--ink-light);margin-bottom:32px}
-    .hero .meta{display:flex;gap:28px;margin-bottom:32px}
-    .hero .meta span{font-size:13px;color:var(--gray)}
-    .hero .meta strong{color:var(--ink);font-weight:600}
-    .btn-group{display:flex;gap:12px;flex-wrap:wrap}
+    .hero::before{
+      content:'';position:absolute;top:-40%;right:-15%;width:800px;height:800px;
+      background:radial-gradient(circle,rgba(191,157,90,0.04) 0%,transparent 60%);pointer-events:none
+    }
+    .hero .container{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 24px;text-align:center}
+    .hero h1{margin-bottom:20px}
+    .hero h1 em{font-style:normal;color:var(--gold);font-weight:800}
+    .hero p{font-size:18px;color:var(--text-secondary);margin:0 auto 40px;max-width:580px}
+    .hero .btn-group{justify-content:center}
+    .btn-group{display:flex;gap:14px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:14px 28px;border-radius:100px;font-size:14px;font-weight:600;
-      text-decoration:none;transition:all 0.25s;border:none;cursor:pointer
+      display:inline-flex;align-items:center;gap:8px;padding:15px 32px;
+      border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;
+      transition:all 0.25s;border:none;cursor:pointer;font-family:var(--font-body)
     }
-    .btn-primary{
-      background:var(--ink);color:var(--white)
-    }
-    .btn-primary:hover{background:var(--gold);color:var(--navy)}
-    .btn-outline{
-      border:1.5px solid var(--gray-border);color:var(--ink);background:transparent
-    }
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-    .btn-wa{
-      background:#25D366;color:#fff
-    }
-    .btn-wa:hover{background:#1da851;box-shadow:0 4px 16px rgba(37,211,102,0.3);transform:translateY(-1px)}
+    .btn-primary{background:var(--text);color:#fff}
+    .btn-primary:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+    .btn-outline{border:1.5px solid var(--border);color:var(--text);background:transparent}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .btn-wa{background:#25D366;color:#fff}
+    .btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.25)}
 
-    /* Hero Form */
-    .hero-form{
-      background:var(--gray-bg);border-radius:var(--radius-lg);padding:32px;
-      border:1px solid var(--gray-border)
+    .hero-badges{display:flex;justify-content:center;gap:24px;margin-top:48px;flex-wrap:wrap}
+    .hero-badges span{
+      font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:6px
     }
-    .hero-form h3{font-size:18px;margin-bottom:4px}
-    .hero-form .sub{font-size:13px;color:var(--gray);margin-bottom:20px}
-    .fld{margin-bottom:12px}
-    .fld input,.fld select{
-      width:100%;padding:13px 16px;border:1.5px solid var(--gray-border);
-      border-radius:var(--radius);font-size:14px;font-family:'Inter',sans-serif;
-      background:var(--white);transition:border-color 0.2s;-webkit-appearance:none;appearance:none
+    .hero-badges strong{color:var(--text);font-weight:600}
+
+    /* ============================================
+       TRUST BAR
+    ============================================ */
+    .trust-bar{
+      padding:20px 0;border-bottom:1px solid var(--border-light);background:#fff
     }
-    .fld input:focus,.fld select:focus{outline:none;border-color:var(--gold)}
-    .fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath fill='%237a7a8a' d='M5 7L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-    .btn-block{width:100%;padding:14px;border-radius:100px;font-size:14px;font-weight:600;background:var(--ink);color:var(--white);border:none;cursor:pointer;transition:all 0.25s;font-family:'Inter',sans-serif}
-    .btn-block:hover{background:var(--gold);color:var(--navy)}
-    .form-foot{text-align:center;margin-top:12px;font-size:11px;color:var(--gray)}
-
-    /* =========================================
-       TRUST STRIP
-    ========================================= */
-    .trust-strip{
-      padding:20px 0;background:var(--white);
-      border-bottom:1px solid var(--gray-border)
+    .trust-bar .container{
+      display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap
     }
-    .trust-strip .container{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-    .trust-strip span{font-size:12px;color:var(--gray);font-weight:500}
+    .trust-bar span{font-size:11px;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:0.06em}
+    .trust-bar .sep{color:var(--border);font-weight:300}
 
-    /* =========================================
-       SECTION HEADERS (editorial style)
-    ========================================= */
-    .sec-intro{margin-bottom:48px}
-    .sec-intro .kicker{
-      font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;
-      color:var(--gold);margin-bottom:8px
-    }
-    .sec-intro p{font-size:16px;max-width:60ch}
-
-    /* =========================================
-       STATS STRIP
-    ========================================= */
-    .stats{
-      padding:64px 0;background:var(--gray-bg);
-      border-bottom:1px solid var(--gray-border)
-    }
-    .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-    .stats .num{font-size:40px;font-weight:800;color:var(--ink);letter-spacing:-0.03em;font-family:'Archivo',sans-serif}
-    .stats .lbl{font-size:13px;color:var(--gray);margin-top:2px}
-
-    /* =========================================
-       CONTENT GRID (editorial layout)
-    ========================================= */
-    .content-section{padding:80px 0;background:var(--white)}
-    .content-section.dark{background:var(--navy);color:var(--white)}
-    .content-section.dark p{color:rgba(255,255,255,0.65)}
-    .content-section.dark .sec-intro .kicker{color:var(--gold-light)}
-
-    /* two-col editorial spread */
+    /* ============================================
+       PAIN / GAIN (editorial spread)
+    ============================================ */
     .spread{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .spread.flipped{direction:rtl}
-    .spread.flipped > *{direction:ltr}
-    .spread-text h3{font-size:24px;margin-bottom:12px}
-    .spread-text p{font-size:15px}
-    .spread-text ul{list-style:none;padding:0;margin-top:16px}
-    .spread-text ul li{padding:8px 0;font-size:14px;color:var(--ink-light);display:flex;align-items:center;gap:10px;border-top:1px solid var(--gray-border)}
-    .spread-text ul li:first-child{border-top:none;padding-top:0}
-    .spread-text ul li::before{content:'—';color:var(--gold);font-weight:500}
-    .content-section.dark .spread-text ul li{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.06)}
-    .content-section.dark .spread-text ul li::before{color:var(--gold-light)}
-
-    /* =========================================
-       SERVICE TILES (varied, not identical)
-    ========================================= */
-    .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-border);border:1px solid var(--gray-border);border-radius:var(--radius-lg);overflow:hidden}
-    .tile{
-      background:var(--white);padding:36px 28px;transition:all 0.3s
+    .spread-col h3{font-size:22px;margin-bottom:16px}
+    .spread-col p{font-size:15px;margin-bottom:16px}
+    .spread-col ul{list-style:none;padding:0}
+    .spread-col li{
+      padding:10px 0;font-size:14px;color:var(--text-secondary);
+      display:flex;align-items:flex-start;gap:12px;border-top:1px solid var(--border-light)
     }
-    .tile:hover{background:var(--gray-bg)}
-    .tile .t-num{font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px}
-    .tile h4{font-size:15px;margin-bottom:6px}
-    .tile p{font-size:13px;color:var(--gray)}
-    .tile.featured{background:var(--ink);color:var(--white)}
-    .tile.featured h4{color:var(--white)}
-    .tile.featured p{color:rgba(255,255,255,0.6)}
-    .tile.featured .t-num{color:var(--gold-light)}
+    .spread-col li:first-of-type{border-top:none;padding-top:0}
+    .spread-col .marker{
+      width:18px;height:18px;border-radius:50%;display:flex;align-items:center;
+      justify-content:center;flex-shrink:0;margin-top:2px;font-size:10px;font-weight:700
+    }
+    .spread-col .marker.m-cross{background:#fee2e2;color:#dc2626}
+    .spread-col .marker.m-check{background:#dcfce7;color:#16a34a}
+    .pain-box{
+      background:linear-gradient(135deg,#fef2f2,#fff5f5);border:1px solid #fecaca;
+      border-radius:var(--radius-lg);padding:40px 36px
+    }
+    .gain-box{
+      background:linear-gradient(135deg,#f0fdf4,#f7fef9);border:1px solid #bbf7d0;
+      border-radius:var(--radius-lg);padding:40px 36px
+    }
 
-    /* =========================================
-       COST TABLE
-    ========================================= */
-    .cost-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--gray-border);border:1px solid var(--gray-border);border-radius:var(--radius-lg);overflow:hidden}
-    .cost-card{background:var(--white);padding:32px 28px;position:relative}
-    .cost-card.popular{background:var(--ink);color:var(--white)}
-    .cost-card.popular .price{color:var(--gold)}
-    .cost-card.popular .price small{color:rgba(255,255,255,0.5)}
-    .cost-card.popular ul li{color:rgba(255,255,255,0.65)}
-    .cost-card .tag-pop{
-      display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;
+    /* ============================================
+       STATS
+    ============================================ */
+    .stats{background:var(--navy);color:#fff;padding:72px 0}
+    .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+    .stats .num{font-family:var(--font-display);font-size:44px;font-weight:300;line-height:1}
+    .stats .num strong{font-weight:800;color:var(--gold)}
+    .stats .lbl{font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px;text-transform:uppercase;letter-spacing:0.08em}
+
+    /* ============================================
+       SERVICES — staggered layout
+    ============================================ */
+    .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+    .service-tile{background:#fff;padding:40px 36px;position:relative;transition:all 0.3s}
+    .service-tile:hover{background:var(--bg-warm)}
+    .service-tile .num{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:14px;letter-spacing:0.05em}
+    .service-tile h4{font-size:16px;margin-bottom:8px}
+    .service-tile p{font-size:13px;color:var(--text-muted);max-width:45ch}
+    .service-tile.full{grid-column:1/-1;background:var(--text);color:#fff}
+    .service-tile.full p{color:rgba(255,255,255,0.55)}
+    .service-tile.full h4{color:#fff}
+    .service-tile.full .num{color:var(--gold-light)}
+    .service-tile.full:hover{background:var(--navy-mid)}
+
+    /* ============================================
+       PROCESS — editorial timeline
+    ============================================ */
+    .process-list{max-width:780px;margin:0 auto}
+    .process-row{display:grid;grid-template-columns:80px 1fr;gap:32px;margin-bottom:40px}
+    .process-row:last-child{margin-bottom:0}
+    .process-row .step{
+      font-family:var(--font-display);font-size:36px;font-weight:300;color:var(--gold);
+      line-height:1;text-align:right
+    }
+    .process-row .content h4{font-size:17px;margin-bottom:4px}
+    .process-row .content p{font-size:14px;color:var(--text-muted);max-width:55ch}
+
+    /* ============================================
+       COST
+    ============================================ */
+    .cost-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+    .cost-item{background:#fff;padding:36px 32px;position:relative}
+    .cost-item .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:4px}
+    .cost-item .price{font-family:var(--font-display);font-size:38px;font-weight:300;color:var(--text);letter-spacing:-0.03em}
+    .cost-item .price strong{font-weight:800}
+    .cost-item .price small{font-size:15px;font-weight:400;color:var(--text-muted)}
+    .cost-item .note{font-size:12px;color:var(--text-muted);margin:2px 0 16px}
+    .cost-item ul{list-style:none;padding:0}
+    .cost-item li{
+      padding:8px 0;font-size:13px;color:var(--text-secondary);
+      display:flex;align-items:center;gap:8px;border-top:1px solid var(--border-light)
+    }
+    .cost-item li:first-of-type{border-top:none}
+    .cost-item li::before{content:'→';color:var(--gold);font-weight:500;font-size:14px}
+    .cost-item.popular{background:var(--text);color:#fff}
+    .cost-item.popular .label{color:rgba(255,255,255,0.4)}
+    .cost-item.popular .price{color:var(--gold)}
+    .cost-item.popular .price small{color:rgba(255,255,255,0.4)}
+    .cost-item.popular li{color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.06)}
+    .cost-item.popular li::before{color:var(--gold-light)}
+    .cost-item .pop-tag{
+      display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;
       letter-spacing:0.1em;color:var(--navy);background:var(--gold);
-      padding:3px 10px;border-radius:100px;margin-bottom:12px
+      padding:3px 10px;border-radius:100px;margin-bottom:10px
     }
-    .cost-card .type{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);margin-bottom:4px}
-    .cost-card.popular .type{color:rgba(255,255,255,0.5)}
-    .cost-card .price{font-size:36px;font-weight:800;color:var(--ink);font-family:'Archivo',sans-serif;line-height:1}
-    .cost-card .price small{font-size:14px;font-weight:400;color:var(--gray)} 
-    .cost-card .note{font-size:12px;color:var(--gray);margin:4px 0 16px}
-    .cost-card ul{list-style:none;padding:0}
-    .cost-card ul li{padding:7px 0;font-size:13px;color:var(--ink-light);display:flex;align-items:center;gap:8px;border-top:1px solid var(--gray-border)}
-    .cost-card ul li:first-child{border-top:none}
-    .cost-card ul li::before{content:'→';color:var(--gold);font-weight:500}
-    .cost-card.popular ul li::before{color:var(--gold-light)}
 
-    /* =========================================
+    /* ============================================
        JURISDICTION
-    ========================================= */
+    ============================================ */
     .juris-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .juris-card{border:1px solid var(--gray-border);border-radius:var(--radius-lg);overflow:hidden}
-    .juris-card .head{padding:24px 28px;background:var(--gray-bg);border-bottom:1px solid var(--gray-border)}
-    .juris-card .head h4{font-size:17px}
-    .juris-card .head p{font-size:13px;color:var(--gray);margin-top:2px}
-    .juris-card .body{padding:20px 28px 24px}
-    .juris-card .body ul{list-style:none;padding:0}
-    .juris-card .body ul li{padding:8px 0;font-size:14px;color:var(--ink-light);display:flex;align-items:center;gap:8px;border-top:1px solid var(--gray-border)}
-    .juris-card .body ul li:first-child{border-top:none;padding-top:0}
-    .juris-card .body ul li::before{content:'—';color:var(--gold)}
+    .juris-card{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+    .juris-card .h{padding:24px 28px;background:var(--bg-subtle);border-bottom:1px solid var(--border)}
+    .juris-card .h h4{font-size:16px}
+    .juris-card .h p{font-size:12px;color:var(--text-muted);margin-top:2px}
+    .juris-card .b{padding:20px 28px 24px}
+    .juris-card .b ul{list-style:none;padding:0}
+    .juris-card .b li{
+      padding:9px 0;font-size:14px;color:var(--text-secondary);
+      display:flex;align-items:center;gap:10px;border-top:1px solid var(--border-light)
+    }
+    .juris-card .b li:first-of-type{border-top:none;padding-top:0}
+    .juris-card .b li::before{content:'—';color:var(--gold);font-weight:500}
 
-    /* =========================================
+    /* ============================================
        CHECKLIST
-    ========================================= */
+    ============================================ */
     .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .check-item{
       display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;
-      padding:12px 16px;background:var(--gray-bg);border-radius:var(--radius)
+      padding:14px 18px;background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-sm);
+      transition:all 0.2s
     }
-    .check-item .ck{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--gold);font-weight:700}
+    .check-item:hover{border-color:var(--gold)}
+    .check-item .ck{
+      width:20px;height:20px;border-radius:50%;border:1.5px solid var(--gold);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:10px;color:var(--gold);font-weight:700
+    }
 
-    /* =========================================
+    /* ============================================
        CASE STUDY
-    ========================================= */
+    ============================================ */
     .cs-card{
-      border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);
-      padding:48px;background:rgba(255,255,255,0.03);max-width:720px;margin:0 auto;text-align:center
+      border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);
+      padding:56px 48px;background:rgba(255,255,255,0.02);text-align:center;max-width:740px;margin:0 auto
     }
-    .cs-card .result{display:inline-block;font-size:12px;font-weight:600;letter-spacing:0.05em;color:var(--gold-light);border:1px solid rgba(200,169,110,0.2);padding:5px 16px;border-radius:100px;margin-bottom:16px}
-    .cs-card h3{color:var(--white);font-size:24px}
-    .cs-card .sub{font-size:14px;color:rgba(255,255,255,0.55);margin:6px 0 24px}
+    .cs-card .tag{
+      display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.05em;
+      color:var(--gold-light);border:1px solid rgba(200,169,110,0.2);
+      padding:5px 18px;border-radius:100px;margin-bottom:20px
+    }
+    .cs-card h3{font-size:24px;color:#fff}
+    .cs-card .sub{font-size:14px;color:rgba(255,255,255,0.5);margin:6px 0 28px}
     .cs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .cs-grid .cs-item .num{font-size:36px;font-weight:800;color:var(--gold);font-family:'Archivo',sans-serif}
-    .cs-grid .cs-item .txt{font-size:11px;color:rgba(255,255,255,0.5)}
-
-    /* =========================================
-       BENEFITS (varied layout)
-    ========================================= */
-    .ben-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--gray-border);border:1px solid var(--gray-border);border-radius:var(--radius-lg);overflow:hidden}
-    .ben-item{background:var(--white);padding:32px 28px}
-    .ben-item .bi{font-size:28px;font-weight:300;color:var(--gold);font-family:'Archivo',sans-serif;margin-bottom:8px}
-    .ben-item h4{font-size:15px;margin-bottom:4px}
-    .ben-item p{font-size:13px;color:var(--gray)}
-
-    /* =========================================
-       FAQ
-    ========================================= */
-    .faq-list{max-width:720px;margin:0 auto}
-    .faq-item{
-      border-bottom:1px solid var(--gray-border);padding:20px 0;
-      cursor:pointer;user-select:none
+    .cs-grid .c .n{font-family:var(--font-display);font-size:40px;font-weight:300;color:var(--gold);line-height:1}
+    .cs-grid .c .n strong{font-weight:800}
+    .cs-grid .c .t{font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px}
+    .cs-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px}
+    .cs-tags span{
+      font-size:11px;color:rgba(255,255,255,0.35);padding:4px 14px;
+      border:1px solid rgba(255,255,255,0.06);border-radius:100px
     }
-    .faq-item:first-child{padding-top:0}
+
+    /* ============================================
+       FORM SECTION
+    ============================================ */
+    .form-section{padding:96px 0;background:var(--bg-warm);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
+    .form-wrap{max-width:520px;margin:0 auto;text-align:center}
+    .form-wrap h2{margin-bottom:6px}
+    .form-wrap .sub{font-size:15px;color:var(--text-secondary);margin-bottom:36px}
+    .form-inner{text-align:left;background:#fff;padding:40px 36px;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}
+    .fld{margin-bottom:14px}
+    .fld input,.fld select{
+      width:100%;padding:14px 18px;border:1.5px solid var(--border);
+      border-radius:var(--radius-sm);font-size:14px;font-family:var(--font-body);
+      background:var(--bg-warm);transition:all 0.2s;-webkit-appearance:none;appearance:none;
+      color:var(--text)
+    }
+    .fld input:focus,.fld select:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px var(--gold-dim)}
+    .fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%238a8a9e' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+    .btn-block{
+      width:100%;padding:15px;border-radius:100px;font-size:14px;font-weight:600;
+      background:var(--text);color:#fff;border:none;cursor:pointer;
+      transition:all 0.25s;font-family:var(--font-body);
+      display:flex;align-items:center;justify-content:center;gap:8px
+    }
+    .btn-block:hover{background:var(--gold);color:var(--navy)}
+    .form-footnote{text-align:center;margin-top:14px;font-size:11px;color:var(--text-muted)}
+
+    /* ============================================
+       FAQ
+    ============================================ */
+    .faq-list{max-width:720px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--border-light);padding:0}
+    .faq-item:first-of-type{border-top:1px solid var(--border-light)}
     .faq-q{
       display:flex;justify-content:space-between;align-items:center;
-      font-size:15px;font-weight:600;color:var(--ink);gap:16px
+      padding:20px 0;font-size:15px;font-weight:600;color:var(--text);
+      cursor:pointer;user-select:none;gap:20px;transition:color 0.2s
     }
-    .faq-q .arr{font-size:14px;color:var(--gray);transition:transform 0.25s;flex-shrink:0}
-    .faq-item.open .faq-q .arr{transform:rotate(180deg)}
+    .faq-q:hover{color:var(--gold)}
+    .faq-q .arrow{
+      font-size:18px;color:var(--text-muted);transition:transform 0.3s;flex-shrink:0;
+      font-family:var(--font-body);font-weight:300
+    }
+    .faq-item.open .faq-q .arrow{transform:rotate(180deg);color:var(--gold)}
     .faq-a{
-      max-height:0;overflow:hidden;transition:all 0.3s;
-      font-size:14px;color:var(--gray);line-height:1.7
+      max-height:0;overflow:hidden;transition:all 0.3s ease;
+      font-size:14px;color:var(--text-secondary);line-height:1.7
     }
-    .faq-item.open .faq-a{max-height:300px;padding-top:12px}
+    .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
 
-    /* =========================================
+    /* ============================================
        CTA
-    ========================================= */
-    .cta-section{padding:96px 0;text-align:center;background:var(--gray-bg);border-top:1px solid var(--gray-border)}
-    .cta-section h2{font-size:clamp(28px,3vw,40px);margin-bottom:12px}
-    .cta-section p{color:var(--gray);margin:0 auto 32px}
-    .cta-section .footnote{font-size:12px;color:var(--gray);margin-top:16px}
+    ============================================ */
+    .cta{padding:96px 0;text-align:center;background:#fff}
+    .cta h2{font-size:clamp(28px,2.8vw,38px);margin-bottom:10px}
+    .cta p{color:var(--text-secondary);margin:0 auto 32px;font-size:16px}
+    .cta .fn{font-size:12px;color:var(--text-muted);margin-top:16px}
 
-    /* =========================================
+    /* ============================================
        FOOTER
-    ========================================= */
-    footer{background:var(--navy);color:rgba(255,255,255,0.45);padding:56px 0 24px}
+    ============================================ */
+    footer{background:var(--navy);color:rgba(255,255,255,0.4);padding:60px 0 24px}
     footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
-    footer h4{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--white);margin-bottom:16px}
-    footer a,footer p{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;display:block;margin-bottom:6px}
+    footer h4{font-family:var(--font-body);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#fff;margin-bottom:16px}
+    footer a,footer p{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;display:block;margin-bottom:7px;transition:color 0.2s}
     footer a:hover{color:var(--gold)}
-    footer .desc{font-size:12px;line-height:1.7;max-width:300px;margin-top:8px}
-    footer .bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;text-align:center;font-size:11px}
+    footer .desc{font-size:12px;line-height:1.7;max-width:280px;margin-top:10px}
+    footer .bottom{border-top:1px solid rgba(255,255,255,0.04);padding-top:20px;text-align:center;font-size:11px}
 
-    /* =========================================
+    /* ============================================
+       ANIMATIONS
+    ============================================ */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes countIn{from{opacity:0}to{opacity:1}}
+    .reveal{opacity:0;transform:translateY(20px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* ============================================
        RESPONSIVE
-    ========================================= */
+    ============================================ */
     @media(max-width:968px){
-      .hero .container{grid-template-columns:1fr;gap:40px}
-      .hero{padding:56px 0 48px}
       .spread{grid-template-columns:1fr;gap:24px}
-      .tiles{grid-template-columns:1fr 1fr}
-      .cost-cards{grid-template-columns:1fr 1fr}
+      .services-grid{grid-template-columns:1fr}
+      .service-tile.full{grid-column:1}
+      .cost-grid{grid-template-columns:1fr 1fr}
       .juris-grid{grid-template-columns:1fr}
-      .ben-grid{grid-template-columns:1fr 1fr}
-      footer .grid{grid-template-columns:1fr 1fr;gap:32px}
       .cs-grid{grid-template-columns:repeat(2,1fr)}
+      footer .grid{grid-template-columns:1fr 1fr;gap:32px}
     }
     @media(max-width:640px){
-      .hero{padding:40px 0 32px}
-      .hero h1{font-size:26px}
-      .hero .meta{gap:16px;flex-wrap:wrap}
+      .hero{padding:72px 0 60px}
+      .hero h1{font-size:28px}
+      .hero p{font-size:16px}
+      .section{padding:60px 0}
       .stats .grid{grid-template-columns:repeat(2,1fr);gap:24px}
-      .tiles{grid-template-columns:1fr}
-      .cost-cards{grid-template-columns:1fr}
+      .cost-grid{grid-template-columns:1fr}
       .check-grid{grid-template-columns:1fr}
-      .ben-grid{grid-template-columns:1fr}
-      .juris-card .head{padding:20px;border-radius:0}
-      .juris-card .body{padding:16px 20px 20px}
-      .cs-card{padding:32px 20px}
+      .process-row{grid-template-columns:1fr;gap:8px}
+      .process-row .step{text-align:left;font-size:28px}
+      .pain-box,.gain-box{padding:28px 24px}
+      .cs-card{padding:36px 24px}
+      .form-wrap{padding:0}
+      .form-inner{padding:28px 24px}
       footer .grid{grid-template-columns:1fr;gap:24px}
-      .sec-intro{margin-bottom:32px}
     }
   </style>
 </head>
@@ -348,216 +417,220 @@
 <nav id="nav">
   <div class="container">
     <a href="#" class="logo">Aspira<em>.</em><small>Business Setup</small></a>
-    <a href="#contact-form" class="nav-cta">Get a consultation</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#cost">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Get a consultation</a>
+    </div>
   </div>
 </nav>
 
-<!-- ==============================
-     HERO
-============================== -->
+<!-- ================================
+    HERO
+================================ -->
 <section class="hero">
   <div class="container">
-    <div>
-      <div class="meta">
-        <span>★ Google <strong>4.9</strong></span>
-        <span>★ Trustpilot <strong>4.8</strong></span>
-        <span><strong>200+</strong> institutions licensed</span>
-      </div>
-      <h1>KHDA approval in Dubai —<br><em>without the runaround</em></h1>
-      <p>We handle every step of the KHDA licensing process for training centres, nurseries, schools and online academies. From trade name registration to final permit — in as fast as 30 days.</p>
-      <div class="btn-group">
-        <a href="#contact-form" class="btn btn-primary">Get free consultation</a>
-        <a href="https://wa.me/+971564066546" target="_blank" class="btn btn-wa">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-      </div>
+    <h1>KHDA approval in Dubai —<br><em>without the runaround</em></h1>
+    <p>We handle every step of the KHDA licensing process for training centres, nurseries, schools and online academies. From trade name to final permit — in as fast as 30 days.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-primary">Book a free consultation</a>
+      <a href="https://wa.me/+971564066546" target="_blank" class="btn btn-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
-
-    <div class="hero-form" id="contact-form">
-      <h3>Book your free consultation</h3>
-      <p class="sub">A licensing specialist will call you within 1 hour.</p>
-      <form action="#" method="post">
-        <div class="fld"><input type="text" placeholder="Full name" required></div>
-        <div class="fld"><input type="email" placeholder="Email address" required></div>
-        <div class="fld"><input type="tel" placeholder="Phone number" required></div>
-        <div class="fld">
-          <select required>
-            <option value="">Institution type</option>
-            <option>Training Centre</option>
-            <option>Nursery / Early Learning</option>
-            <option>Private School</option>
-            <option>Online Academy</option>
-            <option>University / College</option>
-            <option>Arts / Music / Sports Academy</option>
-            <option>Corporate Training</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-block">Send request</button>
-        <div class="form-foot">Your data is protected. No spam. No obligation.</div>
-      </form>
+    <div class="hero-badges">
+      <span>★ Google <strong>4.9</strong></span>
+      <span>★ Trustpilot <strong>4.8</strong></span>
+      <span><strong>200+</strong> institutions licensed</span>
+      <span><strong>100%</strong> success rate</span>
+      <span><strong>45</strong> day avg. approval</span>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     TRUST STRIP
-============================== -->
-<div class="trust-strip">
+<!-- ================================
+    TRUST BAR
+================================ -->
+<div class="trust-bar">
   <div class="container">
     <span>Trusted by founders across Dubai</span>
-    <span>•</span>
-    <span>200+ institutions licensed</span>
-    <span>•</span>
+    <span class="sep">/</span>
+    <span>200+ licensed institutions</span>
+    <span class="sep">/</span>
     <span>100% KHDA success rate</span>
-    <span>•</span>
-    <span>45-day average approval</span>
-    <span>•</span>
+    <span class="sep">/</span>
     <span>12+ years experience</span>
   </div>
 </div>
 
-<!-- ==============================
-     WHY KHDA MATTERS (editorial spread)
-============================== -->
-<section class="content-section">
+<!-- ================================
+    PAIN / GAIN
+================================ -->
+<section class="section warm">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>Why it matters</span></div>
+    <h2>The cost of getting KHDA wrong is high</h2>
+    <p style="margin-top:12px;margin-bottom:40px">Without KHDA approval your institution is illegal. With it, you unlock trust, recognition and revenue. Here is the difference.</p>
+  </div>
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Why it matters</div>
-      <h2>KHDA approval is mandatory for any educational institution in Dubai</h2>
-      <p>The Knowledge and Human Development Authority regulates all private education and training in Dubai. Operating without their permit puts your business at risk of fines up to AED 100,000 and forced closure.</p>
-    </div>
     <div class="spread">
-      <div class="spread-text">
-        <h3>Without KHDA approval</h3>
+      <div class="spread-col pain-box">
+        <h3>Operating without KHDA</h3>
         <ul>
-          <li>Illegal operation — fines up to AED 100,000</li>
-          <li>No recognised certificates for students</li>
-          <li>Cannot advertise or enrol students legally</li>
-          <li>No partnership or franchise opportunities</li>
-          <li>Risk of forced shutdown by authorities</li>
+          <li><span class="marker m-cross">✕</span> Fines up to AED 100,000 and forced closure</li>
+          <li><span class="marker m-cross">✕</span> Students cannot get recognised certificates</li>
+          <li><span class="marker m-cross">✕</span> Cannot advertise or enrol legally</li>
+          <li><span class="marker m-cross">✕</span> No partnerships with schools or government</li>
+          <li><span class="marker m-cross">✕</span> Zero franchise or expansion potential</li>
         </ul>
       </div>
-      <div class="spread-text">
-        <h3>With KHDA approval</h3>
+      <div class="spread-col gain-box">
+        <h3>With KHDA approval secured</h3>
         <ul>
-          <li>Full legal compliance and peace of mind</li>
-          <li>KHDA-attested certificates — valid locally and internationally</li>
-          <li>Official marketing, enrolment and fee collection</li>
-          <li>Partnerships with schools, government and corporate clients</li>
-          <li>Franchise and expansion potential across UAE</li>
+          <li><span class="marker m-check">✓</span> Full legal compliance and peace of mind</li>
+          <li><span class="marker m-check">✓</span> KHDA-attested certificates — valid worldwide</li>
+          <li><span class="marker m-check">✓</span> Official marketing, enrolment and fee collection</li>
+          <li><span class="marker m-check">✓</span> Partnerships with schools, government, corporate</li>
+          <li><span class="marker m-check">✓</span> Franchise and scaling across UAE and region</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     STATS
-============================== -->
+<!-- ================================
+    STATS
+================================ -->
 <section class="stats">
   <div class="container">
     <div class="grid">
-      <div><div class="num">200+</div><div class="lbl">institutions licensed</div></div>
-      <div><div class="num">100%</div><div class="lbl">success rate</div></div>
-      <div><div class="num">45</div><div class="lbl">days avg. approval</div></div>
-      <div><div class="num">12+</div><div class="lbl">years experience</div></div>
+      <div><div class="num"><strong>200</strong>+</div><div class="lbl">Institutions licensed</div></div>
+      <div><div class="num"><strong>100</strong>%</div><div class="lbl">KHDA success rate</div></div>
+      <div><div class="num"><strong>45</strong></div><div class="lbl">Days average approval</div></div>
+      <div><div class="num"><strong>12</strong>+</div><div class="lbl">Years experience</div></div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     SERVICES (varied tiles)
-============================== -->
-<section class="content-section">
+<!-- ================================
+    SERVICES
+================================ -->
+<section class="section" id="services">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>What we do</span></div>
+    <h2>Full-service KHDA licensing</h2>
+    <p style="margin-top:12px;margin-bottom:40px">From the first trade name reservation through to permit renewal — each phase has a dedicated lead and clear deliverables.</p>
+  </div>
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">What we do</div>
-      <h2>End-to-end KHDA licensing support</h2>
-      <p>From your first trade name reservation to the final permit — and every renewal after that.</p>
-    </div>
-    <div class="tiles">
-      <div class="tile">
-        <div class="t-num">01</div>
+    <div class="services-grid">
+      <div class="service-tile">
+        <div class="num">01</div>
         <h4>Document &amp; plan preparation</h4>
-        <p>We build KHDA-compliant academic plans, financial forecasts, curriculum outlines and full compliance checklists tailored to your institution type.</p>
+        <p>KHDA-compliant academic plans, financial forecasts, curriculum outlines and full compliance checklists.</p>
       </div>
-      <div class="tile">
-        <div class="t-num">02</div>
+      <div class="service-tile">
+        <div class="num">02</div>
         <h4>Jurisdiction &amp; license selection</h4>
-        <p>Mainland or free zone — Dubai Knowledge Park, Dubai Academic City or DET. We recommend the right structure for your business model and budget.</p>
+        <p>Mainland or free zone — Dubai Knowledge Park, Academic City or DET. We recommend the right fit.</p>
       </div>
-      <div class="tile">
-        <div class="t-num">03</div>
+      <div class="service-tile">
+        <div class="num">03</div>
         <h4>KHDA portal submission</h4>
-        <p>Complete eServices application, document upload, fee payment and ongoing liaison with KHDA officers until your file is approved.</p>
+        <p>Full eServices application, document upload, fee payment and ongoing liaison with KHDA officers.</p>
       </div>
-      <div class="tile">
-        <div class="t-num">04</div>
+      <div class="service-tile">
+        <div class="num">04</div>
         <h4>Staff qualification attestation</h4>
-        <p>Verification, attestation and documentation of all trainer and faculty degrees to meet KHDA's strict qualification standards.</p>
+        <p>Verification and attestation of all trainer and faculty degrees to meet KHDA standards.</p>
       </div>
-      <div class="tile">
-        <div class="t-num">05</div>
+      <div class="service-tile">
+        <div class="num">05</div>
         <h4>Inspection readiness</h4>
-        <p>Facility audit, Civil Defence safety compliance, classroom setup and staff preparation so you pass KHDA inspection on the first attempt.</p>
+        <p>Facility audit, Civil Defence safety compliance, classroom setup and team preparation.</p>
       </div>
-      <div class="tile featured">
-        <div class="t-num">06</div>
+      <div class="service-tile full">
+        <div class="num">06</div>
         <h4>Renewal &amp; ongoing compliance</h4>
-        <p>Annual KHDA renewal, compliance audits, curriculum updates and continuous support to keep your license active without interruption.</p>
+        <p>Annual KHDA renewal, compliance audits and continuous support to keep your license active without interruption.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     PROCESS (editorial spread)
-============================== -->
-<section class="content-section">
-  <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Our process</div>
-      <h2>Six steps from concept to permit</h2>
-      <p>Each phase has clear deliverables. No guesswork, no hidden stages.</p>
-    </div>
-    <div class="spread" style="gap:40px">
-      <div class="spread-text">
-        <h3>1. Institution type &amp; jurisdiction</h3>
-        <p>We help you decide between nursery, training centre, school or online academy — and whether mainland or free zone better serves your goals.</p>
-        <h3 style="margin-top:28px">2. Trade name &amp; initial approval</h3>
-        <p>Your name gets reserved with DED or the relevant free zone authority. This triggers the initial permission needed to start your KHDA application.</p>
-        <h3 style="margin-top:28px">3. Academic &amp; business plan</h3>
-        <p>Curriculum design, staffing structure, safety layout, financial forecast and marketing strategy — all built to KHDA's specifications.</p>
+<!-- ================================
+    PROCESS
+================================ -->
+<section class="section subtle">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>Our process</span></div>
+    <h2>Six steps from concept to permit</h2>
+    <p style="margin-top:12px;margin-bottom:48px">Every phase has a defined output. No guesswork, no hidden stages.</p>
+  </div>
+  <div class="container narrow">
+    <div class="process-list">
+      <div class="process-row">
+        <div class="step">01</div>
+        <div class="content">
+          <h4>Institution type &amp; jurisdiction</h4>
+          <p>We help you choose between nursery, training centre, school or online academy — and whether mainland or free zone best serves your model and budget.</p>
+        </div>
       </div>
-      <div class="spread-text">
-        <h3>4. Document submission</h3>
-        <p>Trade license, tenancy contract, Civil Defence certificate, staff CVs, attested degrees and supporting documents uploaded to the KHDA eServices portal.</p>
-        <h3 style="margin-top:28px">5. KHDA review &amp; site inspection</h3>
-        <p>We prepare your facility, team and paperwork for the physical inspection. Safety, infrastructure, staff credentials and classroom setup are all verified.</p>
-        <h3 style="margin-top:28px">6. Permit issued</h3>
-        <p>You receive your official KHDA Education Services Permit. Start enrolling students, running campaigns and issuing recognised certificates.</p>
+      <div class="process-row">
+        <div class="step">02</div>
+        <div class="content">
+          <h4>Trade name &amp; initial approval</h4>
+          <p>Your name gets reserved with DED or the relevant free zone authority. This triggers the initial permission needed to start the KHDA application.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step">03</div>
+        <div class="content">
+          <h4>Academic &amp; business plan</h4>
+          <p>Curriculum design, staffing structure, safety layout, financial forecast and marketing strategy — all built to KHDA specifications.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step">04</div>
+        <div class="content">
+          <h4>Document submission</h4>
+          <p>Trade license, tenancy contract, Civil Defence certificate, staff CVs, attested degrees — uploaded to KHDA's eServices portal.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step">05</div>
+        <div class="content">
+          <h4>KHDA review &amp; site inspection</h4>
+          <p>We prepare your facility, team and paperwork for the physical inspection. Safety, infrastructure and staff credentials verified.</p>
+        </div>
+      </div>
+      <div class="process-row">
+        <div class="step">06</div>
+        <div class="content">
+          <h4>Permit issued</h4>
+          <p>Your official KHDA Education Services Permit arrives. Start enrolling students, running campaigns and issuing recognised certificates.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     COST TABLE
-============================== -->
-<section class="content-section" style="background:var(--gray-bg)">
+<!-- ================================
+    COST
+================================ -->
+<section class="section" id="cost">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>Investment guide</span></div>
+    <h2>KHDA fees by institution type</h2>
+    <p style="margin-top:12px;margin-bottom:40px">Government fees are set by KHDA. Total setup costs vary based on scope, location and complexity.</p>
+  </div>
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Investment guide</div>
-      <h2>KHDA fees by institution type</h2>
-      <p>Government fees are set by KHDA. Total setup costs vary based on scope, location and complexity.</p>
-    </div>
-    <div class="cost-cards">
-      <div class="cost-card">
-        <div class="type">Nursery / Early Learning</div>
-        <div class="price">AED 10K <small>KHDA fee</small></div>
-        <div class="note">Estimated setup: 30K – 60K AED</div>
+    <div class="cost-grid">
+      <div class="cost-item">
+        <div class="label">Nursery / Early Learning</div>
+        <div class="price">AED <strong>10K</strong> <small>KHDA fee</small></div>
+        <div class="note">Setup: AED 30K – 60K</div>
         <ul>
           <li>Basic academic plan</li>
           <li>Small facility requirements</li>
@@ -565,22 +638,22 @@
           <li>2–3 month timeline</li>
         </ul>
       </div>
-      <div class="cost-card popular">
-        <div class="tag-pop">Most common</div>
-        <div class="type">Training / Vocational Centre</div>
-        <div class="price">AED 20K <small>KHDA fee</small></div>
-        <div class="note">Estimated setup: 50K – 80K AED</div>
+      <div class="cost-item popular">
+        <div class="pop-tag">Most common</div>
+        <div class="label">Training / Vocational Centre</div>
+        <div class="price">AED <strong>20K</strong> <small>KHDA fee</small></div>
+        <div class="note">Setup: AED 50K – 80K</div>
         <ul>
-          <li>Detailed course outlines required</li>
+          <li>Detailed course outlines</li>
           <li>Trainer qualification attestation</li>
           <li>Flexible facility options</li>
           <li>30–60 day approval with our support</li>
         </ul>
       </div>
-      <div class="cost-card">
-        <div class="type">Private School / University</div>
-        <div class="price">AED 50K <small>KHDA fee</small></div>
-        <div class="note">Estimated setup: 150K – 200K+ AED</div>
+      <div class="cost-item">
+        <div class="label">Private School / University</div>
+        <div class="price">AED <strong>50K</strong> <small>KHDA fee</small></div>
+        <div class="note">Setup: AED 150K – 200K+</div>
         <ul>
           <li>Comprehensive academic framework</li>
           <li>Full facility &amp; safety compliance</li>
@@ -592,26 +665,26 @@
   </div>
 </section>
 
-<!-- ==============================
-     JURISDICTION
-============================== -->
-<section class="content-section">
+<!-- ================================
+    JURISDICTION
+================================ -->
+<section class="section warm">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>Mainland vs Free Zone</span></div>
+    <h2>Where should you set up?</h2>
+    <p style="margin-top:12px;margin-bottom:40px">Jurisdiction affects your cost, flexibility and operational reach. Here is how they compare.</p>
+  </div>
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Mainland vs Free Zone</div>
-      <h2>Where should you set up?</h2>
-      <p>Your jurisdiction affects cost, flexibility and operational reach. Here is how they compare.</p>
-    </div>
     <div class="juris-grid">
       <div class="juris-card">
-        <div class="head">
-          <h4>Mainland License (DET)</h4>
+        <div class="h">
+          <h4>Mainland License</h4>
           <p>Dubai Department of Economy &amp; Tourism</p>
         </div>
-        <div class="body">
+        <div class="b">
           <ul>
             <li>Operate anywhere in Dubai with no zone restrictions</li>
-            <li>Serve local students, government and corporate clients directly</li>
+            <li>Serve local students, government and corporate clients</li>
             <li>Lower rental costs in many areas</li>
             <li>Broader business activity flexibility</li>
             <li>Full access to Dubai's local market</li>
@@ -619,11 +692,11 @@
         </div>
       </div>
       <div class="juris-card">
-        <div class="head">
+        <div class="h">
           <h4>Free Zone License</h4>
           <p>Dubai Knowledge Park / Dubai Academic City</p>
         </div>
-        <div class="body">
+        <div class="b">
           <ul>
             <li>Education-dedicated ecosystem with ready infrastructure</li>
             <li>Streamlined KHDA coordination and faster setup</li>
@@ -637,169 +710,132 @@
   </div>
 </section>
 
-<!-- ==============================
-     CHECKLIST
-============================== -->
-<section class="content-section" style="background:var(--gray-bg)">
-  <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Document checklist</div>
-      <h2>Everything we prepare for your application</h2>
-      <p>KHDA requires 14+ documents. We compile and submit every one.</p>
-    </div>
-    <div class="check-grid">
-      <div class="check-item"><span class="ck">✓</span> Trade name reservation certificate</div>
-      <div class="check-item"><span class="ck">✓</span> Initial approval from DET or free zone</div>
-      <div class="check-item"><span class="ck">✓</span> Valid trade license copy</div>
-      <div class="check-item"><span class="ck">✓</span> Tenancy contract / Ejari</div>
-      <div class="check-item"><span class="ck">✓</span> Facility floor layout &amp; classroom plan</div>
-      <div class="check-item"><span class="ck">✓</span> Civil Defence safety certificate</div>
-      <div class="check-item"><span class="ck">✓</span> Business plan &amp; financial forecast</div>
-      <div class="check-item"><span class="ck">✓</span> Academic plan &amp; curriculum structure</div>
-      <div class="check-item"><span class="ck">✓</span> Course outlines &amp; learning outcomes</div>
-      <div class="check-item"><span class="ck">✓</span> Trainer &amp; management CVs</div>
-      <div class="check-item"><span class="ck">✓</span> Attested academic degrees</div>
-      <div class="check-item"><span class="ck">✓</span> Passport copies of shareholders</div>
-      <div class="check-item"><span class="ck">✓</span> No Objection Certificates (if applicable)</div>
-      <div class="check-item"><span class="ck">✓</span> Marketing materials for approval</div>
-    </div>
+<!-- ================================
+    CASE STUDY
+================================ -->
+<section class="section dark">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>Real results</span></div>
+    <h2 style="color:#fff">Approved in 30 days</h2>
+    <p style="margin-top:12px;margin-bottom:40px">A corporate training institute cut the typical timeline by more than half. Every detail was prepared before submission.</p>
   </div>
-</section>
-
-<!-- ==============================
-     CASE STUDY
-============================== -->
-<section class="content-section dark">
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">Real results</div>
-      <h2 style="color:#fff">Approved in 30 days — a case study</h2>
-      <p>A corporate training institute took 7 months off the typical timeline by preparing every detail before submission.</p>
-    </div>
     <div class="cs-card">
-      <div class="result">Approved in 30 days</div>
+      <div class="tag">Approved in 30 days</div>
       <h3>Corporate Training Institute</h3>
-      <p class="sub">Dubai Knowledge Park · Management &amp; digital skills courses</p>
+      <p class="sub">Dubai Knowledge Park — Management &amp; digital skills courses</p>
       <div class="cs-grid">
-        <div class="cs-item"><div class="num">7</div><div class="txt">days for trade name &amp; pre-approval</div></div>
-        <div class="cs-item"><div class="num">10</div><div class="txt">days for academic plan preparation</div></div>
-        <div class="cs-item"><div class="num">8</div><div class="txt">days for KHDA review &amp; inspection</div></div>
-        <div class="cs-item"><div class="num">5</div><div class="txt">days for final permit issuance</div></div>
+        <div class="c"><div class="n"><strong>7</strong></div><div class="t">Days for trade name &amp; pre-approval</div></div>
+        <div class="c"><div class="n"><strong>10</strong></div><div class="t">Days for academic plan</div></div>
+        <div class="c"><div class="n"><strong>8</strong></div><div class="t">Days for KHDA review &amp; inspection</div></div>
+        <div class="c"><div class="n"><strong>5</strong></div><div class="t">Days for final permit</div></div>
       </div>
-      <div style="margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-        <span style="font-size:11px;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px">Passed inspection first attempt</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px">All staff degrees attested</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px">Full curriculum compliance</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==============================
-     BENEFITS
-============================== -->
-<section class="content-section">
-  <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">What you gain</div>
-      <h2>KHDA approval unlocks more than compliance</h2>
-    </div>
-    <div class="ben-grid">
-      <div class="ben-item">
-        <div class="bi">01</div>
-        <h4>Legal operation</h4>
-        <p>Full compliance with Dubai regulations. No risk of fines or shutdown.</p>
-      </div>
-      <div class="ben-item">
-        <div class="bi">02</div>
-        <h4>Brand trust</h4>
-        <p>Students and corporate clients prefer KHDA-approved institutions.</p>
-      </div>
-      <div class="ben-item">
-        <div class="bi">03</div>
-        <h4>Recognised certificates</h4>
-        <p>KHDA-attested certificates hold value locally and internationally.</p>
-      </div>
-      <div class="ben-item">
-        <div class="bi">04</div>
-        <h4>Marketing freedom</h4>
-        <p>Advertise, partner and enrol with full regulatory approval.</p>
-      </div>
-      <div class="ben-item">
-        <div class="bi">05</div>
-        <h4>Franchise potential</h4>
-        <p>Scale your model across the UAE and the wider region.</p>
-      </div>
-      <div class="ben-item">
-        <div class="bi">06</div>
-        <h4>Revenue readiness</h4>
-        <p>Legally enrol students, collect fees and issue certificates from day one.</p>
+      <div class="cs-tags">
+        <span>Passed inspection first attempt</span>
+        <span>All staff degrees attested</span>
+        <span>Full curriculum compliance</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     FAQ
-============================== -->
-<section class="content-section" style="background:var(--gray-bg)">
+<!-- ================================
+    CONTACT FORM
+================================ -->
+<section class="form-section" id="contact">
   <div class="container">
-    <div class="sec-intro">
-      <div class="kicker">FAQ</div>
-      <h2>Common questions about KHDA approval</h2>
+    <div class="form-wrap">
+      <h2>Book your free consultation</h2>
+      <p class="sub">A senior licensing consultant will call you within one hour.</p>
+      <div class="form-inner">
+        <form action="#" method="post">
+          <div class="fld"><input type="text" placeholder="Full name" required></div>
+          <div class="fld"><input type="email" placeholder="Email address" required></div>
+          <div class="fld"><input type="tel" placeholder="Phone number" required></div>
+          <div class="fld">
+            <select required>
+              <option value="">Institution type</option>
+              <option>Training Centre</option>
+              <option>Nursery / Early Learning</option>
+              <option>Private School</option>
+              <option>Online Academy</option>
+              <option>University / College</option>
+              <option>Arts / Music / Sports Academy</option>
+              <option>Corporate Training</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-block">
+            Send request
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <div class="form-footnote">Your data is protected. No spam. No obligation.</div>
+        </form>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ================================
+    FAQ
+================================ -->
+<section class="section" id="faq">
+  <div class="container narrow">
+    <div class="eyebrow-rule"><span>FAQ</span></div>
+    <h2>Common questions about KHDA approval</h2>
+    <p style="margin-top:12px;margin-bottom:40px">Straight answers to the questions we hear every day.</p>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">What is KHDA approval? <span class="arr">↓</span></div>
+        <div class="faq-q">What is KHDA approval? <span class="arrow">↓</span></div>
         <div class="faq-a">KHDA (Knowledge and Human Development Authority) approval is the official permit required to operate any educational or training institution in Dubai. It means your institute meets the emirate's quality standards and is legally authorised to operate.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Who needs KHDA approval? <span class="arr">↓</span></div>
+        <div class="faq-q">Who needs KHDA approval? <span class="arrow">↓</span></div>
         <div class="faq-a">Any training centre, nursery, tutoring institute, online academy, private school, arts academy, music school, sports academy or university operating in Dubai must obtain KHDA approval before beginning operations.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How long does the process take? <span class="arr">↓</span></div>
+        <div class="faq-q">How long does the process take? <span class="arrow">↓</span></div>
         <div class="faq-a">Typically 2–7 months depending on complexity. With our preparation, most clients receive approval within 30–60 days. Our fastest case study was approved in 30 days.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How much does KHDA approval cost? <span class="arr">↓</span></div>
+        <div class="faq-q">How much does KHDA approval cost? <span class="arrow">↓</span></div>
         <div class="faq-a">Government fees range from AED 10,000 (nurseries) to AED 20,000 (non-profit training centres) to AED 50,000 (private schools). Total setup costs including licensing, documentation and consultancy typically range from AED 30,000 to AED 200,000+.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Can I operate without it? <span class="arr">↓</span></div>
+        <div class="faq-q">Can I operate without KHDA approval? <span class="arrow">↓</span></div>
         <div class="faq-a">No. Operating without KHDA approval is illegal. Penalties include fines up to AED 100,000, forced closure and legal action. This applies to all educational activities including online and corporate training.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What documents are needed? <span class="arr">↓</span></div>
-        <div class="faq-a">Trade license, tenancy contract (Ejari), Civil Defence certificate, academic &amp; business plan, staff qualifications with attested degrees, passport copies, NOCs and marketing materials. We handle all of these.</div>
+        <div class="faq-q">What documents are needed? <span class="arrow">↓</span></div>
+        <div class="faq-a">Trade license, tenancy contract (Ejari), Civil Defence certificate, academic and business plan, staff qualifications with attested degrees, passport copies, NOCs and marketing materials. We handle all of these.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Mainland or free zone — which is better? <span class="arr">↓</span></div>
+        <div class="faq-q">Mainland or free zone — which is better? <span class="arrow">↓</span></div>
         <div class="faq-a">Mainland gives you location flexibility and direct market access. Free zones offer ready education infrastructure and faster KHDA coordination. Your choice depends on your target students, budget and expansion plans.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How do I renew my KHDA license? <span class="arr">↓</span></div>
+        <div class="faq-q">How do I renew my KHDA license? <span class="arrow">↓</span></div>
         <div class="faq-a">KHDA approval must be renewed annually. The process involves updating documents, confirming staff credentials and verifying facility compliance. We manage the full renewal cycle so your license never lapses.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==============================
-     FINAL CTA
-============================== -->
-<section class="cta-section">
-  <div class="container">
+<!-- ================================
+    CTA
+================================ -->
+<section class="cta">
+  <div class="container narrow">
     <h2>Ready to get your KHDA approval?</h2>
     <p>Book a free 30-minute strategy call with a senior licensing consultant. No pressure. No obligation.</p>
-    <a href="#contact-form" class="btn btn-primary" style="padding:16px 36px;font-size:15px">Book your free consultation</a>
-    <div class="footnote">Or call +971 56 406 6546</div>
+    <a href="#contact" class="btn btn-primary" style="padding:16px 36px;font-size:15px">Book your free consultation</a>
+    <div class="fn">Or call +971 56 406 6546</div>
   </div>
 </section>
 
-<!-- ==============================
-     FOOTER
-============================== -->
+<!-- ================================
+    FOOTER
+================================ -->
 <footer>
   <div class="container">
     <div class="grid">
