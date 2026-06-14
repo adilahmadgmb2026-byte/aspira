@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nominee Director Services in Dubai — Aspira Business Setup</title>
+  <meta name="description" content="Professional nominee director services in Dubai. Protect your privacy, comply with UAE laws, and safeguard your corporate interests with Aspira.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;800;900&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://aspiradubai.com/wp-content/uploads/2025/08/cropped-aspira-icon-32x32.png">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      font-family:'Poppins',sans-serif;font-size:17px;line-height:1.75;
+      color:#5a5a6a;background:#fff;
+      -webkit-font-smoothing:antialiased;overflow-x:hidden
+    }
+
+    :root{
+      --primary:#419AAC;--primary-dark:#1A6A7A;--primary-light:#5DB4C6;--primary-deep:#0E4F5C;
+      --primary-dim:rgba(65,154,172,0.06);--primary-glow:rgba(65,154,172,0.03);--primary-glass:rgba(65,154,172,0.1);
+      --text:#5a5a6a;--text-dark:#0f0f1a;--text-muted:#999aab;
+      --bg-light:#F9FAFB;--bg-off:#FAF8F4;
+      --border:rgba(0,0,0,0.05);--border-light:rgba(0,0,0,0.02);--border-teal:rgba(65,154,172,0.12);
+      --radius-sm:6px;--radius:10px;--radius-lg:16px;--radius-xl:24px;
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.02),0 1px 2px rgba(0,0,0,0.03);
+      --shadow:0 4px 16px rgba(0,0,0,0.03),0 2px 8px rgba(0,0,0,0.02);
+      --shadow-lg:0 12px 40px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.02);
+      --shadow-teal:0 8px 28px rgba(65,154,172,0.08);
+      --ease-out:cubic-bezier(0.16,1,0.3,1);--ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .container{max-width:1140px;margin:0 auto;padding:0 28px}
+    .container.narrow{max-width:800px}
+
+    h1,h2,h3,h4{font-family:'Red Hat Display',sans-serif;line-height:1.08;text-wrap:balance;color:var(--text-dark);font-weight:900}
+    h1{font-size:clamp(40px,5.5vw,64px);letter-spacing:-0.03em;font-weight:900}
+    h2{font-size:clamp(30px,3.6vw,48px);letter-spacing:-0.02em}
+    h3{font-size:clamp(22px,1.8vw,30px)}
+    h4{font-size:18px}
+    p{max-width:60ch;color:var(--text);font-size:16px;line-height:1.9}
+    .accent{color:var(--primary);font-weight:700}
+
+    ::selection{background:var(--primary);color:#fff}
+
+    /* ===========================================
+       NAV
+    =========================================== */
+    nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,0.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
+      padding:14px 0;transition:all 0.3s;border-bottom:1px solid transparent
+    }
+    nav.scrolled{border-bottom-color:var(--border);box-shadow:0 4px 24px rgba(0,0,0,0.03)}
+    nav .container{display:flex;align-items:center;justify-content:space-between}
+    .logo img{height:38px;width:auto;display:block}
+    .nav-l{display:flex;align-items:center;gap:36px}
+    .nav-l a{
+      font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;
+      color:var(--text-dark);text-decoration:none;transition:color 0.3s;position:relative
+    }
+    .nav-l a::after{
+      content:'';position:absolute;bottom:-6px;left:0;width:0;height:2.5px;
+      background:var(--primary);border-radius:2px;transition:width 0.35s var(--ease-out)
+    }
+    .nav-l a:hover::after{width:100%}
+    .nav-l a:hover{color:var(--primary)}
+    .nav-cta{
+      font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#fff;
+      background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+      padding:11px 26px;border-radius:10px;text-decoration:none;
+      transition:all 0.35s var(--ease-out);box-shadow:0 2px 8px rgba(26,106,122,0.1)
+    }
+    .nav-cta:hover{
+      transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,106,122,0.2)
+    }
+
+    .hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .hamb span{width:24px;height:2px;background:var(--text-dark);border-radius:2px;transition:all 0.3s}
+
+    @media(max-width:820px){
+      .hamb{display:flex}
+      .nav-l{
+        position:fixed;top:0;right:-100%;width:280px;height:100vh;background:#fff;
+        flex-direction:column;padding:80px 32px 32px;gap:20px;transition:right 0.4s var(--ease-out);
+        z-index:200;box-shadow:-8px 0 32px rgba(0,0,0,0.04);align-items:flex-start
+      }
+      .nav-l.open{right:0}
+      .nav-l a{font-size:15px}
+      .nav-cta{align-self:stretch;text-align:center}
+      .hamb.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+      .hamb.open span:nth-child(2){opacity:0}
+      .hamb.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+      .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.2);z-index:150;opacity:0;pointer-events:none;transition:opacity 0.3s}
+      .nav-overlay.open{opacity:1;pointer-events:auto}
+    }
+
+    /* ===========================================
+       HERO
+    =========================================== */
+    .hero{
+      min-height:86vh;display:flex;align-items:center;position:relative;overflow:hidden;
+      background:linear-gradient(170deg,#f4f7f9 0%,#fafcfd 40%,#fff 100%);
+    }
+    .hero-pattern{
+      position:absolute;inset:0;pointer-events:none;
+      background-image:
+        linear-gradient(rgba(65,154,172,0.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(65,154,172,0.04) 1px,transparent 1px);
+      background-size:64px 64px;
+      -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 15%,transparent 70%);
+      mask-image:radial-gradient(ellipse 70% 55% at 50% 40%,#000 15%,transparent 70%);
+    }
+    .hero-glow{
+      position:absolute;top:-30%;left:40%;width:900px;height:900px;
+      background:radial-gradient(circle,rgba(65,154,172,0.04) 0%,transparent 65%);pointer-events:none;
+      animation:hg 12s var(--ease-out) infinite alternate
+    }
+    @keyframes hg{0%{transform:translate(0,0) scale(1)}100%{transform:translate(20px,-20px) scale(1.05)}}
+
+    .hero-float-l{
+      position:absolute;top:18%;left:3%;width:120px;height:120px;
+      border:1.5px solid var(--border-teal);border-radius:50%;
+      pointer-events:none;animation:hfl 14s var(--ease-out) infinite alternate;opacity:0.15
+    }
+    .hero-float-l::after{
+      content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:60px;height:60px;border:1px solid var(--border-teal);border-radius:50%
+    }
+    .hero-float-r{
+      position:absolute;bottom:12%;right:2%;width:80px;height:80px;
+      border:1.5px solid var(--border-teal);border-radius:50%;
+      pointer-events:none;animation:hfl 10s var(--ease-out) 3s infinite alternate;opacity:0.1
+    }
+    @keyframes hfl{0%{transform:translate(0,0) rotate(0deg)}100%{transform:translate(-25px,15px) rotate(15deg)}}
+
+    .hero-float-dots{
+      position:absolute;top:30%;right:10%;pointer-events:none
+    }
+    .hero-float-dots span{
+      display:block;width:6px;height:6px;background:var(--primary);border-radius:50%;
+      margin-bottom:10px;opacity:0.08;animation:fltd 6s var(--ease-out) infinite alternate
+    }
+    .hero-float-dots span:nth-child(2){margin-left:14px;animation-delay:0.5s}
+    .hero-float-dots span:nth-child(3){margin-left:28px;animation-delay:1s}
+    @keyframes fltd{0%{transform:translate(0,0)}100%{transform:translate(12px,-18px)}}
+
+    .hero .container{position:relative;z-index:2;width:100%;padding:80px 28px}
+
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--primary-dim);border:1px solid var(--border-teal);
+      padding:8px 18px 8px 12px;border-radius:100px;margin-bottom:32px
+    }
+    .hero-badge .pulse{
+      width:8px;height:8px;border-radius:50%;background:var(--primary);
+      animation:pls 2s var(--ease-out) infinite
+    }
+    @keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+    .hero-badge span{font-size:12px;font-weight:600;color:var(--primary-dark)}
+
+    .hero-tag{
+      display:inline-flex;align-items:center;gap:14px;margin-bottom:36px
+    }
+    .hero-tag .line{width:36px;height:2.5px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px}
+    .hero-tag span{
+      font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;
+      color:var(--primary);background:var(--primary-dim);padding:4px 14px;border-radius:100px
+    }
+    .hero h1{margin-bottom:22px;max-width:820px}
+    .hero p{font-size:18px;margin:0 0 40px;max-width:580px;color:#6a6a7a}
+
+    .btn-g{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:17px 36px;
+      border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;
+      transition:all 0.35s var(--ease-out);border:none;cursor:pointer;position:relative;overflow:hidden
+    }
+    .btn-p{
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;box-shadow:0 4px 14px rgba(65,154,172,0.12)
+    }
+    .btn-p:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(65,154,172,0.18)}
+    .btn-s{
+      border:1.5px solid var(--border);color:var(--text-dark);background:transparent;font-weight:600
+    }
+    .btn-s:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-3px);background:var(--primary-dim)}
+    .btn-w{
+      background:#25D366;color:#fff;box-shadow:0 4px 14px rgba(37,211,102,0.12)
+    }
+    .btn-w:hover{background:#1da851;transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,211,102,0.15)}
+
+    .hero-foot{
+      display:flex;gap:32px;margin-top:48px;flex-wrap:wrap
+    }
+    .hero-foot span{
+      font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:7px
+    }
+    .hero-foot strong{color:var(--text-dark);font-weight:700}
+
+    /* ===========================================
+       SECTIONS
+    =========================================== */
+    .sec{padding:120px 0;position:relative}
+    .sec-l{background:var(--bg-light)}
+    .sec-d{background:#fff}
+    .sec-x{background:var(--bg-off)}
+    .sec-dark{
+      background:linear-gradient(135deg,var(--primary-dark),var(--primary-deep));color:#fff
+    }
+    .sec-dark h2,.sec-dark .si .tag{color:#fff}
+    .sec-dark .si .tag::before{background:rgba(255,255,255,0.4)}
+    .sec-dark .si p{color:rgba(255,255,255,0.7)}
+
+    .si{margin-bottom:56px}
+    .si .tag{
+      display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;
+      text-transform:uppercase;letter-spacing:0.2em;color:var(--primary);margin-bottom:16px
+    }
+    .si .tag::before{content:'';width:24px;height:2.5px;background:var(--primary);border-radius:2px}
+    .si p{font-size:16px;margin:18px 0 0;max-width:64ch}
+
+    .si-center{text-align:center}
+    .si-center .tag{justify-content:center}
+    .si-center .tag::before{display:none}
+    .si-center p{margin:18px auto 0}
+
+    /* ===========================================
+       REVEAL
+    =========================================== */
+    .r{opacity:0;transform:translateY(40px);transition:all 1s var(--ease-out)}
+    .r.in{opacity:1;transform:translateY(0)}
+    .rd1{transition-delay:0.1s}.rd2{transition-delay:0.2s}.rd3{transition-delay:0.3s}.rd4{transition-delay:0.4s}.rd5{transition-delay:0.5s}
+    .rs>*{opacity:0;transform:translateY(24px);transition:all 0.7s var(--ease-out)}
+    .rs.in>*{opacity:1;transform:translateY(0)}
+    .rs.in>*:nth-child(1){transition-delay:0.04s}
+    .rs.in>*:nth-child(2){transition-delay:0.08s}
+    .rs.in>*:nth-child(3){transition-delay:0.12s}
+    .rs.in>*:nth-child(4){transition-delay:0.16s}
+    .rs.in>*:nth-child(5){transition-delay:0.2s}
+    .rs.in>*:nth-child(6){transition-delay:0.24s}
+    .rs.in>*:nth-child(7){transition-delay:0.28s}
+    .rs.in>*:nth-child(8){transition-delay:0.32s}
+    .rs.in>*:nth-child(9){transition-delay:0.36s}
+    .rs.in>*:nth-child(10){transition-delay:0.4s}
+    .rsc{opacity:0;transform:scale(0.94);transition:all 1s var(--ease-out)}
+    .rsc.in{opacity:1;transform:scale(1)}
+    @media(prefers-reduced-motion:reduce){
+      .r,.rs>*,.rsc,nav,.nav-l a::after,
+      .hero-glow,.hero-float-l,.hero-float-r,.hero-float-dots span,.hero-badge .pulse{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
+    }
+
+    /* ===========================================
+       SPREAD — comparison
+    =========================================== */
+    .sp{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .sc h3{
+      font-size:18px;margin-bottom:18px;display:flex;align-items:center;gap:10px
+    }
+    .sc h3 .sc-icon{
+      width:28px;height:28px;border-radius:8px;display:flex;align-items:center;
+      justify-content:center;font-size:14px;font-weight:700
+    }
+    .sc h3 .sc-icon.danger{background:rgba(239,68,68,0.06);color:#ef4444}
+    .sc h3 .sc-icon.safe{background:rgba(34,197,94,0.06);color:#22c55e}
+    .sc ul{list-style:none;padding:0}
+    .sc li{
+      padding:13px 0;font-size:15px;color:var(--text);
+      display:flex;align-items:flex-start;gap:14px;border-top:1px solid var(--border)
+    }
+    .sc li:first-of-type{border-top:none;padding-top:0}
+    .sc .mk{
+      width:20px;height:20px;border-radius:50%;display:flex;align-items:center;
+      justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;font-weight:700
+    }
+    .sc .mk.cr{background:rgba(239,68,68,0.06);color:#ef4444}
+    .sc .mk.ck{background:rgba(34,197,94,0.06);color:#22c55e}
+    .cx{
+      padding:40px 36px;border-radius:var(--radius-xl);
+      background:#fff;border:1px solid var(--border);
+      position:relative;overflow:hidden;transition:all 0.5s var(--ease-out);
+      box-shadow:var(--shadow)
+    }
+    .cx:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-4px)}
+
+    /* ===========================================
+       BENEFITS GRID
+    =========================================== */
+    .bg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+    .bi{
+      background:#fff;border:1px solid var(--border);border-radius:var(--radius-xl);
+      padding:40px 32px;position:relative;transition:all 0.5s var(--ease-out);cursor:default;
+      box-shadow:var(--shadow-sm);overflow:hidden;text-align:center
+    }
+    .bi::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,transparent,var(--primary),transparent);
+      opacity:0;transition:opacity 0.5s
+    }
+    .bi:hover{transform:translateY(-5px);border-color:var(--border-teal);box-shadow:var(--shadow-lg),var(--shadow-teal)}
+    .bi:hover::before{opacity:1}
+    .bi .bi-icon{
+      width:52px;height:52px;border-radius:14px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+      font-size:24px;transition:all 0.4s var(--ease-spring)
+    }
+    .bi:hover .bi-icon{transform:scale(1.1);background:var(--primary-glass)}
+    .bi h4{font-size:17px;margin-bottom:10px}
+    .bi p{font-size:14px;color:var(--text);line-height:1.8;max-width:36ch;margin:0 auto}
+
+    /* ===========================================
+       SERVICES GRID
+    =========================================== */
+    .sg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .st{
+      background:#fff;border:1px solid var(--border);border-radius:var(--radius-xl);
+      padding:38px 34px;position:relative;transition:all 0.5s var(--ease-out);cursor:default;
+      box-shadow:var(--shadow-sm);overflow:hidden
+    }
+    .st::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,transparent,var(--primary),transparent);
+      opacity:0;transition:opacity 0.5s
+    }
+    .st:hover{transform:translateY(-5px);border-color:var(--border-teal);box-shadow:var(--shadow-lg),var(--shadow-teal)}
+    .st:hover::before{opacity:1}
+    .st .sn{
+      font-size:10px;font-weight:700;color:var(--primary);letter-spacing:0.15em;
+      margin-bottom:14px;font-family:'Inter',sans-serif;text-transform:uppercase
+    }
+    .st h4{font-size:17px;margin-bottom:10px}
+    .st p{font-size:14px;color:var(--text);max-width:44ch;line-height:1.8}
+    .st.w{
+      grid-column:1/-1;
+      background:linear-gradient(135deg,rgba(65,154,172,0.03),#fff);
+      border-color:var(--border-teal)
+    }
+    .st .st-icon{
+      width:40px;height:40px;border-radius:10px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+      font-size:18px;color:var(--primary);font-weight:700
+    }
+
+    /* ===========================================
+       PROCESS
+    =========================================== */
+    .pl{max-width:760px;margin:0 auto}
+    .pr{display:flex;gap:28px;margin-bottom:36px;position:relative}
+    .pr:last-child{margin-bottom:0}
+    .pr .num{
+      font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#fff;
+      letter-spacing:0.06em;width:44px;flex-shrink:0;padding:4px 0 0;text-transform:uppercase
+    }
+    .pr .num-inner{
+      background:var(--primary);border-radius:8px;padding:8px 6px;text-align:center;
+      font-size:10px;width:44px;display:block;transition:all 0.4s var(--ease-out)
+    }
+    .pr:hover .num-inner{background:var(--primary-dark);transform:scale(1.05)}
+    .pr .dot{
+      width:14px;height:14px;border-radius:50%;background:#fff;
+      border:3px solid var(--primary);flex-shrink:0;margin-top:9px;
+      position:relative;z-index:2;transition:all 0.4s var(--ease-spring)
+    }
+    .pr:hover .dot{background:var(--primary);box-shadow:0 0 0 5px var(--primary-dim);transform:scale(1.15)}
+    .pr .conn{
+      position:absolute;top:28px;left:55px;bottom:-36px;width:2.5px;
+      background:linear-gradient(to bottom,var(--primary),var(--primary-dim));border-radius:2px
+    }
+    .pr:last-child .conn{display:none}
+    .pr .c{flex:1;padding-top:2px}
+    .pr .c h4{font-size:17px;margin-bottom:6px}
+    .pr .c p{font-size:14px;color:var(--text);max-width:52ch}
+
+    /* ===========================================
+       METRICS
+    =========================================== */
+    .metrics{padding:100px 0;position:relative;z-index:1}
+    .mg{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center;position:relative;z-index:1}
+    .m-item{
+      padding:36px 20px;background:#fff;border-radius:var(--radius-xl);
+      border:1px solid var(--border);box-shadow:var(--shadow);
+      transition:all 0.5s var(--ease-out)
+    }
+    .m-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),var(--shadow-teal);border-color:var(--border-teal)}
+    .m-item .n{
+      font-family:'Red Hat Display',sans-serif;font-size:56px;font-weight:900;
+      line-height:1;color:var(--primary)
+    }
+    .m-item .l{font-size:13px;color:var(--text);margin-top:10px;font-weight:500}
+    .m-icon{
+      width:44px;height:44px;border-radius:12px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 14px;
+      font-size:20px;color:var(--primary)
+    }
+
+    /* ===========================================
+       JURISDICTION
+    =========================================== */
+    .jg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+    .jc{
+      border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;
+      transition:all 0.5s var(--ease-out);background:#fff;box-shadow:var(--shadow-sm)
+    }
+    .jc:hover{border-color:var(--border-teal);transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-teal)}
+    .jc .h{
+      padding:24px 28px 20px;text-align:center
+    }
+    .jc .h .jc-icon{
+      width:44px;height:44px;border-radius:12px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;color:var(--primary);margin:0 auto 12px
+    }
+    .jc .h h4{font-size:17px}
+    .jc .h p{font-size:12px;color:var(--text-muted);margin-top:3px}
+    .jc .b{padding:0 28px 28px}
+    .jc .b ul{list-style:none;padding:0}
+    .jc .b li{
+      padding:8px 0;font-size:14px;color:var(--text);display:flex;
+      align-items:center;gap:10px;border-top:1px solid var(--border-light)
+    }
+    .jc .b li:first-of-type{border-top:none;padding-top:0}
+    .jc .b li::before{content:'✓';color:var(--primary);font-weight:700;font-size:12px}
+
+    /* ===========================================
+       CHECKLIST
+    =========================================== */
+    .ckg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .cki{
+      display:flex;align-items:center;gap:14px;font-size:14px;font-weight:500;
+      padding:15px 18px;background:#fff;border:1px solid var(--border);
+      border-radius:var(--radius);transition:all 0.35s var(--ease-out);
+      color:var(--text);box-shadow:var(--shadow-sm)
+    }
+    .cki:hover{border-color:var(--border-teal);color:var(--text-dark);box-shadow:var(--shadow);transform:translateY(-2px)}
+    .cki .bx{
+      width:20px;height:20px;border-radius:5px;border:1.5px solid var(--border-teal);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:10px;color:var(--primary);font-weight:800;transition:all 0.25s var(--ease-spring)
+    }
+    .cki:hover .bx{background:var(--primary);color:#fff;border-color:var(--primary);transform:scale(1.1)}
+
+    /* ===========================================
+       WHY — left/right split
+    =========================================== */
+    .wg{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .wi{
+      padding:36px 32px;border-radius:var(--radius-xl);background:#fff;
+      border:1px solid var(--border);box-shadow:var(--shadow);
+      transition:all 0.5s var(--ease-out)
+    }
+    .wi:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-4px)}
+    .wi h4{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .wi .wi-icon{
+      width:32px;height:32px;border-radius:8px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:14px;color:var(--primary)
+    }
+    .wi p{font-size:14px;color:var(--text);line-height:1.8}
+
+    /* ===========================================
+       FORM
+    =========================================== */
+    .fw{max-width:520px;margin:0 auto;text-align:center;position:relative;z-index:1}
+    .fw .sub{font-size:16px;color:var(--text);margin-bottom:36px}
+    .fi{
+      text-align:left;background:#fff;padding:40px 36px;
+      border:1px solid var(--border);border-radius:var(--radius-xl);
+      position:relative;box-shadow:var(--shadow-lg)
+    }
+    .fi::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-light),var(--primary));
+      border-radius:var(--radius-xl) var(--radius-xl) 0 0
+    }
+    .fld{margin-bottom:14px}
+    .fld input,.fld select{
+      width:100%;padding:15px 18px;border:1.5px solid transparent;border-radius:var(--radius);
+      font-size:14px;font-family:'Inter',sans-serif;background:#F9F9FB;
+      transition:all 0.25s;-webkit-appearance:none;appearance:none;color:var(--text-dark)
+    }
+    .fld input:focus,.fld select:focus{
+      outline:none;border-color:var(--primary);background:#fff;
+      box-shadow:0 0 0 3px var(--primary-dim)
+    }
+    .fld input::placeholder{color:var(--text-muted)}
+    .fld select{
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23999aab' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 16px center;background-color:#F9F9FB
+    }
+    .fld-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .bb{
+      width:100%;padding:16px;border-radius:var(--radius);
+      font-family:'Inter',sans-serif;font-size:14px;font-weight:700;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;border:none;cursor:pointer;transition:all 0.35s var(--ease-out);
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      box-shadow:0 4px 14px rgba(65,154,172,0.12)
+    }
+    .bb:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(65,154,172,0.18)}
+    .ff{text-align:center;margin-top:14px;font-size:11px;color:var(--text-muted)}
+
+    .radio-g{margin-bottom:14px;text-align:left}
+    .radio-g label{display:block;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+    .radio-g .r-opts{display:flex;gap:8px;flex-wrap:wrap}
+    .radio-g .r-opts label{
+      flex:1;min-width:80px;text-align:center;padding:10px 8px;font-size:12px;
+      font-weight:500;border:1.5px solid var(--border);border-radius:var(--radius);
+      cursor:pointer;transition:all 0.25s;color:var(--text);background:#F9F9FB;font-family:'Inter',sans-serif
+    }
+    .radio-g .r-opts input{display:none}
+    .radio-g .r-opts input:checked+label{border-color:var(--primary);background:var(--primary-dim);color:var(--primary-dark);font-weight:600}
+
+    /* ===========================================
+       FAQ
+    =========================================== */
+    .fl{max-width:720px;margin:0 auto}
+    .fq{border-bottom:1px solid var(--border-light);padding:0;transition:border-color 0.3s}
+    .fq:first-of-type{border-top:1px solid var(--border-light)}
+    .fq-q{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:22px 0;font-size:16px;font-weight:700;
+      color:var(--text-dark);cursor:pointer;user-select:none;gap:24px;
+      transition:color 0.2s;font-family:'Red Hat Display',sans-serif
+    }
+    .fq-q:hover{color:var(--primary)}
+    .fq-q .arw{
+      width:28px;height:28px;border-radius:50%;background:var(--bg-light);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:12px;color:var(--text-muted);transition:all 0.4s var(--ease-out);font-weight:400
+    }
+    .fq.open .fq-q .arw{transform:rotate(180deg);background:var(--primary-dim);color:var(--primary)}
+    .fq-a{
+      max-height:0;overflow:hidden;transition:max-height 0.6s var(--ease-out),padding 0.6s var(--ease-out);
+      font-size:14px;color:var(--text);line-height:1.8
+    }
+    .fq.open .fq-a{max-height:400px;padding-bottom:24px}
+
+    /* ===========================================
+       CTA
+    =========================================== */
+    .cta{
+      padding:100px 0;text-align:center;position:relative;
+      background:linear-gradient(170deg,var(--bg-off),#fff)
+    }
+    .cta h2{margin-bottom:16px}
+    .cta p{color:var(--text);margin:0 auto 36px;font-size:16px}
+    .cta .fn{font-size:12px;color:var(--text-muted);margin-top:18px}
+
+    /* ===========================================
+       FOOTER
+    =========================================== */
+    footer{
+      background:var(--bg-off);color:var(--text);padding:80px 0 24px;position:relative
+    }
+    footer::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,transparent,var(--primary-dark),var(--primary),var(--primary-dark),transparent)
+    }
+    footer .g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;align-items:start}
+    footer h4{
+      font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+      text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dark);margin-bottom:18px
+    }
+    footer a,footer p{
+      font-size:13px;color:var(--text);text-decoration:none;display:block;
+      margin-bottom:10px;transition:all 0.2s
+    }
+    footer a:hover{color:var(--primary-dark);padding-left:3px}
+    footer .desc{font-size:12px;line-height:1.8;max-width:280px;margin-top:10px}
+    footer .bt{border-top:1px solid var(--border);padding-top:20px;text-align:center;font-size:11px;color:var(--text-muted)}
+    footer .flogo img{height:34px;width:auto}
+
+    /* ===========================================
+       RESPONSIVE
+    =========================================== */
+    @media(max-width:968px){
+      .sp,.sg,.wg{grid-template-columns:1fr}
+      .st.w{grid-column:1}
+      .bg,.jg{grid-template-columns:1fr 1fr}
+      .mg{grid-template-columns:repeat(2,1fr)}
+      footer .g{grid-template-columns:1fr 1fr;gap:32px}
+      .hero-float-l,.hero-float-r,.hero-float-dots{display:none}
+      .hero-badge{display:none}
+      .fld-row{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .hero{min-height:auto;padding:60px 0 50px}
+      .hero h1{font-size:33px}
+      .hero p{font-size:16px}
+      .hero-foot{gap:16px;flex-direction:column}
+      .sec{padding:80px 0}
+      .si{margin-bottom:36px}
+      .bg,.jg{grid-template-columns:1fr}
+      .mg{grid-template-columns:1fr 1fr;gap:16px}
+      .ckg{grid-template-columns:1fr}
+      .cx{padding:28px 20px}
+      .st{padding:28px 24px}
+      .fi{padding:28px 20px}
+      footer .g{grid-template-columns:1fr;gap:28px}
+      .m-item{padding:24px 16px}
+      .m-item .n{font-size:40px}
+      .container{padding:0 20px}
+      .wi{padding:28px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <a href="#" class="logo"><img src="https://aspiradubai.com/wp-content/uploads/2025/07/ASPIRA.png" alt="Aspira Business Setup" height="38"></a>
+    <div class="nav-l" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Get a consultation</a>
+    </div>
+    <button class="hamb" id="hamb" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-float-l"></div>
+  <div class="hero-float-r"></div>
+  <div class="hero-float-dots">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="container">
+    <div class="hero-badge r" style="transition-delay:0.05s">
+      <span class="pulse"></span>
+      <span>12+ years of trusted service</span>
+    </div>
+    <div class="hero-tag r rd1">
+      <span class="line"></span>
+      <span>Corporate Services · Dubai</span>
+    </div>
+    <h1 class="r rd2">Nominee Director Services<br>in <span class="accent">Dubai</span></h1>
+    <p class="r rd3">Protect your privacy, comply with UAE regulations, and safeguard your corporate interests. We appoint trusted professionals to represent your company on paper — without interfering in your operations.</p>
+    <div class="btn-g r rd4">
+      <a href="#contact" class="btn btn-p">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Book a free consultation
+      </a>
+      <a href="https://wa.me/+971564066546" target="_blank" class="btn btn-w">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="hero-foot r rd5">
+      <span>★ Google <strong>4.9</strong></span>
+      <span>★ Trustpilot <strong>4.8</strong></span>
+      <span><strong>500+</strong> companies served</span>
+      <span><strong>12+</strong> years experience</span>
+      <span><strong>100%</strong> confidentiality</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-l" id="about">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">What is a nominee director</div>
+      <h2>Your company's <span class="accent">representative</span> on paper</h2>
+      <p>A nominee director is a professional appointed to represent your company's interests in official records without being involved in day-to-day management. They act as a board member in government and legal registers, following a pre-agreed mandate that leaves full control with you.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="wg rs" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">📋 Representation</h4><p style="font-size:13px">Appears on official records, signs resolutions and filings as required by UAE law.</p></div>
+      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">🔒 Privacy</h4><p style="font-size:13px">Keeps your ownership details confidential across all public and government registers.</p></div>
+      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">⚖️ Compliance</h4><p style="font-size:13px">Ensures your company meets UAE Commercial Companies Law without operational interference.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-d metrics">
+  <div class="container">
+    <div class="mg rs">
+      <div class="m-item r"><div class="m-icon">🏢</div><div class="n" data-count="500">0</div><div class="l">Companies served</div></div>
+      <div class="m-item r"><div class="m-icon">✓</div><div class="n" data-count="100">0</div><div class="l">Compliance rate</div></div>
+      <div class="m-item r"><div class="m-icon">⚡</div><div class="n" data-count="3">0</div><div class="l">Day appointment</div></div>
+      <div class="m-item r"><div class="m-icon">★</div><div class="n" data-count="12">0</div><div class="l">Years experience</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-l">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Nominee vs Regular</div>
+      <h2>Nominee Director vs <span class="accent">Regular Director</span></h2>
+      <p>The distinction is critical. Understanding it prevents confusion and protects your control.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sp rs">
+      <div class="sc cx">
+        <h3><span class="sc-icon danger">✕</span> Regular Director</h3>
+        <ul>
+          <li><span class="mk cr">✕</span> Actively manages daily business operations</li>
+          <li><span class="mk cr">✕</span> Makes strategic and financial decisions</li>
+          <li><span class="mk cr">✕</span> Holds fiduciary responsibilities to shareholders</li>
+          <li><span class="mk cr">✕</span> Full decision-making authority</li>
+          <li><span class="mk cr">✕</span> Personally liable for corporate obligations</li>
+        </ul>
+      </div>
+      <div class="sc cx">
+        <h3><span class="sc-icon safe">✓</span> Nominee Director</h3>
+        <ul>
+          <li><span class="mk ck">✓</span> Non-executive — no operational involvement</li>
+          <li><span class="mk ck">✓</span> Bound by a strict mandate from owners</li>
+          <li><span class="mk ck">✓</span> Compliance-focused role only</li>
+          <li><span class="mk ck">✓</span> Ultimate control stays with beneficial owner</li>
+          <li><span class="mk ck">✓</span> Protected by indemnity agreements</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-x">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Why choose us</div>
+      <h2>Why businesses use <span class="accent">nominee director services</span></h2>
+      <p>Dubai's business landscape demands local compliance. Nominee directors bridge the gap between international ownership and UAE regulations.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="bg rs">
+      <div class="bi"><div class="bi-icon">🛡️</div><h4>Privacy Protection</h4><p>Shareholders who prefer to keep their names off public records use nominee directors to maintain full confidentiality.</p></div>
+      <div class="bi"><div class="bi-icon">📜</div><h4>Regulatory Compliance</h4><p>Certain company structures require a UAE-resident director. Nominee services make this seamless.</p></div>
+      <div class="bi"><div class="bi-icon">🏛️</div><h4>Corporate Representation</h4><p>Nominee directors represent your company before authorities, banks, and regulatory bodies when needed.</p></div>
+      <div class="bi"><div class="bi-icon">💼</div><h4>Asset Protection</h4><p>Safeguards personal and corporate assets by separating ownership from operational liability.</p></div>
+      <div class="bi"><div class="bi-icon">🌐</div><h4>Banking &amp; KYC</h4><p>UAE banks require director details for account openings. A nominee simplifies this for overseas investors.</p></div>
+      <div class="bi"><div class="bi-icon">📊</div><h4>Smooth Governance</h4><p>Annual filings, VAT submissions, and labour requirements stay on schedule with a dedicated nominee.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-l" id="services">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Our services</div>
+      <h2>Jurisdiction-specific <span class="accent">nominee solutions</span></h2>
+      <p>Each jurisdiction has different expectations. We structure the nominee role to fit your chosen license type perfectly.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="jg rs">
+      <div class="jc"><div class="h"><span class="jc-icon">🏙</span><h4>Free Zone Companies</h4><p>Dubai Knowledge Park, DMCC, IFZA, RAK ICC</p></div><div class="b"><ul><li>Local director required by many free zone regulations</li><li>Nominee bridges compliance gap for foreign owners</li><li>Streamlined setup and ongoing governance</li><li>Full confidentiality maintained</li></ul></div></div>
+      <div class="jc"><div class="h"><span class="jc-icon">🏛️</span><h4>Mainland Companies</h4><p>Dubai Economy &amp; Tourism (DET)</p></div><div class="b"><ul><li>UAE-resident representation may be mandatory</li><li>Nominee meets local directorship requirements</li><li>Suitable for specific business activity types</li><li>Complete operational control retained</li></ul></div></div>
+      <div class="jc"><div class="h"><span class="jc-icon">🌐</span><h4>Offshore Companies</h4><p>RAK ICC, JAFZA Offshore</p></div><div class="b"><ul><li>Privacy and asset protection are primary drivers</li><li>Nominee keeps ownership off public records</li><li>Ideal for holding structures and tax planning</li><li>Compliant with corporate law requirements</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-x" id="process">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Our process</div>
+      <h2>How our <span class="accent">nominee director service</span> works</h2>
+      <p>A clear, transparent process that makes appointing a nominee director straightforward and legally secure.</p>
+    </div>
+  </div>
+  <div class="container narrow rs">
+    <div class="pl">
+      <div class="pr"><div class="num"><span class="num-inner">Step 01</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Initial Consultation</h4><p>We assess your business structure, ownership model, and nominee requirements to recommend the right approach.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 02</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Legal Agreement Drafting</h4><p>A Nominee Director Agreement, Power of Attorney, and Indemnity Agreement are drafted to define scope, rights, and limits.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 03</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Document Submission</h4><p>All paperwork is prepared and submitted to the relevant UAE authority — DET, free zone registry, or offshore body.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 04</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Official Appointment</h4><p>The nominee is registered with the authorities. Your company now meets all directorship compliance requirements.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 05</span></div><div class="dot"></div><div class="c"><h4>Ongoing Representation</h4><p>The nominee acts per the agreed scope — signing filings, supporting banking, and ensuring compliance throughout the engagement.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-l">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Legal framework</div>
+      <h2>Protected by <span class="accent">legally binding</span> agreements</h2>
+      <p>Every nominee appointment is secured by robust contracts that protect your ownership and define authority limits.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="wg rs">
+      <div class="wi"><h4><span class="wi-icon">📄</span>Nominee Director Agreement</h4><p>Defines the scope of duties, authority limits, and responsibilities. Ensures the nominee acts strictly within your mandate.</p></div>
+      <div class="wi"><h4><span class="wi-icon">🔑</span>Power of Attorney</h4><p>Gives beneficial owners the authority to overrule nominee actions. Ultimate control remains with the investor at all times.</p></div>
+      <div class="wi"><h4><span class="wi-icon">🛡️</span>Indemnity Agreement</h4><p>Protects the nominee from liabilities outside their control while safeguarding your interests against any overreach.</p></div>
+      <div class="wi"><h4><span class="wi-icon">🔍</span>Due Diligence &amp; Screening</h4><p>All nominees are verified professionals with clean records. We maintain strict internal protocols and confidentiality NDAs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-x">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">Documents required</div>
+      <h2>What you need for <span class="accent">nominee appointment</span></h2>
+      <p>Accurate documentation ensures a smooth and legally valid appointment process.</p>
+    </div>
+  </div>
+  <div class="container rsc">
+    <div class="ckg rs">
+      <div class="cki"><span class="bx">✓</span> Passport copy of nominee and shareholders</div>
+      <div class="cki"><span class="bx">✓</span> Emirates ID of nominee (if UAE resident)</div>
+      <div class="cki"><span class="bx">✓</span> Memorandum of Association (MOA)</div>
+      <div class="cki"><span class="bx">✓</span> Board resolution appointing the nominee</div>
+      <div class="cki"><span class="bx">✓</span> Power of Attorney defining authority scope</div>
+      <div class="cki"><span class="bx">✓</span> Trade license copy</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-l" id="contact">
+  <div class="container r">
+    <div class="fw">
+      <h2>Book your <span class="accent">free consultation</span></h2>
+      <p class="sub">A senior corporate advisor will call you within one hour to discuss your nominee director needs.</p>
+      <div class="fi">
+        <form action="#" method="post">
+          <div class="fld"><input type="text" placeholder="Full name" required></div>
+          <div class="fld"><input type="email" placeholder="Email address" required></div>
+          <div class="fld"><input type="tel" placeholder="Phone number" required></div>
+          <div class="fld-row">
+            <div class="fld">
+              <select required>
+                <option value="">Jurisdiction</option>
+                <option>Free Zone</option>
+                <option>Mainland</option>
+                <option>Offshore</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="fld">
+              <select required>
+                <option value="">Timeline</option>
+                <option>Within 1 week</option>
+                <option>Within 1 month</option>
+                <option>Within 3 months</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="bb">
+            Send request
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <div class="ff">Your data is protected. No spam. No obligation.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-x" id="faq">
+  <div class="container narrow r">
+    <div class="si si-center">
+      <div class="tag">FAQ</div>
+      <h2>Common questions about <span class="accent">nominee directors</span></h2>
+      <p>Straight answers to the questions we hear every day.</p>
+    </div>
+    <div class="fl">
+      <div class="fq"><div class="fq-q">What is a nominee director in Dubai? <span class="arw">↓</span></div><div class="fq-a">A nominee director is a professional appointed to represent a company on paper, appearing in official government and legal records as a board member. They do not manage the business — their role is strictly compliance-focused and bound by a legal agreement with the beneficial owner.</div></div>
+      <div class="fq"><div class="fq-q">Is a nominee director legally allowed in the UAE? <span class="arw">↓</span></div><div class="fq-a">Yes. Nominee director arrangements are recognised under UAE Commercial Companies Law (CCL) as long as they are properly documented with written agreements that define authority limits and comply with AML regulations.</div></div>
+      <div class="fq"><div class="fq-q">Does a nominee director have control over my company? <span class="arw">↓</span></div><div class="fq-a">No. A nominee director's powers are strictly limited by a legal agreement. The beneficial owner retains full control through a Power of Attorney and the Nominee Director Agreement. The nominee cannot make business decisions or interfere in operations.</div></div>
+      <div class="fq"><div class="fq-q">When do I need a nominee director in Dubai? <span class="arw">↓</span></div><div class="fq-a">You may need a nominee director if: your company structure requires a UAE-resident director, you want to keep your name off public records, you are a foreign investor without UAE residency, or you need smooth compliance for banking and government filings.</div></div>
+      <div class="fq"><div class="fq-q">How long does the appointment process take? <span class="arw">↓</span></div><div class="fq-a">With Aspira, the full process — from consultation to official registration — typically takes 2–3 days. This includes agreement drafting, document preparation, and submission to the relevant authority.</div></div>
+      <div class="fq"><div class="fq-q">How much does nominee director service cost? <span class="arw">↓</span></div><div class="fq-a">Costs vary based on company structure, jurisdiction, and engagement duration. Aspira offers transparent, competitive pricing with no hidden charges. Contact us for a personalised quote based on your needs.</div></div>
+      <div class="fq"><div class="fq-q">What documents protect my ownership? <span class="arw">↓</span></div><div class="fq-a">Three key documents: the Nominee Director Agreement (defines scope), Power of Attorney (gives you override authority), and Indemnity Agreement (protects both parties). All are legally binding and drafted by legal professionals.</div></div>
+      <div class="fq"><div class="fq-q">Do you offer nominee services for all jurisdictions? <span class="arw">↓</span></div><div class="fq-a">Yes. We provide nominee director services for free zone companies (DMCC, IFZA, RAK ICC, DKP, etc.), mainland companies (DET), and offshore structures. Each appointment is tailored to the specific jurisdiction's requirements.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container narrow r">
+    <h2>Ready to appoint a <span class="accent">nominee director?</span></h2>
+    <p>Book a free 30-minute strategy call with a senior corporate advisor. No pressure. No obligation.</p>
+    <a href="#contact" class="btn btn-p" style="padding:18px 44px;font-size:15px">Book your free consultation</a>
+    <div class="fn">Or call +971 56 406 6546</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="g">
+      <div>
+        <a href="#" class="flogo"><img src="https://aspiradubai.com/wp-content/uploads/2025/07/ASPIRA.png" alt="Aspira" height="34"></a>
+        <p class="desc">Your partner for corporate services, business setup and nominee director appointments in Dubai. 500+ entrepreneurs helped since 2014.</p>
+      </div>
+      <div><h4>Services</h4><a href="#">Nominee Director</a><a href="#">Business Setup</a><a href="#">Mainland License</a><a href="#">Free Zone License</a><a href="#">Offshore Setup</a></div>
+      <div><h4>Company</h4><a href="#">About Us</a><a href="#">Blog</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+      <div><h4>Contact</h4><p>+971 56 406 6546</p><p>info@aspiradubai.com</p><p>1001, Al Nasr Central<br>Oud Metha, Dubai, UAE</p></div>
+    </div>
+    <div class="bt">© 2026 Aspira Business Setup LLC</div>
+  </div>
+</footer>
+
+<script>
+  const hamb = document.getElementById('hamb')
+  const menu = document.getElementById('navMenu')
+  const overlay = document.getElementById('navOverlay')
+  hamb.addEventListener('click', () => {
+    hamb.classList.toggle('open')
+    menu.classList.toggle('open')
+    overlay.classList.toggle('open')
+  })
+  overlay.addEventListener('click', () => {
+    hamb.classList.remove('open')
+    menu.classList.remove('open')
+    overlay.classList.remove('open')
+  })
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamb.classList.remove('open')
+      menu.classList.remove('open')
+      overlay.classList.remove('open')
+    })
+  })
+
+  document.querySelectorAll('.fq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'))
+  })
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault()
+      const t = document.querySelector(a.getAttribute('href'))
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+  })
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20)
+  })
+
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'))
+    if (!target) return
+    const suffix = target === 100 ? '%' : target === 12 ? '+' : target === 500 ? '+' : target === 3 ? '' : '+'
+    let current = 0
+    const step = Math.max(1, Math.ceil(target / 40))
+    const interval = setInterval(() => {
+      current += step
+      if (current >= target) { current = target; clearInterval(interval) }
+      el.textContent = current + suffix
+    }, 30)
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in')
+        if (entry.target.hasAttribute('data-count')) animateCounter(entry.target)
+        obs.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+  document.querySelectorAll('.r, .rsc, .rs, [data-count]').forEach(el => obs.observe(el))
+</script>
+</body>
+</html>
