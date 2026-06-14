@@ -7,506 +7,359 @@
   <meta name="description" content="KHDA licensing for training centres, nurseries, schools and online academies in Dubai. We handle the full process — from trade name to permit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700;800;900&family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://aspiradubai.com/wp-content/uploads/2025/08/cropped-aspira-icon-32x32.png">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.65;color:#c8c8d0;background:#080812;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body{
+      font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;
+      color:#6B6B6B;background:#fff;
+      -webkit-font-smoothing:antialiased;overflow-x:hidden
+    }
 
     :root{
-      --gold:#C8A96E;--gold-light:#E0CA8A;--gold-bright:#F0DCA0;--gold-dim:rgba(200,169,110,0.12);--gold-glow:rgba(200,169,110,0.05);
-      --navy:#080812;--navy-mid:#0c0c1e;--navy-light:#111128;--navy-card:#0e0e22;
-      --text:#e8e8f0;--text-secondary:#9898b0;--text-muted:#686880;
-      --border:rgba(255,255,255,0.06);--border-light:rgba(255,255,255,0.03);
-      --card-bg:rgba(255,255,255,0.03);--card-border:rgba(255,255,255,0.06);
-      --radius-sm:6px;--radius:12px;--radius-lg:20px;--radius-xl:28px;
-      --ease-out:cubic-bezier(0.16,1,0.3,1);--ease-smooth:cubic-bezier(0.22,1,0.36,1);
+      --primary:#419AAC;--primary-dark:#1A6A7A;--primary-light:#5DB4C6;
+      --primary-dim:rgba(65,154,172,0.08);--primary-glow:rgba(65,154,172,0.04);
+      --text:#6B6B6B;--text-dark:#111111;--text-muted:#A7A7A7;
+      --bg-light:#F9FAFB;--bg-off:#FAF8F4;
+      --border:rgba(0,0,0,0.06);--border-light:rgba(0,0,0,0.03);
+      --radius-sm:4px;--radius:8px;--radius-lg:12px;
+      --ease-out:cubic-bezier(0.16,1,0.3,1);
     }
-    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px}
     .container.narrow{max-width:860px}
-    .container.wide{max-width:1240px}
 
-    /* =====================================================
-       GLOBAL TYPOGRAPHY
-    ===================================================== */
-    h1,h2,h3,h4{font-family:'Archivo',sans-serif;line-height:1.06;text-wrap:balance}
-    h1{font-size:clamp(38px,5.5vw,72px);font-weight:200;letter-spacing:-0.06em;line-height:1.02}
-    h1 strong{font-weight:900}
-    h2{font-size:clamp(30px,3.2vw,44px);font-weight:400;letter-spacing:-0.04em}
-    h2 strong{font-weight:900}
-    h3{font-size:clamp(20px,1.6vw,26px);font-weight:600;letter-spacing:-0.03em}
-    h4{font-size:15px;font-weight:600}
-    p{max-width:66ch;color:var(--text-secondary);font-size:15px;line-height:1.7}
+    h1,h2,h3,h4{font-family:'Red Hat Display',sans-serif;line-height:1.1;text-wrap:balance;color:var(--text-dark)}
+    h1{font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-0.02em}
+    h2{font-size:clamp(28px,3.2vw,42px);font-weight:700;letter-spacing:-0.01em}
+    h3{font-size:clamp(20px,1.6vw,28px);font-weight:700}
+    h4{font-size:16px;font-weight:700}
+    p{max-width:64ch;color:var(--text);font-size:15px;line-height:1.8}
 
-    /* =====================================================
-       ANIMATED GRADIENT TEXT
-    ===================================================== */
-    .gtext{
-      background:linear-gradient(135deg,var(--gold) 0%,var(--gold-bright) 25%,var(--gold) 50%,var(--gold-light) 75%,var(--gold) 100%);
-      background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-      animation:gradShift 5s ease infinite
-    }
-    @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .accent{color:var(--primary);font-weight:700}
 
-    .gtext-slow{
-      background:linear-gradient(135deg,var(--gold-light) 0%,#fff 30%,var(--gold-light) 60%,var(--gold) 100%);
-      background-size:250% 250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-      animation:gradShiftS 7s ease infinite
-    }
-    @keyframes gradShiftS{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-
-    /* =====================================================
-       ANNOUNCEMENT
-    ===================================================== */
-    .announce{
-      background:linear-gradient(135deg,#0c0c1e,#080812);padding:12px 20px;text-align:center;
-      font-size:12px;color:rgba(255,255,255,0.45);border-bottom:1px solid rgba(200,169,110,0.06);font-weight:500;
-      position:relative;z-index:101
-    }
-    .announce strong{color:var(--gold);font-weight:600}
-
-    /* =====================================================
+    /* ===========================================
        NAV
-    ===================================================== */
+    =========================================== */
     nav{
       position:sticky;top:0;z-index:100;
-      background:rgba(8,8,18,0.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
-      padding:18px 0;transition:all 0.3s;border-bottom:1px solid transparent
+      background:#fff;box-shadow:0px 0px 10px 0px rgba(0,0,0,0.04);
+      padding:12px 0;transition:all 0.3s
     }
-    nav.scrolled{border-bottom-color:rgba(200,169,110,0.08)}
     nav .container{display:flex;align-items:center;justify-content:space-between}
-    .logo{font-family:'Archivo',sans-serif;font-size:22px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.04em;display:flex;align-items:baseline;gap:4px}
-    .logo em{font-style:normal;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .logo small{font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:0.25em;color:var(--text-muted);font-family:'Inter',sans-serif}
-    .nav-links{display:flex;align-items:center;gap:32px}
-    .nav-links a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;transition:color 0.3s;position:relative}
-    .nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transition:width 0.4s var(--ease-out)}
-    .nav-links a:hover::after{width:100%}
-    .nav-links a:hover{color:var(--gold)}
-    .nav-cta{font-size:12px;font-weight:600;color:#080812;background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:11px 26px;border-radius:100px;text-decoration:none;transition:all 0.3s var(--ease-out)}
-    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(200,169,110,0.2)}
-    @media(max-width:768px){.nav-links{display:none}}
-
-    /* =====================================================
-       HERO — corporate dark
-    ===================================================== */
-    .hero{
-      min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;
-      background:linear-gradient(180deg,#080812 0%,#0c0c1e 40%,#080812 100%);
+    .logo img{height:36px;width:auto;display:block}
+    .nav-l{display:flex;align-items:center;gap:32px}
+    .nav-l a{font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:#000;text-decoration:none;transition:color 0.3s;position:relative}
+    .nav-l a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s var(--ease-out)}
+    .nav-l a:hover::after{width:100%}
+    .nav-l a:hover{color:var(--primary-dark)}
+    .nav-cta{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#fff;background:var(--primary-dark);padding:10px 24px;border-radius:10px;text-decoration:none;transition:all 0.3s var(--ease-out)}
+    .nav-cta:hover{background:var(--primary);transform:translateY(-1px);box-shadow:0 4px 12px rgba(26,106,122,0.15)}
+    @media(max-width:768px){
+      .nav-l a:not(.nav-cta){display:none}
+      .nav-l{gap:12px}
     }
-    .hero-bg-grid{
+
+    /* ===========================================
+       HERO
+    =========================================== */
+    .hero{
+      min-height:86vh;display:flex;align-items:center;position:relative;overflow:hidden;
+      background:linear-gradient(180deg,#f8fafb 0%,#fff 100%);
+    }
+    .hero-pattern{
       position:absolute;inset:0;pointer-events:none;
-      background-image:linear-gradient(rgba(200,169,110,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,110,0.03) 1px,transparent 1px);
-      background-size:60px 60px;
+      background-image:linear-gradient(rgba(65,154,172,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(65,154,172,0.03) 1px,transparent 1px);
+      background-size:64px 64px;
       -webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 45%,#000 15%,transparent 70%);
       mask-image:radial-gradient(ellipse 60% 50% at 50% 45%,#000 15%,transparent 70%);
     }
-    .hero-bg-particles{
-      position:absolute;inset:0;pointer-events:none;overflow:hidden
-    }
-    .hero-particle{
-      position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0;
-      animation:particleFloat 8s var(--ease-smooth) infinite
-    }
-    .hero-particle:nth-child(1){top:20%;left:15%;animation-delay:0s;width:2px;height:2px}
-    .hero-particle:nth-child(2){top:60%;right:20%;animation-delay:1.5s;width:3px;height:3px}
-    .hero-particle:nth-child(3){top:30%;right:35%;animation-delay:3s;width:2px;height:2px}
-    .hero-particle:nth-child(4){bottom:25%;left:25%;animation-delay:4.5s;width:4px;height:4px}
-    .hero-particle:nth-child(5){top:75%;left:10%;animation-delay:2s;width:2px;height:2px}
-    .hero-particle:nth-child(6){top:15%;right:15%;animation-delay:5.5s;width:2px;height:2px}
-    @keyframes particleFloat{0%,100%{opacity:0;transform:translateY(20px) scale(0)}30%{opacity:0.5;transform:translateY(0) scale(1)}70%{opacity:0.3;transform:translateY(-30px) scale(0.8)}}
+    .hero .container{position:relative;z-index:2;width:100%;padding:60px 24px}
 
-    .hero-orb-1{
-      position:absolute;top:-30%;right:-10%;width:800px;height:800px;
-      background:radial-gradient(circle,rgba(200,169,110,0.04) 0%,transparent 60%);pointer-events:none;
-      animation:orbDrift 12s var(--ease-smooth) infinite alternate
+    .hero-tag{
+      display:inline-flex;align-items:center;gap:12px;margin-bottom:32px
     }
-    .hero-orb-2{
-      position:absolute;bottom:-20%;left:-15%;width:600px;height:600px;
-      background:radial-gradient(circle,rgba(200,169,110,0.03) 0%,transparent 60%);pointer-events:none;
-      animation:orbDrift 16s var(--ease-smooth) 3s infinite alternate
-    }
-    @keyframes orbDrift{0%{transform:translate(0,0)}100%{transform:translate(40px,-40px)}}
+    .hero-tag .line{width:32px;height:2px;background:var(--primary)}
+    .hero-tag span{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted)}
 
-    .hero-glow-line{
-      position:absolute;bottom:0;left:0;right:0;height:1px;
-      background:linear-gradient(90deg,transparent 5%,rgba(200,169,110,0.08) 20%,var(--gold) 50%,rgba(200,169,110,0.08) 80%,transparent 95%);
-      animation:glowPulse 4s var(--ease-smooth) infinite
-    }
-    @keyframes glowPulse{0%,100%{opacity:0.3}50%{opacity:1}}
+    .hero h1{margin-bottom:20px;max-width:780px}
+    .hero p{font-size:17px;margin:0 0 36px;max-width:560px}
 
-    .hero-accent-bar{
-      position:absolute;left:0;top:0;bottom:0;width:2px;
-      background:linear-gradient(to bottom,transparent 10%,rgba(200,169,110,0.08) 30%,var(--gold) 50%,rgba(200,169,110,0.08) 70%,transparent 90%);
-      animation:barPulse 6s var(--ease-smooth) infinite
-    }
-    @keyframes barPulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
-
-    .hero .container{position:relative;z-index:2;width:100%;padding:80px 24px}
-
-    .hero-badge-row{display:flex;gap:16px;margin-bottom:36px;flex-wrap:wrap}
-    .hero-badge-row span{
-      font-size:11px;color:var(--text-muted);display:flex;align-items:center;gap:6px;
-      padding:7px 16px;background:rgba(255,255,255,0.03);border-radius:100px;
-      border:1px solid rgba(255,255,255,0.04);letter-spacing:0.02em;
-      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
-    }
-    .hero-badge-row strong{color:#fff;font-weight:600}
-    .hero-badge-row .star{color:#e8a838}
-
-    .hero h1{margin-bottom:22px}
-    .hero h1 .gtext{display:inline-block}
-    .hero p{font-size:17px;margin:0 0 44px;max-width:560px;color:var(--text-secondary)}
-
-    .btn-group{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-g{display:flex;gap:14px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:17px 36px;
-      border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;
-      transition:all 0.35s var(--ease-out);border:none;cursor:pointer;font-family:'Inter',sans-serif;
-      position:relative;overflow:hidden
+      display:inline-flex;align-items:center;gap:10px;padding:16px 32px;
+      border-radius:0;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;text-decoration:none;
+      transition:all 0.3s var(--ease-out);border:none;cursor:pointer;position:relative
     }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080812
-    }
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(200,169,110,0.25)}
-    .btn-primary::after{
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.15) 50%,transparent 60%);
-      transform:translateX(-100%);transition:transform 0.7s
-    }
-    .btn-primary:hover::after{transform:translateX(100%)}
+    .btn-p{background:var(--primary);color:#fff}
+    .btn-p:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(65,154,172,0.15)}
+    .btn-s{border:1px solid var(--border);color:var(--text);background:transparent;border-radius:0}
+    .btn-s:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+    .btn-w{background:#25D366;color:#fff;border-radius:0}
+    .btn-w:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,0.15)}
 
-    .btn-outline{
-      border:1px solid rgba(255,255,255,0.1);color:#fff;background:transparent
-    }
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+    .hero-foot{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap}
+    .hero-foot span{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+    .hero-foot strong{color:var(--text-dark);font-weight:600}
 
-    .btn-wa{background:#25D366;color:#fff}
-    .btn-wa:hover{background:#1da851;transform:translateY(-3px);box-shadow:0 6px 20px rgba(37,211,102,0.2)}
-
-    .hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap}
-    .hero-stats span{font-size:13px;color:var(--text-muted)}
-    .hero-stats strong{color:#fff;font-weight:600}
-
-    /* =====================================================
-       TICKER
-    ===================================================== */
-    .ticker-wrap{
-      background:var(--navy-mid);border-top:1px solid rgba(200,169,110,0.04);border-bottom:1px solid rgba(200,169,110,0.04);
-      padding:14px 0;overflow:hidden;position:relative
-    }
-    .ticker-track{display:flex;gap:60px;animation:ticker 40s linear infinite;width:max-content}
-    .ticker-track span{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.15em;white-space:nowrap;font-weight:500}
-    .ticker-track span em{font-style:normal;color:var(--gold);font-weight:600}
-    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-    /* =====================================================
+    /* ===========================================
        SECTIONS
-    ===================================================== */
-    .section{padding:110px 0;position:relative}
-    .section.light{background:var(--navy-mid)}
-    .section.dark{background:var(--navy)}
-    .section.darkest{background:#05050e}
+    =========================================== */
+    .sec{padding:110px 0;position:relative}
+    .sec-l{background:var(--bg-light)}
+    .sec-d{background:#fff}
+    .sec-x{background:var(--bg-off)}
 
-    .sec-intro{margin-bottom:52px;position:relative;z-index:1}
-    .sec-intro .tag{
-      display:inline-flex;align-items:center;gap:14px;font-size:10px;font-weight:600;
-      text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:14px
+    .si{margin-bottom:48px}
+    .si .tag{
+      display:flex;align-items:center;gap:12px;font-size:10px;font-weight:600;
+      text-transform:uppercase;letter-spacing:0.15em;color:var(--primary);margin-bottom:14px
     }
-    .sec-intro .tag::before{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
-    .sec-intro p{font-size:15px;max-width:58ch;margin:14px 0 0}
+    .si .tag::before{content:'';width:24px;height:2px;background:var(--primary)}
+    .si p{font-size:15px;margin:14px 0 0}
 
-    /* =====================================================
+    /* ===========================================
        REVEAL
-    ===================================================== */
-    .r{opacity:0;transform:translateY(40px);transition:all 0.9s var(--ease-out)}
+    =========================================== */
+    .r{opacity:0;transform:translateY(32px);transition:all 0.9s var(--ease-out)}
     .r.in{opacity:1;transform:translateY(0)}
-    .rd1{transition-delay:0.12s}.rd2{transition-delay:0.24s}.rd3{transition-delay:0.36s}.rd4{transition-delay:0.48s}.rd5{transition-delay:0.6s}.rd6{transition-delay:0.72s}
-    .rs>*{opacity:0;transform:translateY(24px);transition:all 0.7s var(--ease-out)}
+    .rd1{transition-delay:0.1s}.rd2{transition-delay:0.2s}.rd3{transition-delay:0.3s}.rd4{transition-delay:0.4s}
+    .rs>*{opacity:0;transform:translateY(20px);transition:all 0.7s var(--ease-out)}
     .rs.in>*{opacity:1;transform:translateY(0)}
-    .rs.in>*:nth-child(1){transition-delay:0.05s}
-    .rs.in>*:nth-child(2){transition-delay:0.1s}
-    .rs.in>*:nth-child(3){transition-delay:0.15s}
-    .rs.in>*:nth-child(4){transition-delay:0.2s}
-    .rs.in>*:nth-child(5){transition-delay:0.25s}
-    .rs.in>*:nth-child(6){transition-delay:0.3s}
-    .rs.in>*:nth-child(7){transition-delay:0.35s}
-    .rs.in>*:nth-child(8){transition-delay:0.4s}
-    .rsc{opacity:0;transform:scale(0.92);transition:all 0.9s var(--ease-out)}
+    .rs.in>*:nth-child(1){transition-delay:0.04s}
+    .rs.in>*:nth-child(2){transition-delay:0.08s}
+    .rs.in>*:nth-child(3){transition-delay:0.12s}
+    .rs.in>*:nth-child(4){transition-delay:0.16s}
+    .rs.in>*:nth-child(5){transition-delay:0.2s}
+    .rs.in>*:nth-child(6){transition-delay:0.24s}
+    .rs.in>*:nth-child(7){transition-delay:0.28s}
+    .rs.in>*:nth-child(8){transition-delay:0.32s}
+    .rsc{opacity:0;transform:scale(0.95);transition:all 0.9s var(--ease-out)}
     .rsc.in{opacity:1;transform:scale(1)}
-    @media(prefers-reduced-motion:reduce){.r,.rs>*,.rsc,.hero-particle,.hero-orb-1,.hero-orb-2,.hero-glow-line,.hero-accent-bar,.ticker-track,.gtext,.gtext-slow,.btn-primary::after{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}
+    @media(prefers-reduced-motion:reduce){
+      .r,.rs>*,.rsc,nav,.nav-l a::after{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
+    }
 
-    /* =====================================================
-       PAIN / GAIN
-    ===================================================== */
-    .spread{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-    .sc h3{font-size:18px;margin-bottom:14px}
+    /* ===========================================
+       SPREAD — Pain/Gain comparison
+    =========================================== */
+    .sp{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .sc h3{font-size:17px;margin-bottom:16px}
     .sc ul{list-style:none;padding:0}
-    .sc li{padding:10px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:12px;border-top:1px solid rgba(255,255,255,0.04)}
+    .sc li{
+      padding:11px 0;font-size:14px;color:var(--text);
+      display:flex;align-items:flex-start;gap:12px;border-top:1px solid var(--border)
+    }
     .sc li:first-of-type{border-top:none;padding-top:0}
     .sc .mk{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:10px;font-weight:700}
-    .sc .mk.cr{background:rgba(239,68,68,0.12);color:#ef4444}
-    .sc .mk.ck{background:rgba(34,197,94,0.12);color:#22c55e}
-    .card-box{
+    .sc .mk.cr{background:rgba(239,68,68,0.08);color:#ef4444}
+    .sc .mk.ck{background:rgba(34,197,94,0.08);color:#22c55e}
+    .cx{
       padding:36px 32px;border-radius:var(--radius-lg);
-      background:var(--card-bg);border:1px solid var(--card-border);
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-      position:relative;overflow:hidden
+      background:#fff;border:1px solid var(--border);
+      position:relative;overflow:hidden;transition:all 0.4s var(--ease-out)
     }
+    .cx:hover{border-color:var(--primary-dim);box-shadow:0 4px 20px rgba(65,154,172,0.04)}
 
-    /* =====================================================
-       STATS
-    ===================================================== */
-    .stats{padding:80px 0;position:relative;overflow:hidden}
-    .stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;position:relative;z-index:1}
-    .stats .n{font-family:'Archivo',sans-serif;font-size:52px;font-weight:200;line-height:1}
-    .stats .n strong{font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .stats .lbl{font-size:12px;color:var(--text-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.1em}
+    /* ===========================================
+       METRICS
+    =========================================== */
+    .metrics{padding:80px 0;position:relative}
+    .mg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;position:relative;z-index:1}
+    .m-item .n{font-family:'Red Hat Display',sans-serif;font-size:52px;font-weight:800;line-height:1;color:var(--primary);display:flex;align-items:center;justify-content:center;gap:2px}
+    .m-item .l{font-size:12px;color:var(--text);margin-top:8px;font-weight:500}
 
-    /* =====================================================
-       SERVICES — corporate glass
-    ===================================================== */
+    /* ===========================================
+       SERVICES
+    =========================================== */
     .sg{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .st{
-      background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-lg);
-      padding:38px 34px;position:relative;transition:all 0.5s var(--ease-out);
-      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:default
+      background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+      padding:36px 32px;position:relative;transition:all 0.4s var(--ease-out);cursor:default
     }
-    .st:hover{transform:translateY(-6px);border-color:rgba(200,169,110,0.15);box-shadow:0 20px 48px rgba(0,0,0,0.2)}
-    .st::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);opacity:0;transition:opacity 0.5s}
-    .st:hover::before{opacity:1}
-    .st .sn{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;font-family:'Archivo',sans-serif}
-    .st h4{font-size:16px;margin-bottom:8px;color:#fff}
-    .st p{font-size:13px;color:var(--text-muted);max-width:42ch}
-    .st.wide{grid-column:1/-1;background:linear-gradient(135deg,rgba(200,169,110,0.03),rgba(255,255,255,0.02));border-color:rgba(200,169,110,0.06)}
-    .st.wide:hover{border-color:rgba(200,169,110,0.2)}
+    .st:hover{transform:translateY(-3px);border-color:var(--primary-dim);box-shadow:0 8px 24px rgba(65,154,172,0.04)}
+    .st .sn{font-size:10px;font-weight:700;color:var(--primary);letter-spacing:0.12em;margin-bottom:12px;font-family:'Inter',sans-serif;text-transform:uppercase}
+    .st h4{font-size:16px;margin-bottom:8px}
+    .st p{font-size:13px;color:var(--text);max-width:42ch;line-height:1.7}
+    .st.w{grid-column:1/-1;background:var(--primary-dim);border-color:var(--primary)}
 
-    /* =====================================================
-       PROCESS — with connecting line
-    ===================================================== */
-    .pl{max-width:800px;margin:0 auto;position:relative}
-    .pl::before{content:'';position:absolute;top:0;bottom:0;left:32px;width:1px;background:linear-gradient(to bottom,var(--gold-dim),rgba(200,169,110,0.02));pointer-events:none}
-    .pr{display:flex;gap:28px;margin-bottom:36px;position:relative}
+    /* ===========================================
+       PROCESS — timeline
+    =========================================== */
+    .pl{max-width:780px;margin:0 auto}
+    .pr{display:flex;gap:24px;margin-bottom:32px;position:relative}
     .pr:last-child{margin-bottom:0}
+    .pr .num{
+      font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--primary);
+      letter-spacing:0.08em;width:48px;flex-shrink:0;padding-top:2px;text-transform:uppercase
+    }
     .pr .dot{
-      width:14px;height:14px;border-radius:50%;background:var(--navy-mid);
-      border:2px solid var(--gold);flex-shrink:0;margin-top:4px;position:relative;z-index:2;
-      transition:all 0.4s var(--ease-out)
+      width:12px;height:12px;border-radius:50%;background:transparent;
+      border:2px solid var(--primary);flex-shrink:0;margin-top:5px;
+      position:relative;z-index:2;transition:all 0.4s var(--ease-out)
     }
-    .pr:hover .dot{background:var(--gold);box-shadow:0 0 20px rgba(200,169,110,0.15)}
-    .pr .content{flex:1}
-    .pr .content .big{
-      font-family:'Archivo',sans-serif;font-size:48px;font-weight:900;line-height:1;
-      color:rgba(200,169,110,0.03);pointer-events:none;user-select:none;margin-bottom:-12px
-    }
-    .pr .content h4{font-size:17px;margin-bottom:4px;color:#fff}
-    .pr .content p{font-size:14px;color:var(--text-muted)}
+    .pr:hover .dot{background:var(--primary);box-shadow:0 0 16px rgba(65,154,172,0.15)}
+    .pr .conn{position:absolute;top:18px;left:50px;bottom:-32px;width:2px;background:linear-gradient(to bottom,var(--primary),transparent)}
+    .pr:last-child .conn{display:none}
+    .pr .c{flex:1}
+    .pr .c h4{font-size:16px;margin-bottom:4px}
+    .pr .c p{font-size:14px;color:var(--text)}
 
-    /* =====================================================
-       COST — glass pricing
-    ===================================================== */
-    .cost-g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-    .ci{
-      background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-lg);
-      padding:40px 34px;position:relative;transition:all 0.5s var(--ease-out);
-      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
+    /* ===========================================
+       PRICING
+    =========================================== */
+    .pg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+    .pi{
+      background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+      padding:36px 32px;position:relative;transition:all 0.4s var(--ease-out)
     }
-    .ci:hover{transform:translateY(-6px);border-color:rgba(200,169,110,0.12);box-shadow:0 20px 48px rgba(0,0,0,0.15)}
-    .ci .lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:4px}
-    .ci .prc{font-family:'Archivo',sans-serif;font-size:42px;font-weight:200;color:#fff;letter-spacing:-0.03em}
-    .ci .prc strong{font-weight:900;color:var(--gold)}
-    .ci .prc small{font-size:15px;font-weight:400;color:var(--text-muted)}
-    .ci .nt{font-size:12px;color:var(--text-muted);margin:4px 0 18px}
-    .ci ul{list-style:none;padding:0}
-    .ci li{padding:9px 0;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;border-top:1px solid rgba(255,255,255,0.03)}
-    .ci li:first-of-type{border-top:none}
-    .ci li::before{content:'→';color:var(--gold);font-weight:500;font-size:14px}
-    .ci.pop{
-      background:linear-gradient(135deg,rgba(200,169,110,0.04),rgba(200,169,110,0.01));
-      border-color:rgba(200,169,110,0.12);
-    }
-    .ci.pop .pt{
-      display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;
-      letter-spacing:0.12em;color:var(--navy);background:linear-gradient(135deg,var(--gold),var(--gold-light));
-      padding:3px 12px;border-radius:100px;margin-bottom:12px
-    }
+    .pi:hover{transform:translateY(-3px);border-color:var(--primary-dim);box-shadow:0 8px 24px rgba(65,154,172,0.04)}
+    .pi .l{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:6px}
+    .pi .p{font-family:'Red Hat Display',sans-serif;font-size:40px;font-weight:800;color:var(--text-dark);letter-spacing:-0.02em}
+    .pi .p strong{color:var(--primary)}
+    .pi .p small{font-size:14px;font-weight:400;color:var(--text-muted)}
+    .pi .nt{font-size:12px;color:var(--text);margin:4px 0 16px}
+    .pi ul{list-style:none;padding:0}
+    .pi li{padding:8px 0;font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;border-top:1px solid var(--border)}
+    .pi li:first-of-type{border-top:none}
+    .pi li::before{content:'—';color:var(--primary);font-weight:500}
+    .pi.pop{background:var(--primary-dim);border-color:var(--primary)}
+    .pi.pop .pt{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#fff;background:var(--primary);padding:3px 12px;border-radius:4px;margin-bottom:12px}
 
-    /* =====================================================
+    /* ===========================================
        JURISDICTION
-    ===================================================== */
+    =========================================== */
     .jg{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .jc{
-      border:1px solid var(--card-border);border-radius:var(--radius-lg);overflow:hidden;
-      transition:all 0.4s var(--ease-out)
-    }
-    .jc:hover{border-color:rgba(200,169,110,0.1);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+    .jc{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.4s var(--ease-out);background:#fff}
+    .jc:hover{border-color:var(--primary-dim);transform:translateY(-2px);box-shadow:0 4px 16px rgba(65,154,172,0.04)}
     .jc .h{padding:24px 28px;border-bottom:1px solid var(--border)}
-    .jc .h h4{font-size:16px;color:#fff}
+    .jc .h h4{font-size:16px}
     .jc .h p{font-size:12px;color:var(--text-muted);margin-top:2px}
     .jc .b{padding:20px 28px 24px}
     .jc .b ul{list-style:none;padding:0}
-    .jc .b li{padding:9px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;border-top:1px solid var(--border)}
+    .jc .b li{padding:8px 0;font-size:14px;color:var(--text);display:flex;align-items:center;gap:10px;border-top:1px solid var(--border)}
     .jc .b li:first-of-type{border-top:none;padding-top:0}
-    .jc .b li::before{content:'—';color:var(--gold);font-weight:500}
+    .jc .b li::before{content:'—';color:var(--primary);font-weight:500}
 
-    /* =====================================================
+    /* ===========================================
        CHECKLIST
-    ===================================================== */
-    .ckg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .cki{
-      display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;
-      padding:14px 18px;background:var(--card-bg);border:1px solid var(--card-border);
-      border-radius:var(--radius-sm);transition:all 0.3s var(--ease-out)
-    }
-    .cki:hover{border-color:rgba(200,169,110,0.15);transform:translateY(-2px);background:rgba(200,169,110,0.02)}
-    .cki .bx{
-      width:20px;height:20px;border-radius:4px;border:1.5px solid var(--gold);
-      display:flex;align-items:center;justify-content:center;flex-shrink:0;
-      font-size:10px;color:var(--gold);font-weight:700;transition:all 0.2s
-    }
-    .cki:hover .bx{background:var(--gold);color:var(--navy)}
+    =========================================== */
+    .ckg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .cki{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;padding:13px 16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);transition:all 0.3s var(--ease-out);color:var(--text)}
+    .cki:hover{border-color:var(--primary-dim);color:var(--text-dark)}
+    .cki .bx{width:18px;height:18px;border-radius:3px;border:1.5px solid var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:var(--primary);font-weight:700;transition:all 0.2s}
+    .cki:hover .bx{background:var(--primary);color:#fff}
 
-    /* =====================================================
-       CASE STUDY — gold seal
-    ===================================================== */
-    .seal{
-      width:80px;height:80px;border-radius:50%;
-      border:2px solid rgba(200,169,110,0.15);display:flex;align-items:center;justify-content:center;
-      margin:0 auto 20px;position:relative;animation:sealPulse 4s var(--ease-smooth) infinite
+    /* ===========================================
+       CASE STUDY
+    =========================================== */
+    .cc{
+      border:1px solid var(--border);border-radius:var(--radius-lg);
+      padding:56px 44px;background:#fff;text-align:center;
+      max-width:720px;margin:0 auto;position:relative;overflow:hidden
     }
-    @keyframes sealPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,169,110,0)}50%{box-shadow:0 0 0 12px rgba(200,169,110,0.03)}}
-    .seal-inner{
-      width:62px;height:62px;border-radius:50%;border:1px solid rgba(200,169,110,0.1);
-      display:flex;align-items:center;justify-content:center;
-      font-family:'Archivo',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;
-      letter-spacing:0.1em;color:var(--gold);text-align:center;line-height:1.2
+    .cc::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(65,154,172,0.03),transparent 70%);pointer-events:none}
+    .cc .seal{
+      width:64px;height:64px;border-radius:50%;border:1.5px solid var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:1
     }
-    .cs-card{
-      border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius-xl);
-      padding:60px 48px;background:var(--card-bg);text-align:center;max-width:740px;margin:0 auto;
-      position:relative;overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
-    }
-    .cs-card::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,110,0.03),transparent 70%);pointer-events:none}
-    .cs-card .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.05em;color:var(--gold);border:1px solid rgba(200,169,110,0.15);padding:5px 18px;border-radius:100px;margin-bottom:4px;position:relative;z-index:1}
-    .cs-card h3{font-size:24px;color:#fff;position:relative;z-index:1}
-    .cs-card .sub{font-size:14px;color:var(--text-muted);margin:6px 0 28px;position:relative;z-index:1}
-    .cs-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;z-index:1}
-    .cs-g .c .n{font-family:'Archivo',sans-serif;font-size:44px;font-weight:200;color:var(--gold);line-height:1}
-    .cs-g .c .n strong{font-weight:900}
-    .cs-g .c .t{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px}
-    .cs-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1}
-    .cs-tags span{font-size:11px;color:rgba(255,255,255,0.25);padding:4px 14px;border:1px solid rgba(255,255,255,0.04);border-radius:100px;transition:all 0.3s}
-    .cs-tags span:hover{border-color:rgba(200,169,110,0.2);color:var(--gold)}
+    .cc .seal-inner{width:48px;height:48px;border-radius:50%;border:1px solid var(--primary-dim);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);text-align:center;line-height:1.2}
+    .cc .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--primary);border:1px solid var(--primary-dim);padding:5px 16px;border-radius:4px;margin-bottom:4px;position:relative;z-index:1}
+    .cc h3{font-size:22px;position:relative;z-index:1}
+    .cc .sub{font-size:14px;color:var(--text);margin:6px 0 24px;position:relative;z-index:1}
+    .csg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;z-index:1}
+    .csg .c .n{font-family:'Red Hat Display',sans-serif;font-size:40px;font-weight:800;color:var(--primary);line-height:1}
+    .csg .c .t{font-size:11px;color:var(--text);margin-top:4px}
+    .cst{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
+    .cst span{font-size:11px;color:var(--text-muted);padding:4px 12px;border:1px solid var(--border);border-radius:4px;transition:all 0.3s}
+    .cst span:hover{border-color:var(--primary);color:var(--primary)}
 
-    /* =====================================================
-       FORM — glass
-    ===================================================== */
-    .form-section{padding:110px 0;position:relative;overflow:hidden}
-    .form-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 70% 30%,rgba(200,169,110,0.02),transparent 50%);pointer-events:none}
+    /* ===========================================
+       FORM
+    =========================================== */
+    .fs{padding:110px 0;position:relative}
     .fw{max-width:520px;margin:0 auto;text-align:center;position:relative;z-index:1}
-    .fw h2{margin-bottom:6px;color:#fff}
-    .fw .sub{font-size:15px;color:var(--text-muted);margin-bottom:36px}
-    .fi{
-      text-align:left;background:var(--card-bg);padding:40px 36px;border:1px solid var(--card-border);
-      border-radius:var(--radius-lg);position:relative;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
-    }
-    .fi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-dim),var(--gold),var(--gold-dim),transparent);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
-    .fld{margin-bottom:14px}
-    .fld input,.fld select{
-      width:100%;padding:15px 18px;border:1.5px solid rgba(255,255,255,0.06);border-radius:var(--radius-sm);
-      font-size:14px;font-family:'Inter',sans-serif;background:rgba(255,255,255,0.03);
-      transition:all 0.25s;-webkit-appearance:none;appearance:none;color:#fff
-    }
-    .fld input:focus,.fld select:focus{outline:none;border-color:var(--gold);background:rgba(200,169,110,0.03);box-shadow:0 0 0 3px rgba(200,169,110,0.06)}
+    .fw .sub{font-size:15px;color:var(--text);margin-bottom:32px}
+    .fi{text-align:left;background:#fff;padding:36px 32px;border:1px solid var(--border);border-radius:var(--radius-lg);position:relative}
+    .fi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--primary);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+    .fld{margin-bottom:12px}
+    .fld input,.fld select{width:100%;padding:13px 15px;border:1px solid transparent;border-radius:0;font-size:14px;font-family:'Inter',sans-serif;background:#F9F9FB;transition:all 0.25s;-webkit-appearance:none;appearance:none;color:var(--text-dark)}
+    .fld input:focus,.fld select:focus{outline:none;border-color:var(--primary);background:#fff}
     .fld input::placeholder{color:var(--text-muted)}
-    .fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23686880' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
-    .fld select option{background:#080812;color:#fff}
-    .btn-block{
-      width:100%;padding:16px;border-radius:100px;font-size:14px;font-weight:600;
-      background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#080812;
-      border:none;cursor:pointer;transition:all 0.3s var(--ease-out);
-      font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px
-    }
-    .btn-block:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,169,110,0.2)}
-    .ffn{text-align:center;margin-top:14px;font-size:11px;color:var(--text-muted)}
+    .fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23A7A7A7' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-color:#F9F9FB}
+    .bb{width:100%;padding:15px;border-radius:0;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;background:var(--primary);color:#fff;border:none;cursor:pointer;transition:all 0.3s var(--ease-out);display:flex;align-items:center;justify-content:center;gap:8px}
+    .bb:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(65,154,172,0.15)}
+    .ff{text-align:center;margin-top:12px;font-size:11px;color:var(--text-muted)}
 
-    /* =====================================================
+    /* ===========================================
        FAQ
-    ===================================================== */
+    =========================================== */
     .fl{max-width:720px;margin:0 auto}
-    .fiq{border-bottom:1px solid rgba(255,255,255,0.04);padding:0;transition:border-color 0.3s}
-    .fiq:first-of-type{border-top:1px solid rgba(255,255,255,0.04)}
-    .fiq:hover{border-color:rgba(200,169,110,0.08)}
-    .fiq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:15px;font-weight:600;color:#fff;cursor:pointer;user-select:none;gap:20px;transition:color 0.2s}
-    .fiq-q:hover{color:var(--gold)}
-    .fiq-q .arw{font-size:14px;color:var(--text-muted);transition:transform 0.4s,color 0.3s,background 0.3s;flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);font-weight:300}
-    .fiq.open .fiq-q .arw{transform:rotate(180deg);color:var(--gold);background:rgba(200,169,110,0.06)}
-    .fiq-a{max-height:0;overflow:hidden;transition:max-height 0.5s var(--ease-out),padding 0.5s var(--ease-out);font-size:14px;color:var(--text-secondary);line-height:1.7}
-    .fiq.open .fiq-a{max-height:300px;padding-bottom:24px}
+    .fq{border-bottom:1px solid var(--border);padding:0;transition:border-color 0.3s}
+    .fq:first-of-type{border-top:1px solid var(--border)}
+    .fq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15px;font-weight:500;color:var(--text-dark);cursor:pointer;user-select:none;gap:20px;transition:color 0.2s;font-family:'Red Hat Display',sans-serif;font-weight:600}
+    .fq-q:hover{color:var(--primary)}
+    .fq-q .arw{font-size:14px;color:var(--text-muted);transition:transform 0.4s;flex-shrink:0;font-weight:400}
+    .fq.open .fq-q .arw{transform:rotate(180deg);color:var(--primary)}
+    .fq-a{max-height:0;overflow:hidden;transition:max-height 0.5s var(--ease-out),padding 0.5s var(--ease-out);font-size:14px;color:var(--text);line-height:1.7}
+    .fq.open .fq-a{max-height:300px;padding-bottom:20px}
 
-    /* =====================================================
+    /* ===========================================
        CTA
-    ===================================================== */
-    .cta{
-      padding:110px 0;text-align:center;
-      background:linear-gradient(180deg,var(--navy) 0%,#05050e 100%);position:relative;overflow:hidden
-    }
-    .cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,0.08),transparent)}
-    .cta h2{font-size:clamp(30px,3vw,42px);margin-bottom:12px;color:#fff}
-    .cta p{color:var(--text-secondary);margin:0 auto 36px;font-size:15px}
-    .cta .btn{font-size:15px;padding:18px 40px}
-    .cta .fn{font-size:12px;color:var(--text-muted);margin-top:18px}
+    =========================================== */
+    .cta{padding:100px 0;text-align:center;position:relative}
+    .cta h2{margin-bottom:14px}
+    .cta p{color:var(--text);margin:0 auto 32px;font-size:15px}
+    .cta .fn{font-size:12px;color:var(--text-muted);margin-top:16px}
 
-    /* =====================================================
+    /* ===========================================
        FOOTER
-    ===================================================== */
-    footer{background:#05050e;color:rgba(255,255,255,0.3);padding:64px 0 24px;position:relative}
-    footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,0.06),transparent)}
-    footer .g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
-    footer h4{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:#fff;margin-bottom:16px}
-    footer a,footer p{font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;display:block;margin-bottom:8px;transition:color 0.2s}
-    footer a:hover{color:var(--gold)}
-    footer .desc{font-size:12px;line-height:1.7;max-width:280px;margin-top:10px}
-    footer .bt{border-top:1px solid rgba(255,255,255,0.03);padding-top:20px;text-align:center;font-size:11px}
+    =========================================== */
+    footer{background:#FAF8F4;color:var(--text);padding:80px 0 24px;position:relative}
+    footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--primary-dark)}
+    footer .g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;align-items:start}
+    footer h4{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-dark);margin-bottom:14px}
+    footer a,footer p{font-size:13px;color:var(--text);text-decoration:none;display:block;margin-bottom:8px;transition:color 0.2s}
+    footer a:hover{color:var(--primary-dark)}
+    footer .desc{font-size:12px;line-height:1.7;max-width:280px;margin-top:8px}
+    footer .bt{border-top:1px solid var(--border);padding-top:20px;text-align:center;font-size:11px;color:var(--text-muted)}
+    footer .flogo img{height:32px;width:auto}
 
-    /* =====================================================
+    /* ===========================================
        RESPONSIVE
-    ===================================================== */
+    =========================================== */
     @media(max-width:968px){
-      .spread,.sg,.jg{grid-template-columns:1fr}
-      .st.wide{grid-column:1}
-      .cost-g{grid-template-columns:1fr 1fr}
-      .cs-g{grid-template-columns:repeat(2,1fr)}
+      .sp,.sg,.jg{grid-template-columns:1fr}
+      .st.w{grid-column:1}
+      .pg{grid-template-columns:1fr 1fr}
+      .csg{grid-template-columns:repeat(2,1fr)}
       footer .g{grid-template-columns:1fr 1fr;gap:32px}
     }
     @media(max-width:640px){
       .hero{min-height:auto;padding:80px 0 60px}
       .hero h1{font-size:30px}
       .hero p{font-size:15px}
-      .hero-stats{gap:20px}
-      .section{padding:70px 0}
-      .stats-g{grid-template-columns:repeat(2,1fr);gap:24px}
-      .cost-g{grid-template-columns:1fr}
+      .hero-foot{gap:20px}
+      .sec{padding:70px 0}
+      .mg{grid-template-columns:repeat(2,1fr);gap:20px}
+      .pg{grid-template-columns:1fr}
       .ckg{grid-template-columns:1fr}
-      .card-box{padding:28px 24px}
+      .cx{padding:28px 24px}
       .st{padding:28px 24px}
-      .cs-card{padding:36px 24px}
-      .fi{padding:28px 24px}
-      .ci{padding:30px 24px}
+      .cc{padding:32px 20px}
+      .fi{padding:28px 20px}
+      .pi{padding:28px 24px}
       footer .g{grid-template-columns:1fr;gap:24px}
-      .pl::before{left:24px}
-      .pr .dot{width:12px;height:12px}
     }
   </style>
 </head>
 <body>
 
-<div class="announce">Fines up to <strong>AED 100,000</strong> for operating without KHDA approval. Get compliant — free consultation available.</div>
-
 <nav id="nav">
   <div class="container">
-    <a href="#" class="logo">Aspira<em>.</em><small>Business Setup</small></a>
-    <div class="nav-links">
+    <a href="#" class="logo"><img src="https://aspiradubai.com/wp-content/uploads/2025/07/ASPIRA.png" alt="Aspira Business Setup" height="36"></a>
+    <div class="nav-l">
       <a href="#services">Services</a>
       <a href="#cost">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -515,82 +368,44 @@
   </div>
 </nav>
 
-<!-- ================================
-    HERO
-================================ -->
 <section class="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-bg-particles">
-    <div class="hero-particle"></div><div class="hero-particle"></div>
-    <div class="hero-particle"></div><div class="hero-particle"></div>
-    <div class="hero-particle"></div><div class="hero-particle"></div>
-  </div>
-  <div class="hero-orb-1"></div>
-  <div class="hero-orb-2"></div>
-  <div class="hero-glow-line"></div>
-  <div class="hero-accent-bar"></div>
+  <div class="hero-pattern"></div>
   <div class="container">
-    <div class="hero-badge-row">
-      <span><span class="star">★</span> Google <strong>4.9</strong></span>
-      <span><span class="star">★</span> Trustpilot <strong>4.8</strong></span>
-      <span><strong>200+</strong> institutions</span>
-      <span><strong>100%</strong> success rate</span>
+    <div class="hero-tag">
+      <span class="line"></span>
+      <span>KHDA Licensing · Dubai</span>
     </div>
-    <h1>KHDA approval in Dubai —<br><span class="gtext">without the runaround</span></h1>
+    <h1>KHDA approval in Dubai<br>without the runaround</h1>
     <p>We handle every step of the KHDA licensing process for training centres, nurseries, schools and online academies. From trade name to final permit — in as fast as 30 days.</p>
-    <div class="btn-group">
-      <a href="#contact" class="btn btn-primary">Book a free consultation</a>
-      <a href="https://wa.me/+971564066546" target="_blank" class="btn btn-wa">
+    <div class="btn-g">
+      <a href="#contact" class="btn btn-p">Book a free consultation</a>
+      <a href="https://wa.me/+971564066546" target="_blank" class="btn btn-w">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-foot">
       <span>★ Google <strong>4.9</strong></span>
       <span>★ Trustpilot <strong>4.8</strong></span>
       <span><strong>200+</strong> institutions licensed</span>
+      <span><strong>100%</strong> success rate</span>
       <span><strong>45</strong> day avg. approval</span>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    TICKER
-================================ -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span>Trusted by founders across Dubai</span>
-    <span><em>200+</em> institutions licensed</span>
-    <span><em>100%</em> KHDA success rate</span>
-    <span><em>45</em> day average approval</span>
-    <span><em>12+</em> years experience</span>
-    <span>★ Google <em>4.9</em></span>
-    <span>★ Trustpilot <em>4.8</em></span>
-    <span>Trusted by founders across Dubai</span>
-    <span><em>200+</em> institutions licensed</span>
-    <span><em>100%</em> KHDA success rate</span>
-    <span><em>45</em> day average approval</span>
-    <span><em>12+</em> years experience</span>
-    <span>★ Google <em>4.9</em></span>
-    <span>★ Trustpilot <em>4.8</em></span>
-  </div>
-</div>
-
-<!-- ================================
-    PAIN / GAIN
-================================ -->
-<section class="section light">
+<section class="sec sec-l">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Why it matters</div>
-      <h2>The cost of getting <span class="gtext-slow">KHDA wrong</span> is high</h2>
-      <p>Without KHDA approval your institution is illegal. With it, you unlock trust, recognition and revenue.</p>
+      <h2>The cost of getting KHDA wrong is high</h2>
+      <p>Without KHDA approval your institution is illegal. With it, you unlock trust, recognition and revenue. The difference is clear.</p>
     </div>
   </div>
   <div class="container">
-    <div class="spread rs">
-      <div class="sc card-box">
-        <h3 style="color:#fff">Operating without KHDA</h3>
+    <div class="sp rs">
+      <div class="sc cx">
+        <h3>Operating without KHDA</h3>
         <ul>
           <li><span class="mk cr">✕</span> Fines up to AED 100,000 and forced closure</li>
           <li><span class="mk cr">✕</span> Students cannot get recognised certificates</li>
@@ -599,8 +414,8 @@
           <li><span class="mk cr">✕</span> Zero franchise or expansion potential</li>
         </ul>
       </div>
-      <div class="sc card-box">
-        <h3 style="color:#fff">With KHDA approval secured</h3>
+      <div class="sc cx">
+        <h3>With KHDA approval secured</h3>
         <ul>
           <li><span class="mk ck">✓</span> Full legal compliance and peace of mind</li>
           <li><span class="mk ck">✓</span> KHDA-attested certificates — valid worldwide</li>
@@ -613,232 +428,111 @@
   </div>
 </section>
 
-<!-- ================================
-    STATS
-================================ -->
-<section class="section darkest stats">
+<section class="sec-d metrics">
   <div class="container">
-    <div class="stats-g rs">
-      <div><div class="n"><strong>200</strong>+</div><div class="lbl">Institutions licensed</div></div>
-      <div><div class="n"><strong>100</strong>%</div><div class="lbl">KHDA success rate</div></div>
-      <div><div class="n"><strong>45</strong></div><div class="lbl">Days average approval</div></div>
-      <div><div class="n"><strong>12</strong>+</div><div class="lbl">Years experience</div></div>
+    <div class="mg rs">
+      <div class="m-item"><div class="n">200+</div><div class="l">Institutions licensed</div></div>
+      <div class="m-item"><div class="n">100%</div><div class="l">KHDA success rate</div></div>
+      <div class="m-item"><div class="n">45</div><div class="l">Days average approval</div></div>
+      <div class="m-item"><div class="n">12+</div><div class="l">Years experience</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    SERVICES
-================================ -->
-<section class="section light" id="services">
+<section class="sec sec-l" id="services">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">What we do</div>
-      <h2><span class="gtext-slow">Full-service</span> KHDA licensing</h2>
+      <h2>Full-service KHDA licensing</h2>
       <p>From the first trade name reservation through to permit renewal — each phase has a dedicated lead and clear deliverables.</p>
     </div>
   </div>
   <div class="container rsc">
     <div class="sg rs">
-      <div class="st">
-        <div class="sn">01</div>
-        <h4>Document &amp; plan preparation</h4>
-        <p>KHDA-compliant academic plans, financial forecasts, curriculum outlines and full compliance checklists.</p>
-      </div>
-      <div class="st">
-        <div class="sn">02</div>
-        <h4>Jurisdiction &amp; license selection</h4>
-        <p>Mainland or free zone — Dubai Knowledge Park, Academic City or DET. We recommend the right fit.</p>
-      </div>
-      <div class="st">
-        <div class="sn">03</div>
-        <h4>KHDA portal submission</h4>
-        <p>Full eServices application, document upload, fee payment and ongoing liaison with KHDA officers.</p>
-      </div>
-      <div class="st">
-        <div class="sn">04</div>
-        <h4>Staff qualification attestation</h4>
-        <p>Verification and attestation of all trainer and faculty degrees to meet KHDA standards.</p>
-      </div>
-      <div class="st">
-        <div class="sn">05</div>
-        <h4>Inspection readiness</h4>
-        <p>Facility audit, Civil Defence safety compliance, classroom setup and team preparation.</p>
-      </div>
-      <div class="st wide">
-        <div class="sn">06</div>
-        <h4>Renewal &amp; ongoing compliance</h4>
-        <p>Annual KHDA renewal, compliance audits and continuous support to keep your license active without interruption.</p>
-      </div>
+      <div class="st"><div class="sn">01</div><h4>Document &amp; plan preparation</h4><p>KHDA-compliant academic plans, financial forecasts, curriculum outlines and full compliance checklists tailored to your institution type.</p></div>
+      <div class="st"><div class="sn">02</div><h4>Jurisdiction &amp; license selection</h4><p>Mainland or free zone — Dubai Knowledge Park, Academic City or DET. We recommend the right structure for your model and budget.</p></div>
+      <div class="st"><div class="sn">03</div><h4>KHDA portal submission</h4><p>Full eServices application, document upload, fee payment and ongoing liaison with KHDA officers until your file is approved.</p></div>
+      <div class="st"><div class="sn">04</div><h4>Staff qualification attestation</h4><p>Verification and attestation of all trainer and faculty degrees to meet KHDA's strict qualification standards.</p></div>
+      <div class="st"><div class="sn">05</div><h4>Inspection readiness</h4><p>Facility audit, Civil Defence safety compliance, classroom setup and staff preparation to pass inspection on the first attempt.</p></div>
+      <div class="st w"><div class="sn">06</div><h4>Renewal &amp; ongoing compliance</h4><p>Annual KHDA renewal, compliance audits and continuous support to keep your license active without interruption.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    PROCESS
-================================ -->
-<section class="section darkest" id="process">
+<section class="sec sec-x">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Our process</div>
-      <h2>Six steps from <span class="gtext-slow">concept to permit</span></h2>
+      <h2>Six steps from concept to permit</h2>
       <p>Every phase has a defined output. No guesswork, no hidden stages.</p>
     </div>
   </div>
   <div class="container narrow rs">
     <div class="pl">
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">01</div>
-          <h4>Institution type &amp; jurisdiction</h4>
-          <p>Nursery, training centre, school or online academy — mainland or free zone. We recommend the right model and budget.</p>
-        </div>
-      </div>
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">02</div>
-          <h4>Trade name &amp; initial approval</h4>
-          <p>Your name gets reserved with DED or the relevant free zone authority. This triggers the initial permission for KHDA.</p>
-        </div>
-      </div>
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">03</div>
-          <h4>Academic &amp; business plan</h4>
-          <p>Curriculum design, staffing structure, safety layout, financial forecast and marketing strategy — all to KHDA specs.</p>
-        </div>
-      </div>
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">04</div>
-          <h4>Document submission</h4>
-          <p>Trade license, tenancy, Civil Defence, CVs, attested degrees — uploaded to KHDA's eServices portal.</p>
-        </div>
-      </div>
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">05</div>
-          <h4>KHDA review &amp; site inspection</h4>
-          <p>We prepare your facility, team and paperwork for the physical inspection. First-time pass guaranteed.</p>
-        </div>
-      </div>
-      <div class="pr">
-        <div class="dot"></div>
-        <div class="content">
-          <div class="big" aria-hidden="true">06</div>
-          <h4>Permit issued</h4>
-          <p>Your official KHDA Education Services Permit. Start enrolling students, running campaigns and issuing certificates.</p>
-        </div>
-      </div>
+      <div class="pr"><div class="num">Step 01</div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Institution type &amp; jurisdiction</h4><p>Nursery, training centre, school or online academy — mainland or free zone. We match the right model to your goals.</p></div></div>
+      <div class="pr"><div class="num">Step 02</div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Trade name &amp; initial approval</h4><p>Your name gets reserved with DED or the relevant free zone. This triggers the initial permission needed for KHDA.</p></div></div>
+      <div class="pr"><div class="num">Step 03</div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Academic &amp; business plan</h4><p>Curriculum design, staffing, safety layout, financial forecast and marketing — all built to KHDA specifications.</p></div></div>
+      <div class="pr"><div class="num">Step 04</div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Document submission</h4><p>Trade license, tenancy, Civil Defence, CVs, attested degrees — uploaded to KHDA's eServices portal.</p></div></div>
+      <div class="pr"><div class="num">Step 05</div><div class="dot"></div><div class="conn"></div><div class="c"><h4>KHDA review &amp; site inspection</h4><p>We prepare your facility, team and paperwork for the physical inspection. First-time pass is the standard.</p></div></div>
+      <div class="pr"><div class="num">Step 06</div><div class="dot"></div><div class="c"><h4>Permit issued</h4><p>Your official KHDA Education Services Permit. Enrol students, run campaigns, issue recognised certificates.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    COST
-================================ -->
-<section class="section light" id="cost">
+<section class="sec sec-l" id="cost">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Investment guide</div>
-      <h2>KHDA fees by <span class="gtext-slow">institution type</span></h2>
+      <h2>KHDA fees by institution type</h2>
       <p>Government fees are set by KHDA. Total setup costs vary based on scope, location and complexity.</p>
     </div>
   </div>
   <div class="container rsc">
-    <div class="cost-g rs">
-      <div class="ci">
-        <div class="lbl">Nursery / Early Learning</div>
-        <div class="prc">AED <strong>10K</strong> <small>KHDA fee</small></div>
+    <div class="pg rs">
+      <div class="pi">
+        <div class="l">Nursery / Early Learning</div>
+        <div class="p">AED <strong>10K</strong> <small>KHDA fee</small></div>
         <div class="nt">Setup: AED 30K – 60K</div>
-        <ul>
-          <li>Basic academic plan</li>
-          <li>Small facility requirements</li>
-          <li>Simplified curriculum approval</li>
-          <li>2–3 month timeline</li>
-        </ul>
+        <ul><li>Basic academic plan</li><li>Small facility requirements</li><li>Simplified curriculum approval</li><li>2–3 month timeline</li></ul>
       </div>
-      <div class="ci pop">
+      <div class="pi pop">
         <div class="pt">Most common</div>
-        <div class="lbl">Training / Vocational Centre</div>
-        <div class="prc">AED <strong>20K</strong> <small>KHDA fee</small></div>
+        <div class="l">Training / Vocational Centre</div>
+        <div class="p">AED <strong>20K</strong> <small>KHDA fee</small></div>
         <div class="nt">Setup: AED 50K – 80K</div>
-        <ul>
-          <li>Detailed course outlines required</li>
-          <li>Trainer qualification attestation</li>
-          <li>Flexible facility options</li>
-          <li>30–60 day approval with our support</li>
-        </ul>
+        <ul><li>Detailed course outlines required</li><li>Trainer qualification attestation</li><li>Flexible facility options</li><li>30–60 day approval with our support</li></ul>
       </div>
-      <div class="ci">
-        <div class="lbl">Private School / University</div>
-        <div class="prc">AED <strong>50K</strong> <small>KHDA fee</small></div>
+      <div class="pi">
+        <div class="l">Private School / University</div>
+        <div class="p">AED <strong>50K</strong> <small>KHDA fee</small></div>
         <div class="nt">Setup: AED 150K – 200K+</div>
-        <ul>
-          <li>Comprehensive academic framework</li>
-          <li>Full facility &amp; safety compliance</li>
-          <li>Advanced staffing requirements</li>
-          <li>3–7 month timeline</li>
-        </ul>
+        <ul><li>Comprehensive academic framework</li><li>Full facility &amp; safety compliance</li><li>Advanced staffing requirements</li><li>3–7 month timeline</li></ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    JURISDICTION
-================================ -->
-<section class="section darkest">
+<section class="sec sec-x">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Mainland vs Free Zone</div>
-      <h2>Where should you <span class="gtext-slow">set up?</span></h2>
+      <h2>Where should you set up?</h2>
       <p>Jurisdiction affects your cost, flexibility and operational reach.</p>
     </div>
   </div>
   <div class="container rs">
     <div class="jg">
-      <div class="jc">
-        <div class="h"><h4>Mainland License</h4><p>Dubai Department of Economy &amp; Tourism</p></div>
-        <div class="b">
-          <ul>
-            <li>Operate anywhere in Dubai with no zone restrictions</li>
-            <li>Serve local students, government and corporate clients</li>
-            <li>Lower rental costs in many areas</li>
-            <li>Broader business activity flexibility</li>
-            <li>Full access to Dubai's local market</li>
-          </ul>
-        </div>
-      </div>
-      <div class="jc">
-        <div class="h"><h4>Free Zone License</h4><p>Dubai Knowledge Park / Dubai Academic City</p></div>
-        <div class="b">
-          <ul>
-            <li>Education-dedicated ecosystem with ready infrastructure</li>
-            <li>Streamlined KHDA coordination and faster setup</li>
-            <li>Ready classrooms and training spaces available</li>
-            <li>100% foreign ownership allowed</li>
-            <li>Ideal for international institutes and training centres</li>
-          </ul>
-        </div>
-      </div>
+      <div class="jc"><div class="h"><h4>Mainland License</h4><p>Dubai Department of Economy &amp; Tourism</p></div><div class="b"><ul><li>Operate anywhere in Dubai — no zone restrictions</li><li>Serve local students, government and corporate clients</li><li>Lower rental costs in many areas</li><li>Broader business activity flexibility</li><li>Full access to Dubai's local market</li></ul></div></div>
+      <div class="jc"><div class="h"><h4>Free Zone License</h4><p>Dubai Knowledge Park / Dubai Academic City</p></div><div class="b"><ul><li>Education-dedicated ecosystem with ready infrastructure</li><li>Streamlined KHDA coordination and faster setup</li><li>Ready classrooms and training spaces available</li><li>100% foreign ownership allowed</li><li>Ideal for international institutes and training centres</li></ul></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    CHECKLIST
-================================ -->
-<section class="section light">
+<section class="sec sec-l">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Document checklist</div>
-      <h2>Everything we <span class="gtext-slow">prepare for you</span></h2>
+      <h2>Everything we prepare for you</h2>
       <p>KHDA requires 14+ documents. We compile and submit every one.</p>
     </div>
   </div>
@@ -862,30 +556,27 @@
   </div>
 </section>
 
-<!-- ================================
-    CASE STUDY
-================================ -->
-<section class="section darkest">
+<section class="sec sec-x">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">Real results</div>
-      <h2 style="color:#fff">Approved in <span class="gtext">30 days</span></h2>
-      <p style="color:var(--text-muted)">A corporate training institute cut the typical timeline by more than half. Every detail was prepared before submission.</p>
+      <h2>Approved in 30 days</h2>
+      <p>A corporate training institute cut the typical timeline by more than half. Every detail was prepared before submission.</p>
     </div>
   </div>
   <div class="container rsc">
-    <div class="cs-card">
+    <div class="cc">
       <div class="seal"><div class="seal-inner">KHDA<br>2026</div></div>
       <div class="tag">Approved in 30 days</div>
       <h3>Corporate Training Institute</h3>
       <p class="sub">Dubai Knowledge Park — Management &amp; digital skills courses</p>
-      <div class="cs-g rs">
-        <div class="c"><div class="n"><strong>7</strong></div><div class="t">Days for trade name &amp; pre-approval</div></div>
-        <div class="c"><div class="n"><strong>10</strong></div><div class="t">Days for academic plan</div></div>
-        <div class="c"><div class="n"><strong>8</strong></div><div class="t">Days for KHDA review &amp; inspection</div></div>
-        <div class="c"><div class="n"><strong>5</strong></div><div class="t">Days for final permit</div></div>
+      <div class="csg rs">
+        <div class="c"><div class="n">7</div><div class="t">Days for trade name &amp;<br>pre-approval</div></div>
+        <div class="c"><div class="n">10</div><div class="t">Days for academic<br>plan preparation</div></div>
+        <div class="c"><div class="n">8</div><div class="t">Days for KHDA review<br>&amp; inspection</div></div>
+        <div class="c"><div class="n">5</div><div class="t">Days for final<br>permit issuance</div></div>
       </div>
-      <div class="cs-tags">
+      <div class="cst">
         <span>Passed inspection first attempt</span>
         <span>All staff degrees attested</span>
         <span>Full curriculum compliance</span>
@@ -894,13 +585,10 @@
   </div>
 </section>
 
-<!-- ================================
-    FORM
-================================ -->
-<section class="section light" id="contact">
+<section class="sec sec-l" id="contact">
   <div class="container r">
     <div class="fw">
-      <h2>Book your <span class="gtext">free consultation</span></h2>
+      <h2>Book your free consultation</h2>
       <p class="sub">A senior licensing consultant will call you within one hour.</p>
       <div class="fi">
         <form action="#" method="post">
@@ -920,115 +608,63 @@
               <option>Other</option>
             </select>
           </div>
-          <button type="submit" class="btn-block">
+          <button type="submit" class="bb">
             Send request
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <div class="ffn">Your data is protected. No spam. No obligation.</div>
+          <div class="ff">Your data is protected. No spam. No obligation.</div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    FAQ
-================================ -->
-<section class="section darkest" id="faq">
+<section class="sec sec-x" id="faq">
   <div class="container narrow r">
-    <div class="sec-intro">
+    <div class="si">
       <div class="tag">FAQ</div>
-      <h2>Common questions about <span class="gtext-slow">KHDA approval</span></h2>
+      <h2>Common questions about KHDA approval</h2>
       <p>Straight answers to the questions we hear every day.</p>
     </div>
     <div class="fl">
-      <div class="fiq">
-        <div class="fiq-q">What is KHDA approval? <span class="arw">↓</span></div>
-        <div class="fiq-a">KHDA (Knowledge and Human Development Authority) approval is the official permit required to operate any educational or training institution in Dubai. It means your institute meets the emirate's quality standards and is legally authorised to operate.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">Who needs KHDA approval? <span class="arw">↓</span></div>
-        <div class="fiq-a">Any training centre, nursery, tutoring institute, online academy, private school, arts academy, music school, sports academy or university operating in Dubai must obtain KHDA approval before beginning operations.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">How long does the process take? <span class="arw">↓</span></div>
-        <div class="fiq-a">Typically 2–7 months depending on complexity. With our preparation, most clients receive approval within 30–60 days. Our fastest case study was approved in 30 days.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">How much does KHDA approval cost? <span class="arw">↓</span></div>
-        <div class="fiq-a">Government fees range from AED 10,000 (nurseries) to AED 20,000 (non-profit training centres) to AED 50,000 (private schools). Total setup costs including licensing, documentation and consultancy typically range from AED 30,000 to AED 200,000+.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">Can I operate without KHDA approval? <span class="arw">↓</span></div>
-        <div class="fiq-a">No. Operating without KHDA approval is illegal. Penalties include fines up to AED 100,000, forced closure and legal action. This applies to all educational activities including online and corporate training.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">What documents are needed? <span class="arw">↓</span></div>
-        <div class="fiq-a">Trade license, tenancy contract (Ejari), Civil Defence certificate, academic and business plan, staff qualifications with attested degrees, passport copies, NOCs and marketing materials. We handle all of these.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">Mainland or free zone — which is better? <span class="arw">↓</span></div>
-        <div class="fiq-a">Mainland gives you location flexibility and direct market access. Free zones offer ready education infrastructure and faster KHDA coordination. Your choice depends on your target students, budget and expansion plans.</div>
-      </div>
-      <div class="fiq">
-        <div class="fiq-q">How do I renew my KHDA license? <span class="arw">↓</span></div>
-        <div class="fiq-a">KHDA approval must be renewed annually. The process involves updating documents, confirming staff credentials and verifying facility compliance. We manage the full renewal cycle so your license never lapses.</div>
-      </div>
+      <div class="fq"><div class="fq-q">What is KHDA approval? <span class="arw">↓</span></div><div class="fq-a">KHDA (Knowledge and Human Development Authority) approval is the official permit required to operate any educational or training institution in Dubai. It means your institute meets the emirate's quality standards and is legally authorised to operate.</div></div>
+      <div class="fq"><div class="fq-q">Who needs KHDA approval? <span class="arw">↓</span></div><div class="fq-a">Any training centre, nursery, tutoring institute, online academy, private school, arts academy, music school, sports academy or university operating in Dubai must obtain KHDA approval before beginning operations.</div></div>
+      <div class="fq"><div class="fq-q">How long does the process take? <span class="arw">↓</span></div><div class="fq-a">Typically 2–7 months depending on complexity. With our preparation, most clients receive approval within 30–60 days. Our fastest case study was approved in 30 days.</div></div>
+      <div class="fq"><div class="fq-q">How much does KHDA approval cost? <span class="arw">↓</span></div><div class="fq-a">Government fees range from AED 10,000 (nurseries) to AED 20,000 (non-profit training centres) to AED 50,000 (private schools). Total setup costs including licensing, documentation and consultancy typically range from AED 30,000 to AED 200,000+.</div></div>
+      <div class="fq"><div class="fq-q">Can I operate without KHDA approval? <span class="arw">↓</span></div><div class="fq-a">No. Operating without KHDA approval is illegal. Penalties include fines up to AED 100,000, forced closure and legal action. This applies to all educational activities including online and corporate training.</div></div>
+      <div class="fq"><div class="fq-q">What documents are needed? <span class="arw">↓</span></div><div class="fq-a">Trade license, tenancy contract (Ejari), Civil Defence certificate, academic and business plan, staff qualifications with attested degrees, passport copies, NOCs and marketing materials. We handle all of these.</div></div>
+      <div class="fq"><div class="fq-q">Mainland or free zone — which is better? <span class="arw">↓</span></div><div class="fq-a">Mainland gives you location flexibility and direct market access. Free zones offer ready education infrastructure and faster KHDA coordination. Your choice depends on your target students, budget and expansion plans.</div></div>
+      <div class="fq"><div class="fq-q">How do I renew my KHDA license? <span class="arw">↓</span></div><div class="fq-a">KHDA approval must be renewed annually. The process involves updating documents, confirming staff credentials and verifying facility compliance. We manage the full renewal cycle so your license never lapses.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ================================
-    CTA
-================================ -->
 <section class="cta">
   <div class="container narrow r">
-    <h2>Ready to get your <span class="gtext">KHDA approval?</span></h2>
+    <h2>Ready to get your KHDA approval?</h2>
     <p>Book a free 30-minute strategy call with a senior licensing consultant. No pressure. No obligation.</p>
-    <a href="#contact" class="btn btn-primary" style="padding:18px 42px;font-size:15px">Book your free consultation</a>
+    <a href="#contact" class="btn btn-p" style="padding:16px 40px;font-size:15px">Book your free consultation</a>
     <div class="fn">Or call +971 56 406 6546</div>
   </div>
 </section>
 
-<!-- ================================
-    FOOTER
-================================ -->
 <footer>
   <div class="container">
     <div class="g">
       <div>
-        <span style="font-family:'Archivo',sans-serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.04em">Aspira<em style="font-style:normal;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">.</em></span>
+        <a href="#" class="flogo"><img src="https://aspiradubai.com/wp-content/uploads/2025/07/ASPIRA.png" alt="Aspira" height="32"></a>
         <p class="desc">Your partner for KHDA licensing, business setup and education institution formation in Dubai. 200+ entrepreneurs helped since 2014.</p>
       </div>
-      <div>
-        <h4>Services</h4>
-        <a href="#">KHDA Approval</a>
-        <a href="#">Business Setup</a>
-        <a href="#">Mainland License</a>
-        <a href="#">Free Zone License</a>
-        <a href="#">Golden Visa</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="#">About Us</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>+971 56 406 6546</p>
-        <p>info@aspiradubai.com</p>
-        <p>1001, Al Nasr Central<br>Oud Metha, Dubai, UAE</p>
-      </div>
+      <div><h4>Services</h4><a href="#">KHDA Approval</a><a href="#">Business Setup</a><a href="#">Mainland License</a><a href="#">Free Zone License</a><a href="#">Golden Visa</a></div>
+      <div><h4>Company</h4><a href="#">About Us</a><a href="#">Blog</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+      <div><h4>Contact</h4><p>+971 56 406 6546</p><p>info@aspiradubai.com</p><p>1001, Al Nasr Central<br>Oud Metha, Dubai, UAE</p></div>
     </div>
     <div class="bt">© 2026 Aspira Business Setup LLC</div>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.fiq-q').forEach(q => {
+  document.querySelectorAll('.fq-q').forEach(q => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'))
   })
   document.querySelectorAll('a[href^="#"]').forEach(a => {
