@@ -44,6 +44,21 @@
 
     ::selection{background:var(--primary);color:#fff}
 
+    /* ======== FLOATING STICKY CTA ======== */
+    .float-cta{
+      position:fixed;bottom:24px;right:24px;z-index:1000;
+      display:none;align-items:center;gap:8px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;padding:14px 24px;border-radius:100px;text-decoration:none;
+      font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
+      box-shadow:0 8px 28px rgba(26,106,122,0.25);
+      transition:all 0.4s var(--ease-spring);border:none;cursor:pointer
+    }
+    .float-cta:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 36px rgba(26,106,122,0.35)}
+    .float-cta.show{display:flex;animation:fup 0.5s var(--ease-spring)}
+    @keyframes fup{0%{opacity:0;transform:translateY(20px) scale(0.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    @media(max-width:768px){.float-cta{padding:12px 20px;font-size:12px;bottom:16px;right:16px}}
+
     /* ===========================================
        NAV
     =========================================== */
@@ -103,6 +118,11 @@
       min-height:86vh;display:flex;align-items:center;position:relative;overflow:hidden;
       background:linear-gradient(170deg,#f4f7f9 0%,#fafcfd 40%,#fff 100%);
     }
+    .hero-grain{
+      position:absolute;inset:0;pointer-events:none;opacity:0.3;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      background-repeat:repeat;background-size:256px 256px
+    }
     .hero-pattern{
       position:absolute;inset:0;pointer-events:none;
       background-image:
@@ -118,6 +138,13 @@
       animation:hg 12s var(--ease-out) infinite alternate
     }
     @keyframes hg{0%{transform:translate(0,0) scale(1)}100%{transform:translate(20px,-20px) scale(1.05)}}
+
+    .hero-shape{
+      position:absolute;bottom:-2px;left:0;right:0;height:80px;pointer-events:none;
+      background:var(--bg-light);
+      -webkit-clip-path:ellipse(52% 100% at 50% 100%);
+      clip-path:ellipse(52% 100% at 50% 100%)
+    }
 
     .hero-float-l{
       position:absolute;top:18%;left:3%;width:120px;height:120px;
@@ -148,10 +175,20 @@
 
     .hero .container{position:relative;z-index:2;width:100%;padding:80px 28px}
 
+    .hero-trust{
+      display:flex;gap:20px;align-items:center;margin-bottom:32px;flex-wrap:wrap
+    }
+    .hero-trust .r-star{
+      display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-muted)
+    }
+    .hero-trust .r-star strong{color:var(--text-dark)}
+    .hero-trust .r-div{width:1px;height:20px;background:var(--border)}
+    .hero-trust .r-logo{height:24px;opacity:0.5;filter:grayscale(1)}
+
     .hero-badge{
       display:inline-flex;align-items:center;gap:10px;
       background:var(--primary-dim);border:1px solid var(--border-teal);
-      padding:8px 18px 8px 12px;border-radius:100px;margin-bottom:32px
+      padding:8px 18px 8px 12px;border-radius:100px;margin-bottom:28px
     }
     .hero-badge .pulse{
       width:8px;height:8px;border-radius:50%;background:var(--primary);
@@ -161,7 +198,7 @@
     .hero-badge span{font-size:12px;font-weight:600;color:var(--primary-dark)}
 
     .hero-tag{
-      display:inline-flex;align-items:center;gap:14px;margin-bottom:36px
+      display:inline-flex;align-items:center;gap:14px;margin-bottom:32px
     }
     .hero-tag .line{width:36px;height:2.5px;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:2px}
     .hero-tag span{
@@ -169,7 +206,7 @@
       color:var(--primary);background:var(--primary-dim);padding:4px 14px;border-radius:100px
     }
     .hero h1{margin-bottom:22px;max-width:820px}
-    .hero p{font-size:18px;margin:0 0 40px;max-width:580px;color:#6a6a7a}
+    .hero .sub{font-size:18px;margin:0 0 36px;max-width:600px;color:#6a6a7a}
 
     .btn-g{display:flex;gap:16px;flex-wrap:wrap}
     .btn{
@@ -182,27 +219,53 @@
       color:#fff;box-shadow:0 4px 14px rgba(65,154,172,0.12)
     }
     .btn-p:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(65,154,172,0.18)}
-    .btn-s{
-      border:1.5px solid var(--border);color:var(--text-dark);background:transparent;font-weight:600
-    }
-    .btn-s:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-3px);background:var(--primary-dim)}
     .btn-w{
       background:#25D366;color:#fff;box-shadow:0 4px 14px rgba(37,211,102,0.12)
     }
     .btn-w:hover{background:#1da851;transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,211,102,0.15)}
 
-    .hero-foot{
-      display:flex;gap:32px;margin-top:48px;flex-wrap:wrap
+    /* ===========================================
+       DECORATIVE SECTION ELEMENTS
+    =========================================== */
+    .sec-shape{
+      position:absolute;bottom:-2px;left:0;right:0;height:60px;pointer-events:none;z-index:1
     }
-    .hero-foot span{
-      font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:7px
+    .sec-shape.top{top:-2px;bottom:auto}
+    .sec-shape svg{width:100%;height:100%}
+
+    .bg-blob{
+      position:absolute;border-radius:50%;pointer-events:none;z-index:0
     }
-    .hero-foot strong{color:var(--text-dark);font-weight:700}
+    .bg-blob-1{
+      top:-20%;right:-10%;width:500px;height:500px;
+      background:radial-gradient(circle,rgba(65,154,172,0.025),transparent 70%)
+    }
+    .bg-blob-2{
+      bottom:-15%;left:-8%;width:400px;height:400px;
+      background:radial-gradient(circle,rgba(65,154,172,0.02),transparent 70%)
+    }
+    .bg-blob-3{
+      top:40%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;
+      background:radial-gradient(circle,rgba(65,154,172,0.015),transparent 70%)
+    }
+
+    .sec-dots{
+      position:absolute;pointer-events:none;z-index:0;opacity:0.04
+    }
+    .sec-dots-1{top:60px;right:40px}
+    .sec-dots-1 span,.sec-dots-2 span{
+      display:block;width:5px;height:5px;background:var(--primary);border-radius:50%;margin-bottom:8px
+    }
+    .sec-dots-2{bottom:60px;left:40px}
+    .sec-dots-1 span:nth-child(2){margin-left:10px}
+    .sec-dots-1 span:nth-child(3){margin-left:20px}
+    .sec-dots-2 span:nth-child(2){margin-left:12px}
+    .sec-dots-2 span:nth-child(3){margin-left:24px}
 
     /* ===========================================
        SECTIONS
     =========================================== */
-    .sec{padding:120px 0;position:relative}
+    .sec{padding:120px 0;position:relative;overflow:hidden}
     .sec-l{background:var(--bg-light)}
     .sec-d{background:#fff}
     .sec-x{background:var(--bg-off)}
@@ -212,6 +275,7 @@
     .sec-dark h2,.sec-dark .si .tag{color:#fff}
     .sec-dark .si .tag::before{background:rgba(255,255,255,0.4)}
     .sec-dark .si p{color:rgba(255,255,255,0.7)}
+    .sec-dark .accent{color:var(--primary-light)}
 
     .si{margin-bottom:56px}
     .si .tag{
@@ -247,17 +311,15 @@
     .rsc{opacity:0;transform:scale(0.94);transition:all 1s var(--ease-out)}
     .rsc.in{opacity:1;transform:scale(1)}
     @media(prefers-reduced-motion:reduce){
-      .r,.rs>*,.rsc,nav,.nav-l a::after,
+      .r,.rs>*,.rsc,nav,.nav-l a::after,.float-cta,
       .hero-glow,.hero-float-l,.hero-float-r,.hero-float-dots span,.hero-badge .pulse{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
     }
 
     /* ===========================================
-       SPREAD — comparison
+       SPREAD
     =========================================== */
     .sp{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-    .sc h3{
-      font-size:18px;margin-bottom:18px;display:flex;align-items:center;gap:10px
-    }
+    .sc h3{font-size:18px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
     .sc h3 .sc-icon{
       width:28px;height:28px;border-radius:8px;display:flex;align-items:center;
       justify-content:center;font-size:14px;font-weight:700
@@ -283,9 +345,34 @@
       box-shadow:var(--shadow)
     }
     .cx:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-4px)}
+    .cx::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,transparent,var(--primary),transparent);
+      opacity:0;transition:opacity 0.5s
+    }
+    .cx:hover::after{opacity:1}
 
     /* ===========================================
-       BENEFITS GRID
+       WHY ASPIRA
+    =========================================== */
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .why-item{
+      display:flex;align-items:flex-start;gap:16px;
+      padding:24px;background:#fff;border-radius:var(--radius-lg);
+      border:1px solid var(--border);box-shadow:var(--shadow-sm);
+      transition:all 0.4s var(--ease-out)
+    }
+    .why-item:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-3px)}
+    .why-item .wi{
+      width:40px;height:40px;border-radius:10px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:18px;color:var(--primary)
+    }
+    .why-item .wc h4{font-size:15px;margin-bottom:4px;font-weight:800}
+    .why-item .wc p{font-size:13px;color:var(--text);line-height:1.7}
+
+    /* ===========================================
+       BENEFITS
     =========================================== */
     .bg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
     .bi{
@@ -310,37 +397,62 @@
     .bi p{font-size:14px;color:var(--text);line-height:1.8;max-width:36ch;margin:0 auto}
 
     /* ===========================================
-       SERVICES GRID
+       TESTIMONIAL
     =========================================== */
-    .sg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .st{
-      background:#fff;border:1px solid var(--border);border-radius:var(--radius-xl);
-      padding:38px 34px;position:relative;transition:all 0.5s var(--ease-out);cursor:default;
-      box-shadow:var(--shadow-sm);overflow:hidden
+    .testimonial-card{
+      max-width:640px;margin:0 auto;text-align:center;
+      padding:48px 40px;background:#fff;border-radius:var(--radius-xl);
+      border:1px solid var(--border);box-shadow:var(--shadow-lg);position:relative
     }
-    .st::before{
-      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    .testimonial-card::before{
+      content:'';position:absolute;top:-3px;left:10%;right:10%;height:3px;
       background:linear-gradient(90deg,transparent,var(--primary),transparent);
-      opacity:0;transition:opacity 0.5s
+      border-radius:0 0 50% 50%
     }
-    .st:hover{transform:translateY(-5px);border-color:var(--border-teal);box-shadow:var(--shadow-lg),var(--shadow-teal)}
-    .st:hover::before{opacity:1}
-    .st .sn{
-      font-size:10px;font-weight:700;color:var(--primary);letter-spacing:0.15em;
-      margin-bottom:14px;font-family:'Inter',sans-serif;text-transform:uppercase
+    .testimonial-card .quote{
+      font-size:42px;color:var(--primary);opacity:0.15;line-height:0.6;margin-bottom:8px;font-family:Georgia,serif
     }
-    .st h4{font-size:17px;margin-bottom:10px}
-    .st p{font-size:14px;color:var(--text);max-width:44ch;line-height:1.8}
-    .st.w{
-      grid-column:1/-1;
-      background:linear-gradient(135deg,rgba(65,154,172,0.03),#fff);
-      border-color:var(--border-teal)
+    .testimonial-card blockquote{
+      font-size:16px;color:var(--text);line-height:1.8;font-style:italic;
+      font-weight:500;font-family:'Poppins',sans-serif
     }
-    .st .st-icon{
-      width:40px;height:40px;border-radius:10px;background:var(--primary-dim);
-      display:flex;align-items:center;justify-content:center;margin-bottom:16px;
-      font-size:18px;color:var(--primary);font-weight:700
+    .testimonial-card .author{
+      margin-top:24px;display:flex;align-items:center;justify-content:center;gap:12px
     }
+    .testimonial-card .author .avatar{
+      width:44px;height:44px;border-radius:50%;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;
+      font-size:18px;color:var(--primary)
+    }
+    .testimonial-card .author .info{text-align:left}
+    .testimonial-card .author .info strong{font-size:14px;color:var(--text-dark);display:block}
+    .testimonial-card .author .info span{font-size:12px;color:var(--text-muted)}
+
+    /* ===========================================
+       SERVICES
+    =========================================== */
+    .jg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+    .jc{
+      border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;
+      transition:all 0.5s var(--ease-out);background:#fff;box-shadow:var(--shadow-sm)
+    }
+    .jc:hover{border-color:var(--border-teal);transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-teal)}
+    .jc .h{padding:24px 28px 20px;text-align:center}
+    .jc .h .jc-icon{
+      width:44px;height:44px;border-radius:12px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;color:var(--primary);margin:0 auto 12px
+    }
+    .jc .h h4{font-size:17px}
+    .jc .h p{font-size:12px;color:var(--text-muted);margin-top:3px}
+    .jc .b{padding:0 28px 28px}
+    .jc .b ul{list-style:none;padding:0}
+    .jc .b li{
+      padding:8px 0;font-size:14px;color:var(--text);display:flex;
+      align-items:center;gap:10px;border-top:1px solid var(--border-light)
+    }
+    .jc .b li:first-of-type{border-top:none;padding-top:0}
+    .jc .b li::before{content:'✓';color:var(--primary);font-weight:700;font-size:12px}
 
     /* ===========================================
        PROCESS
@@ -395,32 +507,22 @@
     }
 
     /* ===========================================
-       JURISDICTION
+       LEGAL CARDS
     =========================================== */
-    .jg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
-    .jc{
-      border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;
-      transition:all 0.5s var(--ease-out);background:#fff;box-shadow:var(--shadow-sm)
+    .wg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .wi{
+      padding:32px 28px;border-radius:var(--radius-xl);background:#fff;
+      border:1px solid var(--border);box-shadow:var(--shadow);
+      transition:all 0.5s var(--ease-out)
     }
-    .jc:hover{border-color:var(--border-teal);transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-teal)}
-    .jc .h{
-      padding:24px 28px 20px;text-align:center
+    .wi:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-4px)}
+    .wi h4{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .wi .wi-icon{
+      width:36px;height:36px;border-radius:10px;background:var(--primary-dim);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      font-size:16px;color:var(--primary)
     }
-    .jc .h .jc-icon{
-      width:44px;height:44px;border-radius:12px;background:var(--primary-dim);
-      display:flex;align-items:center;justify-content:center;
-      font-size:20px;color:var(--primary);margin:0 auto 12px
-    }
-    .jc .h h4{font-size:17px}
-    .jc .h p{font-size:12px;color:var(--text-muted);margin-top:3px}
-    .jc .b{padding:0 28px 28px}
-    .jc .b ul{list-style:none;padding:0}
-    .jc .b li{
-      padding:8px 0;font-size:14px;color:var(--text);display:flex;
-      align-items:center;gap:10px;border-top:1px solid var(--border-light)
-    }
-    .jc .b li:first-of-type{border-top:none;padding-top:0}
-    .jc .b li::before{content:'✓';color:var(--primary);font-weight:700;font-size:12px}
+    .wi p{font-size:14px;color:var(--text);line-height:1.8}
 
     /* ===========================================
        CHECKLIST
@@ -441,22 +543,22 @@
     .cki:hover .bx{background:var(--primary);color:#fff;border-color:var(--primary);transform:scale(1.1)}
 
     /* ===========================================
-       WHY — left/right split
+       INLINE CTA BANNER
     =========================================== */
-    .wg{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-    .wi{
-      padding:36px 32px;border-radius:var(--radius-xl);background:#fff;
-      border:1px solid var(--border);box-shadow:var(--shadow);
-      transition:all 0.5s var(--ease-out)
+    .in-cta{
+      background:linear-gradient(135deg,var(--primary-dark),var(--primary-deep));
+      border-radius:var(--radius-xl);padding:48px 40px;text-align:center;
+      position:relative;overflow:hidden;margin-top:40px
     }
-    .wi:hover{border-color:var(--border-teal);box-shadow:var(--shadow-teal);transform:translateY(-4px)}
-    .wi h4{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-    .wi .wi-icon{
-      width:32px;height:32px;border-radius:8px;background:var(--primary-dim);
-      display:flex;align-items:center;justify-content:center;flex-shrink:0;
-      font-size:14px;color:var(--primary)
+    .in-cta::before{
+      content:'';position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
+      background-size:40px 40px;pointer-events:none
     }
-    .wi p{font-size:14px;color:var(--text);line-height:1.8}
+    .in-cta h3{color:#fff;font-size:24px;margin-bottom:8px;position:relative;z-index:1}
+    .in-cta p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:20px;position:relative;z-index:1}
+    .in-cta .btn-p{background:#fff;color:var(--primary-dark);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
+    .in-cta .btn-p:hover{background:var(--bg-light);color:var(--primary-deep);transform:translateY(-3px)}
 
     /* ===========================================
        FORM
@@ -500,17 +602,6 @@
     .bb:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(65,154,172,0.18)}
     .ff{text-align:center;margin-top:14px;font-size:11px;color:var(--text-muted)}
 
-    .radio-g{margin-bottom:14px;text-align:left}
-    .radio-g label{display:block;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
-    .radio-g .r-opts{display:flex;gap:8px;flex-wrap:wrap}
-    .radio-g .r-opts label{
-      flex:1;min-width:80px;text-align:center;padding:10px 8px;font-size:12px;
-      font-weight:500;border:1.5px solid var(--border);border-radius:var(--radius);
-      cursor:pointer;transition:all 0.25s;color:var(--text);background:#F9F9FB;font-family:'Inter',sans-serif
-    }
-    .radio-g .r-opts input{display:none}
-    .radio-g .r-opts input:checked+label{border-color:var(--primary);background:var(--primary-dim);color:var(--primary-dark);font-weight:600}
-
     /* ===========================================
        FAQ
     =========================================== */
@@ -537,7 +628,7 @@
     .fq.open .fq-a{max-height:400px;padding-bottom:24px}
 
     /* ===========================================
-       CTA
+       CTA BOTTOM
     =========================================== */
     .cta{
       padding:100px 0;text-align:center;position:relative;
@@ -575,8 +666,7 @@
        RESPONSIVE
     =========================================== */
     @media(max-width:968px){
-      .sp,.sg,.wg{grid-template-columns:1fr}
-      .st.w{grid-column:1}
+      .sp,.wg,.why-grid{grid-template-columns:1fr}
       .bg,.jg{grid-template-columns:1fr 1fr}
       .mg{grid-template-columns:repeat(2,1fr)}
       footer .g{grid-template-columns:1fr 1fr;gap:32px}
@@ -587,8 +677,10 @@
     @media(max-width:640px){
       .hero{min-height:auto;padding:60px 0 50px}
       .hero h1{font-size:33px}
-      .hero p{font-size:16px}
+      .hero .sub{font-size:16px}
       .hero-foot{gap:16px;flex-direction:column}
+      .hero-trust{gap:12px}
+      .hero-trust .r-div{display:none}
       .sec{padding:80px 0}
       .si{margin-bottom:36px}
       .bg,.jg{grid-template-columns:1fr}
@@ -602,16 +694,26 @@
       .m-item .n{font-size:40px}
       .container{padding:0 20px}
       .wi{padding:28px 24px}
+      .testimonial-card{padding:32px 24px}
+      .in-cta{padding:32px 24px}
+      .sec-dots-1,.sec-dots-2,.bg-blob-1,.bg-blob-2,.bg-blob-3{display:none}
+      .hero-shape{height:40px}
     }
   </style>
 </head>
 <body>
+
+<a href="#contact" class="float-cta" id="floatCta">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  Free consultation
+</a>
 
 <nav id="nav">
   <div class="container">
     <a href="#" class="logo"><img src="https://aspiradubai.com/wp-content/uploads/2025/07/ASPIRA.png" alt="Aspira Business Setup" height="38"></a>
     <div class="nav-l" id="navMenu">
       <a href="#about">About</a>
+      <a href="#benefits">Benefits</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
@@ -625,6 +727,7 @@
 <div class="nav-overlay" id="navOverlay"></div>
 
 <section class="hero">
+  <div class="hero-grain"></div>
   <div class="hero-pattern"></div>
   <div class="hero-glow"></div>
   <div class="hero-float-l"></div>
@@ -632,6 +735,7 @@
   <div class="hero-float-dots">
     <span></span><span></span><span></span>
   </div>
+  <div class="hero-shape"></div>
   <div class="container">
     <div class="hero-badge r" style="transition-delay:0.05s">
       <span class="pulse"></span>
@@ -642,7 +746,7 @@
       <span>Corporate Services · Dubai</span>
     </div>
     <h1 class="r rd2">Nominee Director Services<br>in <span class="accent">Dubai</span></h1>
-    <p class="r rd3">Protect your privacy, comply with UAE regulations, and safeguard your corporate interests. We appoint trusted professionals to represent your company on paper — without interfering in your operations.</p>
+    <p class="sub r rd3">Protect your privacy, comply with UAE regulations, and safeguard your corporate interests. We appoint trusted professionals to represent your company on paper — without interfering in your operations.</p>
     <div class="btn-g r rd4">
       <a href="#contact" class="btn btn-p">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -653,45 +757,50 @@
         WhatsApp
       </a>
     </div>
-    <div class="hero-foot r rd5">
-      <span>★ Google <strong>4.9</strong></span>
-      <span>★ Trustpilot <strong>4.8</strong></span>
-      <span><strong>500+</strong> companies served</span>
-      <span><strong>12+</strong> years experience</span>
-      <span><strong>100%</strong> confidentiality</span>
+    <div class="hero-trust r rd5">
+      <span class="r-star">★ Google <strong>4.9</strong></span>
+      <span class="r-div"></span>
+      <span class="r-star">★ Trustpilot <strong>4.8</strong></span>
+      <span class="r-div"></span>
+      <span class="r-star"><strong>500+</strong> companies served</span>
+      <span class="r-div"></span>
+      <span class="r-star"><strong>3</strong> day appointment</span>
     </div>
   </div>
 </section>
 
 <section class="sec sec-l" id="about">
+  <div class="bg-blob bg-blob-1"></div>
   <div class="container narrow r">
     <div class="si si-center">
       <div class="tag">What is a nominee director</div>
       <h2>Your company's <span class="accent">representative</span> on paper</h2>
-      <p>A nominee director is a professional appointed to represent your company's interests in official records without being involved in day-to-day management. They act as a board member in government and legal registers, following a pre-agreed mandate that leaves full control with you.</p>
+      <p>A nominee director is a professional appointed to represent your company's interests in official records without being involved in day-to-day management. They appear as a board member in government and legal registers, following a pre-agreed mandate that leaves full control with you.</p>
     </div>
   </div>
-  <div class="container">
-    <div class="wg rs" style="grid-template-columns:1fr 1fr 1fr">
-      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">📋 Representation</h4><p style="font-size:13px">Appears on official records, signs resolutions and filings as required by UAE law.</p></div>
-      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">🔒 Privacy</h4><p style="font-size:13px">Keeps your ownership details confidential across all public and government registers.</p></div>
-      <div class="wi" style="text-align:center;padding:32px 24px"><h4 style="justify-content:center">⚖️ Compliance</h4><p style="font-size:13px">Ensures your company meets UAE Commercial Companies Law without operational interference.</p></div>
+  <div class="container" style="margin-top:48px">
+    <div class="why-grid rs">
+      <div class="why-item"><div class="wi">📋</div><div class="wc"><h4>Official Representation</h4><p>Appears on all government and legal records — signs resolutions, filings, and documents as required by UAE law.</p></div></div>
+      <div class="why-item"><div class="wi">🔒</div><div class="wc"><h4>Full Privacy Protection</h4><p>Your ownership details stay confidential across all public registers including DED, free zone authorities, and banks.</p></div></div>
+      <div class="why-item"><div class="wi">⚖️</div><div class="wc"><h4>Regulatory Compliance</h4><p>Ensures your company meets UAE Commercial Companies Law requirements without any operational interference.</p></div></div>
+      <div class="why-item"><div class="wi">🛡️</div><div class="wc"><h4>100% Control Retained</h4><p>You retain full decision-making authority. The nominee cannot make business decisions without your explicit written consent.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec-d metrics">
+<section class="sec-dark metrics" style="padding:80px 0">
   <div class="container">
     <div class="mg rs">
-      <div class="m-item r"><div class="m-icon">🏢</div><div class="n" data-count="500">0</div><div class="l">Companies served</div></div>
-      <div class="m-item r"><div class="m-icon">✓</div><div class="n" data-count="100">0</div><div class="l">Compliance rate</div></div>
-      <div class="m-item r"><div class="m-icon">⚡</div><div class="n" data-count="3">0</div><div class="l">Day appointment</div></div>
-      <div class="m-item r"><div class="m-icon">★</div><div class="n" data-count="12">0</div><div class="l">Years experience</div></div>
+      <div class="m-item r"><div class="m-icon" style="background:rgba(255,255,255,0.08);color:var(--primary-light)">🏢</div><div class="n" style="color:#fff" data-count="500">0</div><div class="l" style="color:rgba(255,255,255,0.6)">Companies served</div></div>
+      <div class="m-item r"><div class="m-icon" style="background:rgba(255,255,255,0.08);color:var(--primary-light)">✓</div><div class="n" style="color:#fff" data-count="100">0</div><div class="l" style="color:rgba(255,255,255,0.6)">Compliance rate</div></div>
+      <div class="m-item r"><div class="m-icon" style="background:rgba(255,255,255,0.08);color:var(--primary-light)">⚡</div><div class="n" style="color:#fff" data-count="3">0</div><div class="l" style="color:rgba(255,255,255,0.6)">Day appointment</div></div>
+      <div class="m-item r"><div class="m-icon" style="background:rgba(255,255,255,0.08);color:var(--primary-light)">★</div><div class="n" style="color:#fff" data-count="12">0</div><div class="l" style="color:rgba(255,255,255,0.6)">Years experience</div></div>
     </div>
   </div>
 </section>
 
 <section class="sec sec-l">
+  <div class="sec-dots sec-dots-1"><span></span><span></span><span></span></div>
   <div class="container narrow r">
     <div class="si si-center">
       <div class="tag">Nominee vs Regular</div>
@@ -725,7 +834,8 @@
   </div>
 </section>
 
-<section class="sec sec-x">
+<section class="sec sec-x" id="benefits">
+  <div class="bg-blob bg-blob-2"></div>
   <div class="container narrow r">
     <div class="si si-center">
       <div class="tag">Why choose us</div>
@@ -743,9 +853,24 @@
       <div class="bi"><div class="bi-icon">📊</div><h4>Smooth Governance</h4><p>Annual filings, VAT submissions, and labour requirements stay on schedule with a dedicated nominee.</p></div>
     </div>
   </div>
+
+  <div class="container narrow rsc">
+    <div class="testimonial-card">
+      <div class="quote">"</div>
+      <blockquote>I needed a nominee director for my DMCC company and Aspira handled everything in under 3 days. The team was transparent, professional, and ensured all legal agreements protected my interests completely.</blockquote>
+      <div class="author">
+        <div class="avatar">AK</div>
+        <div class="info">
+          <strong>Ahmed Al Khouri</strong>
+          <span>Founder · Al Khouri Trading DMCC</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="sec sec-l" id="services">
+  <div class="sec-dots sec-dots-2"><span></span><span></span><span></span></div>
   <div class="container narrow r">
     <div class="si si-center">
       <div class="tag">Our services</div>
@@ -755,14 +880,22 @@
   </div>
   <div class="container">
     <div class="jg rs">
-      <div class="jc"><div class="h"><span class="jc-icon">🏙</span><h4>Free Zone Companies</h4><p>Dubai Knowledge Park, DMCC, IFZA, RAK ICC</p></div><div class="b"><ul><li>Local director required by many free zone regulations</li><li>Nominee bridges compliance gap for foreign owners</li><li>Streamlined setup and ongoing governance</li><li>Full confidentiality maintained</li></ul></div></div>
-      <div class="jc"><div class="h"><span class="jc-icon">🏛️</span><h4>Mainland Companies</h4><p>Dubai Economy &amp; Tourism (DET)</p></div><div class="b"><ul><li>UAE-resident representation may be mandatory</li><li>Nominee meets local directorship requirements</li><li>Suitable for specific business activity types</li><li>Complete operational control retained</li></ul></div></div>
-      <div class="jc"><div class="h"><span class="jc-icon">🌐</span><h4>Offshore Companies</h4><p>RAK ICC, JAFZA Offshore</p></div><div class="b"><ul><li>Privacy and asset protection are primary drivers</li><li>Nominee keeps ownership off public records</li><li>Ideal for holding structures and tax planning</li><li>Compliant with corporate law requirements</li></ul></div></div>
+      <div class="jc"><div class="h"><span class="jc-icon">🏙</span><h4>Free Zone Companies</h4><p>DMCC, IFZA, RAK ICC, DKP</p></div><div class="b"><ul><li>Local director required by many free zones</li><li>Nominee bridges compliance gap smoothly</li><li>Streamlined setup and governance</li><li>Full confidentiality maintained</li></ul></div></div>
+      <div class="jc"><div class="h"><span class="jc-icon">🏛️</span><h4>Mainland Companies</h4><p>Dubai Economy &amp; Tourism</p></div><div class="b"><ul><li>UAE-resident representation may be mandatory</li><li>Nominee meets directorship requirements</li><li>Suitable for specific activity types</li><li>Complete operational control retained</li></ul></div></div>
+      <div class="jc"><div class="h"><span class="jc-icon">🌐</span><h4>Offshore Companies</h4><p>RAK ICC, JAFZA Offshore</p></div><div class="b"><ul><li>Privacy and asset protection prioritised</li><li>Ownership kept off public records</li><li>Ideal for holdings and tax planning</li><li>Fully compliant with corporate law</li></ul></div></div>
+    </div>
+  </div>
+  <div class="container narrow">
+    <div class="in-cta rsc">
+      <h3>Not sure which jurisdiction suits you?</h3>
+      <p>We'll help you choose the right structure and nominee setup — no obligation.</p>
+      <a href="#contact" class="btn btn-p" style="background:#fff;color:var(--primary-dark)">Get free advice</a>
     </div>
   </div>
 </section>
 
 <section class="sec sec-x" id="process">
+  <div class="bg-blob bg-blob-3"></div>
   <div class="container narrow r">
     <div class="si si-center">
       <div class="tag">Our process</div>
@@ -773,10 +906,10 @@
   <div class="container narrow rs">
     <div class="pl">
       <div class="pr"><div class="num"><span class="num-inner">Step 01</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Initial Consultation</h4><p>We assess your business structure, ownership model, and nominee requirements to recommend the right approach.</p></div></div>
-      <div class="pr"><div class="num"><span class="num-inner">Step 02</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Legal Agreement Drafting</h4><p>A Nominee Director Agreement, Power of Attorney, and Indemnity Agreement are drafted to define scope, rights, and limits.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 02</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Legal Agreement Drafting</h4><p>Nominee Director Agreement, Power of Attorney, and Indemnity Agreement are drafted to define scope, rights, and limits.</p></div></div>
       <div class="pr"><div class="num"><span class="num-inner">Step 03</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Document Submission</h4><p>All paperwork is prepared and submitted to the relevant UAE authority — DET, free zone registry, or offshore body.</p></div></div>
       <div class="pr"><div class="num"><span class="num-inner">Step 04</span></div><div class="dot"></div><div class="conn"></div><div class="c"><h4>Official Appointment</h4><p>The nominee is registered with the authorities. Your company now meets all directorship compliance requirements.</p></div></div>
-      <div class="pr"><div class="num"><span class="num-inner">Step 05</span></div><div class="dot"></div><div class="c"><h4>Ongoing Representation</h4><p>The nominee acts per the agreed scope — signing filings, supporting banking, and ensuring compliance throughout the engagement.</p></div></div>
+      <div class="pr"><div class="num"><span class="num-inner">Step 05</span></div><div class="dot"></div><div class="c"><h4>Ongoing Representation</h4><p>The nominee acts per the agreed scope — signing filings, supporting banking, and ensuring compliance throughout.</p></div></div>
     </div>
   </div>
 </section>
@@ -794,7 +927,14 @@
       <div class="wi"><h4><span class="wi-icon">📄</span>Nominee Director Agreement</h4><p>Defines the scope of duties, authority limits, and responsibilities. Ensures the nominee acts strictly within your mandate.</p></div>
       <div class="wi"><h4><span class="wi-icon">🔑</span>Power of Attorney</h4><p>Gives beneficial owners the authority to overrule nominee actions. Ultimate control remains with the investor at all times.</p></div>
       <div class="wi"><h4><span class="wi-icon">🛡️</span>Indemnity Agreement</h4><p>Protects the nominee from liabilities outside their control while safeguarding your interests against any overreach.</p></div>
-      <div class="wi"><h4><span class="wi-icon">🔍</span>Due Diligence &amp; Screening</h4><p>All nominees are verified professionals with clean records. We maintain strict internal protocols and confidentiality NDAs.</p></div>
+      <div class="wi"><h4><span class="wi-icon">🔍</span>Due Diligence &amp; Screening</h4><p>All nominees are verified professionals. We maintain strict internal protocols, background checks, and confidentiality NDAs.</p></div>
+    </div>
+  </div>
+  <div class="container narrow" style="margin-top:40px">
+    <div class="in-cta rsc" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark))">
+      <h3>Want to review a sample agreement?</h3>
+      <p>Request a copy of our nominee director agreement template — no commitment needed.</p>
+      <a href="#contact" class="btn btn-p" style="background:#fff;color:var(--primary-dark)">Request sample</a>
     </div>
   </div>
 </section>
@@ -820,6 +960,7 @@
 </section>
 
 <section class="sec sec-l" id="contact">
+  <div class="bg-blob bg-blob-1"></div>
   <div class="container r">
     <div class="fw">
       <h2>Book your <span class="accent">free consultation</span></h2>
@@ -939,7 +1080,9 @@
   })
 
   window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20)
+    const nav = document.getElementById('nav')
+    nav.classList.toggle('scrolled', window.scrollY > 20)
+    document.getElementById('floatCta').classList.toggle('show', window.scrollY > 400)
   })
 
   function animateCounter(el) {
